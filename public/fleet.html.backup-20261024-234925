@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our Fleet | Zims Rental Cars Nadi</title><meta name="description" content="Explore the Zims Rental Cars Nadi fleet and enquire about a vehicle for your Fiji trip."><meta name="theme-color" content="#07539b"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="512x512" href="/assets/zims-app-icon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');:root{--blue:#07539b;--navy:#062b50;--red:#ed3044;--ink:#092b4d;--muted:#5c7085;--line:#dce6ee;--pale:#f4f8fb;--gold:#f4c95d;--shadow:0 18px 48px #082b4b16}*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:'DM Sans',sans-serif;background:#fffdfa}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1450px,calc(100% - 48px));margin:auto}.top{background:#053a78;color:#e2f1ff;font-size:11px;padding:8px 0}header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #d9e7f2}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:9px;flex-shrink:0}.brand img{width:70px;height:58px;object-fit:contain;animation:fromLeft .7s both}.brand-word{font:800 18px Manrope;animation:fromRight .7s .1s both}.brand-word span{display:block;color:var(--red);font-size:9px;letter-spacing:1.2px}.navlinks{display:flex;gap:24px;font-size:12px;font-weight:800}.navlinks a{position:relative;padding-top:17px}.nav-car{position:absolute;top:-2px;left:50%;transform:translateX(-50%);font-size:15px}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn-red{background:linear-gradient(135deg,#f23c4d,#d91d35);color:white}.btn-blue{background:linear-gradient(135deg,#0b66ad,#06457e);color:white}.btn-outline{border:1px solid #c7d8e6;background:#fff;color:var(--navy)}.hero{background:linear-gradient(115deg,#052c50ed,#07539bba),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85') center/cover;color:white;padding:62px 0}.kicker{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);font-weight:800}.hero .kicker{color:#ffd6da}.hero h1{font:800 clamp(34px,5vw,60px)/1.05 Manrope;letter-spacing:-2px;margin:12px 0}.hero p{max-width:700px;line-height:1.8;color:#eef8ff;font-size:14px}.fleet-section{padding:38px 0 64px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.filter{border:1px solid #d5e2ec;border-radius:999px;background:white;padding:9px 14px;font-size:12px;font-weight:800;color:var(--navy)}.filter.active{background:var(--blue);color:white;border-color:var(--blue)}.fleet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.car{border:1px solid #dce6ee;border-radius:22px;overflow:hidden;background:white;box-shadow:0 10px 30px #082b5008;display:flex;flex-direction:column;cursor:pointer;transition:transform .2s,box-shadow .2s}.car:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.car-img{height:240px;padding:12px;background:#eef4f7;display:grid;place-items:center}.car-img img{width:100%;height:100%;object-fit:contain}.car-info{padding:20px;display:flex;flex-direction:column;flex:1}.car h2{font:800 20px Manrope;margin:0 0 13px}.rate{display:inline-flex;align-self:start;gap:5px;background:#ffe39a;color:#122f4b;padding:9px 13px;border-radius:999px;font-weight:900}.rate small{font-size:10px;align-self:center}.spec-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px}.pill{border-radius:999px;padding:6px 9px;background:#f2f7fa;border:1px solid #e1eaf0;color:#526c89;font-size:11px}.fuel{font-size:12px;color:#b4bec8;margin:0 0 10px}.fuel strong{color:#526c89;letter-spacing:1px}.feature-note{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 18px}.car-actions{display:flex;gap:9px;margin-top:auto}.car-actions .btn{flex:1}.note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:18px}.contact-band{background:linear-gradient(125deg,#052c50,#06457a);color:white;padding:24px 0}.contact-band .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}.contact-band p{font-size:12px;color:#dceeff;margin:5px 0}.gallery-bg{position:fixed;inset:0;z-index:40;background:#031a39e8;display:none;align-items:center;justify-content:center;padding:18px}.gallery-bg.open{display:flex}.gallery-panel{width:min(850px,100%);max-height:92vh;overflow:auto;border-radius:22px;background:white;padding:22px}.gallery-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.gallery-head h2{margin:6px 0;font:800 24px Manrope}.close{border:0;background:#e8f4ff;border-radius:50%;width:38px;height:38px;font-size:24px;color:var(--navy)}.gallery-main{width:100%;height:min(48vh,420px);object-fit:contain;background:#eef4f7;border-radius:14px;margin-top:14px}.gallery-note{font-size:12px;color:var(--muted);line-height:1.6}.gallery-thumbs{display:flex;gap:8px;margin-top:10px}.gallery-thumbs button{border:1px solid var(--line);background:#f5f9fb;border-radius:10px;padding:4px}.gallery-thumbs img{width:78px;height:55px;object-fit:contain}.flower{position:fixed;right:14px;bottom:12px;width:54px;height:54px;z-index:5;pointer-events:none;opacity:.6}@keyframes fromLeft{from{opacity:0;transform:translateX(-25px)}to{opacity:1;transform:translateX(0)}}@keyframes fromRight{from{opacity:0;transform:translateX(25px)}to{opacity:1;transform:translateX(0)}}@media(max-width:900px){.navlinks{gap:12px}.fleet{grid-template-columns:repeat(2,minmax(0,1fr))}.car-img{height:210px}}@media(max-width:650px){.wrap{width:calc(100% - 28px)}.nav{height:68px}.brand img{width:54px;height:48px}.brand-word{font-size:15px}.navlinks{gap:9px;font-size:10px}.navlinks a:nth-child(3),.navlinks a:nth-child(4),.navlinks a:nth-child(5){display:none}.hero{padding:44px 0}.fleet{grid-template-columns:1fr}.car-img{height:220px}.car-info{padding:17px}.contact-band .wrap{align-items:flex-start;flex-direction:column}.gallery-panel{padding:14px}}@media(prefers-reduced-motion:reduce){.brand img,.brand-word{animation:none}.car{transition:none}}
+
+/* Owner-review polish */
+header .navlinks a{position:relative;padding-top:22px!important;padding-bottom:10px!important}
+.nav-car-indicator{position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:28px;height:16px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
+.nav-car-indicator svg{width:27px;height:14px;display:block}
+.navlinks a.active-section .nav-car-indicator{opacity:1}
+.fleet-section{padding:28px 0 42px}
+.filters{margin:0 0 22px;display:flex;gap:9px;flex-wrap:wrap}
+.filter{border:1px solid #d5e3ec;border-radius:999px;padding:10px 15px;background:#fff;color:#12375e;font-weight:800;font-size:12px;transition:background .2s,color .2s,transform .2s}
+.filter.active,.filter:hover{background:#07539b;color:#fff;border-color:#07539b}
+.fleet{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+  justify-content:center;
+}
+.fleet .car:first-child:nth-last-child(1){
+  grid-column:2;
+}
+
+.fleet .car:first-child:nth-last-child(2),
+.fleet .car:first-child:nth-last-child(2) ~ .car{
+  grid-column:span 1;
+}
+
+.fleet:has(.car:nth-child(2):last-child){
+  grid-template-columns:repeat(6,minmax(0,1fr));
+}
+
+.fleet:has(.car:nth-child(2):last-child) .car{
+  grid-column:span 3;
+}
+.car{border:1px solid #e0e9ef;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#fff,#fcfdfe);box-shadow:0 9px 26px #062b500b;min-width:0;transition:transform .25s ease,box-shadow .25s ease}
+.car-img{height:auto;aspect-ratio:16/9;padding:0;background:#eaf3f5;overflow:hidden}
+.car-img img{width:100%;height:100%;display:block;object-fit:cover;padding:0;background:transparent;transition:transform .5s ease}
+.car-info{padding:19px 19px 18px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.car h2{font:800 clamp(17px,1.45vw,20px)/1.25 Manrope,'DM Sans',sans-serif;letter-spacing:-.45px;margin:0 0 15px;min-height:0}
+.rate{margin-bottom:0;background:linear-gradient(120deg,#ffedb0,#f4c95d);box-shadow:inset 0 1px #ffffffa6}
+.spec-row{margin:12px 0 10px;gap:7px}
+.pill{padding:6px 9px;background:#f3f7f9;border-color:#e4ebef}
+.fuel{margin:0 0 12px;color:#7b8ea1}
+.fuel strong{color:#d39b13;letter-spacing:1px}
+.feature-note{font-size:12px;line-height:1.6;margin:0 0 17px}
+.car-actions{width:100%;gap:9px;margin-top:auto}
+.car-actions .btn{min-height:43px;border-radius:12px;font-size:12px;padding:10px 12px}
+.note{margin-top:18px;padding:12px 15px;border-radius:12px;background:#f3f8fb;border:1px solid #e3edf3}
+.gallery-bg{backdrop-filter:blur(8px)}
+.gallery-main{background:linear-gradient(145deg,#f3f7f9,#eaf2f5);object-fit:contain}
+.flower{position:absolute;right:-10px;bottom:-12px;width:clamp(100px,12vw,150px);height:auto;max-height:150px;object-fit:contain;pointer-events:none;opacity:.88;z-index:1}.fleet-footer{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 80% 0%,#07539b 0%,transparent 55%),#042746;color:#fff;padding:14px 0 10px}.fleet-footer .wrap{position:relative;z-index:2}.fleet-footer-top{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-bottom:10px}.fleet-footer .brand img{width:60px;height:48px;object-fit:contain}.fleet-footer .brand-word{font-size:16px}.fleet-footer .brand-word span{font-size:8px}.fleet-footer .footer-links{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#e2f1ff}.fleet-footer .footer-bottom{border-top:1px solid #ffffff2c;padding-top:9px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#b6d0e8;font-size:10px;line-height:1.5}.fleet-footer .footer-bottom span:last-child{padding-right:95px}
+@media(max-width:900px){.fleet{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.car-info{padding:16px}.car h2{font-size:17px}.car-actions .btn{font-size:11px}.navlinks{gap:12px}}
+@media(max-width:650px){.fleet-footer-top{align-items:flex-start;flex-direction:column}.fleet-footer .footer-bottom{flex-direction:column}.fleet-footer .footer-bottom span:last-child{padding-right:55px}.flower{width:80px;right:-12px;bottom:-12px;opacity:.7}.navlinks{gap:8px;font-size:10px}.navlinks a:nth-child(3),.navlinks a:nth-child(4),.navlinks a:nth-child(5){display:none}.fleet-section{padding:22px 0 32px}.fleet{grid-template-columns:1fr;gap:14px}.car-img{aspect-ratio:16/9}.car-info{padding:17px}.car h2{font-size:18px;margin-bottom:12px}.car-actions .btn{font-size:12px}.gallery-panel{padding:14px}.flower{width:80px;right:-12px;bottom:-12px;opacity:.7}}
+@media(prefers-reduced-motion:reduce){.car,.car-img img,.filter{transition:none!important}}
+
+
+.brand img{animation:logoEnter 1.2s cubic-bezier(.2,.8,.2,1) .12s both;will-change:transform,opacity}.brand-word{animation:wordEnter 1.15s .38s cubic-bezier(.2,.8,.2,1) both;will-change:transform,opacity}.fleet-footer .brand img,.fleet-footer .brand-word{animation:none;opacity:0;transform:translateY(8px)}.fleet-footer.brand-entered .brand img{animation:logoEnter 1.2s cubic-bezier(.2,.8,.2,1) .08s both}.fleet-footer.brand-entered .brand-word{animation:wordEnter 1.15s .34s cubic-bezier(.2,.8,.2,1) both}
+@keyframes logoEnter{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}@keyframes wordEnter{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+.flower-decoration{position:fixed;z-index:5;right:4px;bottom:7px;width:clamp(112px,11vw,168px);max-height:180px;height:auto;object-fit:contain;opacity:.92;pointer-events:none;filter:drop-shadow(0 12px 18px #061c3040) drop-shadow(0 3px 3px #061c3030);transition:width .25s ease,opacity .25s ease}.flower-decoration.flower-near-map{width:82px;opacity:.4}
+@media(max-width:780px){.flower-decoration{width:96px;right:0;bottom:4px;opacity:.7}.flower-decoration.flower-near-map{width:64px;opacity:.25}}@media(max-width:460px){.flower-decoration{width:76px;opacity:.58}.flower-decoration.flower-near-map{width:52px;opacity:.2}}@media(prefers-reduced-motion:reduce){.brand img,.brand-word,.flower-decoration{animation:none!important;transition:none!important}}
+
+/* Premium vehicle gallery: clear thumbnail tiles with labels below the image, never overlaid. */
+.gallery-panel{width:min(980px,100%);padding:24px;box-shadow:0 28px 90px #00152c55}
+.gallery-main{display:block;width:100%;height:min(43vh,390px);margin-top:14px;border:1px solid #e4edf3;border-radius:16px;background:linear-gradient(145deg,#f7fafc,#eaf2f6);object-fit:contain}
+.gallery-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 12px;align-items:stretch}
+.gallery-thumbs button{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;overflow:hidden;padding:6px;border:1px solid #dce7ef;border-radius:13px;background:#f8fbfd;color:var(--ink);text-align:left;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.gallery-thumbs button:hover{transform:translateY(-2px);border-color:#8eb8d8;box-shadow:0 7px 18px #082b5010}
+.gallery-thumbs button.active,.gallery-thumbs button[aria-pressed="true"]{border-color:var(--blue);box-shadow:0 0 0 2px #07539b20;background:#eef7fd}
+.gallery-thumbs img{display:block;width:100%;height:76px;object-fit:cover;border-radius:8px;background:#e9f0f4}
+.gallery-thumbs span{display:block;padding:8px 4px 3px;font-size:11px;font-weight:700;line-height:1.3;text-align:center;white-space:normal;overflow-wrap:anywhere}
+.gallery-note{margin:8px 0 14px;font-size:11px;line-height:1.55}
+#galleryBook{width:100%;min-height:46px}
+@media(max-width:650px){.gallery-bg{padding:9px}.gallery-panel{padding:13px;border-radius:17px;max-height:95vh}.gallery-main{height:min(34vh,280px);margin-top:10px}.gallery-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:10px 0}.gallery-thumbs button{padding:4px;border-radius:10px}.gallery-thumbs img{height:52px;border-radius:6px}.gallery-thumbs span{font-size:10px;padding:6px 2px 2px}.gallery-head h2{font-size:20px}}
+@media(max-width:360px){.gallery-thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-thumbs img{height:74px}}
+@media(prefers-reduced-motion:reduce){.gallery-thumbs button{transition:none!important}}
+/* Centre an incomplete final row on the fleet page */
+.fleet:has(> .car:nth-child(1):last-child) > .car:last-child,
+.fleet:has(> .car:nth-child(4):last-child) > .car:last-child,
+.fleet:has(> .car:nth-child(7):last-child) > .car:last-child {
+  grid-column: 2;
+}
+
+/* Keep single cards centred on tablet and mobile */
+@media (max-width: 900px) {
+  .fleet:has(> .car:only-child) > .car:last-child {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 520px;
+    justify-self: center;
+  }
+}
+
+/* Fleet card hover animation */
+.fleet .car {
+  position: relative;
+  transform: translateY(0) scale(1);
+  transform-origin: center center;
+  transition:
+    transform 380ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 380ms ease,
+    border-color 300ms ease;
+  will-change: transform;
+}
+
+.fleet .car:hover,
+.fleet .car:focus-within {
+  z-index: 3;
+  transform: translateY(-7px) scale(1.025);
+  border-color: #7bb7e8;
+  box-shadow:
+    0 24px 55px rgba(5,58,120,.18),
+    0 5px 14px rgba(5,58,120,.08);
+}
+
+.fleet .car-img {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.fleet .car-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255,255,255,.26) 48%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  transition: transform 750ms ease;
+}
+
+.fleet .car:hover .car-img::after {
+  transform: translateX(130%);
+}
+
+.fleet .car-img img {
+  transition:
+    transform 650ms cubic-bezier(.2,.8,.2,1),
+    filter 400ms ease;
+}
+
+.fleet .car:hover .car-img img {
+  transform: scale(1.09);
+  filter: saturate(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fleet .car,
+  .fleet .car-img img,
+  .fleet .car-img::after {
+    transition: none !important;
+  }
+
+  .fleet .car:hover,
+  .fleet .car:focus-within,
+  .fleet .car:hover .car-img img {
+    transform: none;
+  }
+}
+
+/* Premium specification layout — does not alter card animation */
+
+/* Premium silhouette specification layout */
+.spec-grid.spec-silhouette-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin: 14px 0 12px;
+  padding: 5px 0;
+  border-top: 1px solid #e5edf3;
+  border-bottom: 1px solid #e5edf3;
+  gap: 0;
+}
+
+.spec-silhouette-layout .spec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.spec-silhouette-layout .spec-item:nth-child(even) {
+  border-left: 1px solid #e5edf3;
+  padding-left: 14px;
+}
+
+.spec-silhouette-layout .spec-item:nth-child(n+3) {
+  border-top: 1px solid #e5edf3;
+}
+
+.spec-silhouette-layout .spec-icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  border-radius: 10px;
+  color: #07539b;
+  background: #edf5fc;
+}
+
+.spec-silhouette-layout .spec-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.spec-silhouette-layout .spec-item strong,
+.spec-silhouette-layout .spec-item small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.spec-silhouette-layout .spec-item strong {
+  color: #092b4d;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.spec-silhouette-layout .spec-item small {
+  color: #526b82;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+@media (max-width: 380px) {
+  .spec-silhouette-layout .spec-item {
+    gap: 6px;
+    padding: 10px 4px;
+  }
+
+  .spec-silhouette-layout .spec-item:nth-child(even) {
+    padding-left: 8px;
+  }
+
+  .spec-silhouette-layout .spec-icon {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+  }
+
+  .spec-silhouette-layout .spec-item strong {
+    font-size: 10px;
+  }
+
+  .spec-silhouette-layout .spec-item small {
+    font-size: 9px;
+  }
+}
+
+
+</style></head><body><div class="top"><div class="wrap">📍 <span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span> · Approx. 5 minutes from Nadi International Airport</div></div><header><div class="wrap nav"><a class="brand" href="index.html#home"><img src="assets/zims-logo.jpg" data-site-setting="business_logo_url" alt="Zims Rental Cars logo"><span class="brand-word">ZIMS<span>RENTAL CARS</span></span></a><nav class="navlinks" aria-label="Main navigation"><a href="index.html#home">Home</a><a href="fleet.html" class="active-section" aria-current="page"><span class="nav-car-indicator" aria-hidden="true"><svg viewBox="0 0 60 28"><path d="M7 17 11 9.5Q12 7 16 7h23q4 0 6 4l3 5h4q3 0 3 3v3H5v-3q0-2 2-2Z" fill="#101820"/><path d="M15 9.5h10v6H12.5Z M28 9.5h10q3 0 4.5 3l1.2 3H28Z" fill="#d9e9f5"/><circle cx="15" cy="23" r="4" fill="#101820" stroke="#fff" stroke-width="1.2"/><circle cx="44" cy="23" r="4" fill="#101820" stroke="#fff" stroke-width="1.2"/></svg></span>Our Fleet</a><a href="index.html#how">How It Works</a><a href="index.html#about">About Us</a><a href="index.html#guide">Travel Guide</a><a href="index.html#contact">Contact</a></nav><a class="btn btn-red" href="index.html#booking">Book Now →</a></div></header><main><section class="hero"><div class="wrap"><div class="kicker">Our rental fleet</div><h1>Find your ride for Fiji.</h1><p>Explore our range of cars, wagons, SUVs and pickups. Choose a vehicle to view its gallery and current details, then enquire about your travel dates.</p></div></section><section class="fleet-section"><div class="wrap"><div class="filters" aria-label="Filter vehicles"><button class="filter active" data-filter="All">All vehicles</button><button class="filter" data-filter="Economy">Cars & wagons</button><button class="filter" data-filter="SUV">SUVs</button><button class="filter" data-filter="Pickup">Pickup</button></div><p id="availabilityMessage" class="note" hidden aria-live="polite"></p><div class="fleet" id="fleetGrid"></div><p class="note">All vehicles are listed with 5 seats, automatic transmission and luggage capacity for 2 large and 2 small bags. Please confirm the exact vehicle and luggage fit with Zims before booking, as capacity can vary by vehicle and luggage size. Other features, including Bluetooth, Apple CarPlay, Android Auto and reverse camera, must be confirmed for the exact vehicle.</p></div></section><section class="contact-band"><div class="wrap"><div><strong>Need help choosing?</strong><p>Our Nadi team can help confirm availability and vehicle details.</p></div><a class="btn btn-red" data-business-link="whatsapp" href="https://wa.me/6799042101" target="_blank" rel="noopener">WhatsApp Zims →</a></div></section><footer class="fleet-footer"><div class="wrap"><div class="fleet-footer-top"><a class="brand" href="index.html#home"><img src="assets/zims-logo.jpg" data-site-setting="business_logo_url" alt="Zims Rental Cars logo"><span class="brand-word" style="color:#fff">ZIMS<span style="color:#ffccd3">RENTAL CARS · RENT SMART, RENT WITH US!</span></span></a><nav class="footer-links" aria-label="Footer navigation"><a href="index.html#home">Home</a><a href="fleet.html">Our Fleet</a><a href="index.html#about">About Us</a><a href="index.html#contact">Contact</a></nav></div><div class="footer-bottom"><span>© <span data-site-setting="business_name">Zims Rental Cars Nadi</span> · <span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span></span><span><span data-site-setting="business_phone">+679 9042101</span> · <span data-site-setting="business_email">zimsrentalfj@gmail.com</span></span></div></div></footer></main><div class="gallery-bg" id="galleryBg" role="dialog" aria-modal="true" aria-labelledby="galleryTitle"><div class="gallery-panel"><div class="gallery-head"><div><div class="kicker">Vehicle gallery</div><h2 id="galleryTitle">Vehicle details</h2></div><button class="close" id="closeGallery" aria-label="Close gallery">×</button></div><img id="galleryMain" class="gallery-main" alt="Vehicle exterior reference"><div class="gallery-thumbs" id="galleryThumbs"></div><p class="gallery-note" id="galleryNote"></p><button class="btn btn-blue" id="galleryBook">Book this vehicle →</button></div></div><script>
+const cars=[
+{id:'fielder',name:'Toyota Fielder',category:'Economy',price:110,img:'assets/toyota-fielder.jpg',seats:'5 seats (confirm exact vehicle)',gallery:[['Exterior','assets/toyota-fielder.jpg'],['Front interior','assets/interiors/toyota-fielder-front.jpg'],['Rear interior','assets/interiors/toyota-fielder-back.webp'],['Boot','assets/interiors/toyota-fielder-boot.jpg']]},
+{id:'corolla',name:'Toyota Corolla',category:'Economy',price:115,img:'assets/toyota-corolla.jpg',seats:'5 seats (confirm exact vehicle)',gallery:[['Exterior','assets/toyota-corolla.jpg'],['Front interior','assets/interiors/toyota-corolla-front.jpg'],['Rear interior','assets/interiors/toyota-corolla-back.jpg'],['Boot','assets/interiors/toyota-corolla-boot.jpg']]},
+{id:'fit-shuttle',name:'Honda Fit Shuttle',category:'Economy',price:110,img:'assets/honda-fit-shuttle.jpg',seats:'5 seats (confirm exact vehicle)',gallery:[['Exterior','assets/honda-fit-shuttle.jpg'],['Front interior','assets/interiors/honda-fit-shuttle-front.jpg'],['Rear interior','assets/interiors/honda-fit-shuttle-back.jpg'],['Boot','assets/interiors/honda-fit-shuttle-boot.jpg']]},
+{id:'ad-wagon',name:'Nissan AD Wagon / Wingroad',category:'Economy',price:115,img:'assets/nissan-ad-wagon.jpg',seats:'5 seats (confirm exact vehicle)',gallery:[['Exterior','assets/nissan-ad-wagon.jpg'],['Front interior','assets/interiors/nissan-ad-wagon-front.jpg'],['Rear interior','assets/interiors/nissan-ad-wagon-back.jpg'],['Boot','assets/interiors/nissan-ad-wagon-boot.jpg']]},
+{id:'sportage',name:'Kia Sportage',category:'SUV',price:175,img:'assets/kia-sportage.jpg',seats:'5 seats (confirm exact vehicle)',gallery:[['Exterior','assets/kia-sportage.jpg'],['Front interior','assets/interiors/kia-sportage-front.jpg'],['Rear interior','assets/interiors/kia-sportage-back.jpg'],['Boot','assets/interiors/kia-sportage-boot.jpg']]},
+{id:'x-trail',name:'Nissan X-Trail',category:'SUV',price:270,img:'assets/nissan-x-trail.jpg',seats:'5–7 seats depending on model',gallery:[['Exterior','assets/nissan-x-trail.jpg'],['Front interior','assets/interiors/nissan-x-trail-front.jpg'],['Rear interior','assets/interiors/nissan-x-trail-back.jpg'],['Boot','assets/interiors/nissan-x-trail-boot.jpg']]},
+{id:'ranger',name:'Ford Ranger',category:'Pickup',price:490,img:'assets/ford-ranger.jpg',seats:'5 seats if double-cab (confirm exact vehicle)',gallery:[['Exterior','assets/ford-ranger.jpg'],['Front interior','assets/interiors/ford-ranger-front.jpg'],['Rear interior','assets/interiors/ford-ranger-back.jpg'],['Boot / cargo area','assets/interiors/ford-ranger-boot.jpg']]}
+];const pageParams=new URLSearchParams(location.search);const hasAvailability=pageParams.has('available');const availableIds=new Set((pageParams.get('available')||'').split(',').filter(Boolean));let activeFilter='All',selected=null;const $=id=>document.getElementById(id),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function bookingUrl(c){const params=new URLSearchParams({vehicle:c.id});for(const key of ['start','end','startTime','endTime','pickup','dropoff']){const value=pageParams.get(key);if(value)params.set(key,value)}return 'index.html?'+params.toString()+'#booking'}function render(){const list=cars.filter(c=>(activeFilter==='All'||c.category===activeFilter)&&(!hasAvailability||availableIds.has(c.id)));const msg=$('availabilityMessage');if(hasAvailability){msg.hidden=false;msg.textContent=list.length?`${list.length} vehicle(s) show as available for your selected dates. Availability can change until Zims confirms your booking.`:'No vehicles are available for the selected dates. Change your dates or contact Zims for help.'}else{msg.hidden=true} $('fleetGrid').innerHTML=list.map(c=>`<article class="car" tabindex="0" role="group" data-id="${c.id}" aria-label="View ${c.name} details"><div class="car-img"><img src="${c.img}" alt="${c.name} exterior reference" loading="lazy"></div><div class="car-info"><h2>${c.name}</h2><div class="rate">FJ$${c.price} <small>/ day</small></div><div class="spec-grid spec-silhouette-layout">
+  <div class="spec-item">
+    <span class="spec-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 4a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5v2"/></svg>
+    </span>
+    <span><strong>5</strong><small>Seats</small></span>
+  </div>
+  <div class="spec-item">
+    <span class="spec-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-1.7 2.9-.2-.1a1.7 1.7 0 0 0-1.8.2l-.2.1h-3.4l-.1-.2a1.7 1.7 0 0 0-1.6-1l-.3.1-2.9-1.7.1-.3a1.7 1.7 0 0 0-.2-1.8l-.1-.2v-3.4l.2-.1a1.7 1.7 0 0 0 1-1.6l-.1-.3 1.7-2.9.3.1a1.7 1.7 0 0 0 1.8-.2l.2-.1h3.4l.1.2a1.7 1.7 0 0 0 1.6 1l.3-.1 2.9 1.7-.1.3a1.7 1.7 0 0 0 .2 1.8l.1.2v3.4z"/></svg>
+    </span>
+    <span><strong>Automatic</strong><small>Transmission</small></span>
+  </div>
+  <div class="spec-item">
+    <span class="spec-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M6 7h12l1 14H5L6 7Z M9 7V5a3 3 0 0 1 6 0v2M9 12h6"/></svg>
+    </span>
+    <span><strong>2 Large Bags</strong><small>Luggage capacity</small></span>
+  </div>
+  <div class="spec-item"><span class="spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 8h10l1 13H6L7 8Z M9 8V5a3 3 0 0 1 6 0v3 M9 12h6"/></svg></span><span><strong>2 Small Bags</strong><small>Luggage capacity</small></span></div>
+</div><p class="fuel">Fuel economy <strong>☆☆☆☆☆</strong> <span>(not yet rated)</span></p><p class="feature-note">Other equipment, including Apple CarPlay, Android Auto and reverse camera, must be confirmed for the exact vehicle.</p><div class="car-actions"><button class="btn btn-outline" data-gallery="${c.id}">View photos</button><a class="btn btn-blue" href="${bookingUrl(c)}">Book Now →</a></div></div></article>`).join('');document.querySelectorAll('.car').forEach(card=>{card.addEventListener('click',e=>{if(e.target.closest('a,button'))return;openGallery(card.dataset.id)});card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(card.dataset.id)}})});document.querySelectorAll('[data-gallery]').forEach(b=>b.addEventListener('click',()=>openGallery(b.dataset.gallery)))}let galleryIndex=0;function openGallery(id){selected=cars.find(c=>c.id===id);if(!selected)return;galleryIndex=0;$('galleryTitle').textContent=selected.name;$('galleryNote').textContent='Photos supplied for this vehicle. Exact model year and equipment may vary; confirm all features with Zims before booking.';const photos=selected.gallery||[['Exterior',selected.img]];$('galleryThumbs').innerHTML=photos.map((p,i)=>`<button type="button" data-photo-index="${i}" aria-label="Show ${p[0]}" aria-pressed="${i===0}"><img src="${p[1]}" alt=""><span>${p[0]}</span></button>`).join('');function showPhoto(i){galleryIndex=(i+photos.length)%photos.length;$('galleryMain').src=photos[galleryIndex][1];$('galleryMain').alt=selected.name+' — '+photos[galleryIndex][0];$('galleryThumbs').querySelectorAll('button').forEach((b,j)=>{b.setAttribute('aria-pressed',String(j===galleryIndex));b.classList.toggle('active',j===galleryIndex)})}$('galleryThumbs').querySelectorAll('[data-photo-index]').forEach(b=>b.addEventListener('click',()=>showPhoto(Number(b.dataset.photoIndex))));showPhoto(0);$('galleryBg').classList.add('open');document.body.style.overflow='hidden';$('closeGallery').focus()}function closeGallery(){$('galleryBg').classList.remove('open');document.body.style.overflow=''}$('closeGallery').addEventListener('click',closeGallery);$('galleryBg').addEventListener('click',e=>{if(e.target===$('galleryBg'))closeGallery()});$('galleryBook').addEventListener('click',()=>{if(selected)location.href=bookingUrl(selected)});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGallery();if($('galleryBg').classList.contains('open')&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){const count=selected?.gallery?.length||1;galleryIndex=(galleryIndex+(e.key==='ArrowRight'?1:-1)+count)%count;$('galleryThumbs').querySelectorAll('[data-photo-index]')[galleryIndex]?.click()}});document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{activeFilter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));
+
+
+async function loadPublishedFleet() {
+  try {
+    const response = await fetch('/api/vehicles');
+
+    if (!response.ok) {
+      throw new Error('Vehicle API returned ' + response.status);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.vehicles) || !data.vehicles.length) {
+      console.warn('No vehicles returned by the API.');
+      return;
+    }
+
+    const updatedCars = data.vehicles.map(v => {
+      const existing = cars.find(c => c.id === v.id) || {};
+
+      const exterior = v.image_path || existing.img;
+
+      // Keep the original interior photos and update only the exterior.
+      const gallery = Array.isArray(existing.gallery) && existing.gallery.length
+        ? existing.gallery.map((photo, index) =>
+            index === 0
+              ? [photo[0], exterior]
+              : photo
+          )
+        : [['Exterior', exterior]];
+
+      return {
+        ...existing,
+        id: v.id,
+        name: v.name,
+        category: /sportage|x-trail/i.test(v.name) ? 'SUV' :
+                  /ranger/i.test(v.name) ? 'Pickup' :
+                  existing.category || 'Economy',
+        price: Number(v.daily_rate),
+        img: exterior,
+        depositPercent: v.deposit_percent == null
+          ? null
+          : Number(v.deposit_percent),
+        gallery,
+        seats: '5 seats',
+transmission: 'Automatic',
+luggage: '2 large + 2 small bags'
+      };
+    });
+
+    // Update the existing array without reassigning the const.
+    cars.splice(
+      0,
+      cars.length,
+      ...updatedCars.sort((a, b) => a.price - b.price)
+    );
+
+    render();
+
+  } catch (error) {
+    console.error('Could not load published fleet:', error);
+  }
+}
+
+
+loadPublishedFleet();
+
+async function loadFleetSiteSettings() {
+  try {
+    const response = await fetch('/api/site-settings');
+    if (!response.ok) return;
+
+    const data = await response.json();
+    const settings = data.settings || {};
+
+    document.querySelectorAll('[data-site-setting]').forEach((element) => {
+      const key = element.dataset.siteSetting;
+      if (key !== 'business_logo_url' && typeof settings[key] === 'string') {
+        element.textContent = settings[key];
+      }
+    });
+
+    if (typeof settings.business_logo_url === 'string' && settings.business_logo_url.trim()) {
+      document.querySelectorAll('[data-site-setting="business_logo_url"]').forEach((image) => {
+        image.src = settings.business_logo_url;
+      });
+    }
+
+    const phone = (settings.business_phone || '+679 9042101').trim();
+    const whatsapp = (settings.business_whatsapp || phone).replace(/\D/g, '');
+
+    document.querySelectorAll('[data-business-link="whatsapp"]').forEach((link) => {
+      link.href = 'https://wa.me/' + whatsapp;
+    });
+  } catch (error) {
+    console.error('Could not load website settings:', error);
+  }
+}
+
+loadFleetSiteSettings();
+</script><img class="flower-decoration" src="assets/hibiscus-tattoo.webp" alt="" aria-hidden="true" loading="lazy"><script>(()=>{const flower=document.querySelector(".flower-decoration"),footer=document.querySelector(".fleet-footer");if(footer&&"IntersectionObserver"in window){const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)footer.classList.add("brand-entered")}),{threshold:.12});o.observe(footer)}if(flower&&"IntersectionObserver"in window){const nearby=new Set();const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)nearby.add(e.target);else nearby.delete(e.target);flower.classList.toggle("flower-near-map",nearby.size>0)}),{threshold:.08});document.querySelectorAll(".contact-band,.fleet-footer").forEach(el=>o.observe(el))}})()</script></body></html>

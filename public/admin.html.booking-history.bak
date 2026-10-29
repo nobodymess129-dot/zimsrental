@@ -1,0 +1,399 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zims Admin</title><style>
+:root{--blue:#07539b;--navy:#062e60;--red:#f21e35;--ink:#092b59;--muted:#63758b;--line:#dbe6f0;--bg:#f4f8fc}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:9px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:700}button.secondary{background:#e8f1fa;color:var(--ink)}button.danger{background:#fff0f1;color:#b20d24}.shell{max-width:1200px;margin:auto;padding:24px}.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}.brand{font-size:21px;font-weight:850}.brand span{color:var(--red)}.muted{color:var(--muted)}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 10px 32px #163a5d0b}.login{max-width:440px;margin:9vh auto}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:12px;font-weight:800;color:#52647a}.field input,.field textarea,.field select{width:100%;padding:12px;border:1px solid #cad8e6;border-radius:9px;background:#fff;color:var(--ink)}.field textarea{min-height:80px;resize:vertical}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}.tabs button{background:#e5edf5;color:var(--ink)}.tabs button.active{background:var(--blue);color:white}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}.stat{padding:16px;border:1px solid var(--line);border-radius:12px}.stat strong{display:block;font-size:27px;margin-top:5px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:740px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}td input,td select{padding:8px;border:1px solid var(--line);border-radius:7px;max-width:140px}.msg{padding:11px;border-radius:9px;background:#eaf5ff;margin:12px 0}.msg.error{background:#fff0f1;color:#a20d23}.hidden{display:none!important}.tag{display:inline-block;padding:4px 8px;border-radius:99px;background:#e9f3fb;font-size:11px;font-weight:800}.actions{display:flex;gap:7px;flex-wrap:wrap}.hint{font-size:12px;color:var(--muted);line-height:1.5}@media(max-width:700px){.shell{padding:14px}.panel{padding:16px}.stats{grid-template-columns:1fr}.top{align-items:flex-start}}
+
+/* Match the public site's restrained interaction motion. */
+.shell button {
+  transition: transform .18s ease, opacity .18s ease;
+}
+.shell button:hover:not(:disabled),.shell button:focus-visible {
+  transform: translateY(-1px);
+}
+.shell button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+.site-settings-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.site-settings-form .field{min-width:0}.site-settings-form .field:nth-child(1),.site-settings-form .field:nth-child(3),.site-settings-form .field:nth-child(5),.site-settings-form .row,.site-settings-form .hint{grid-column:1/-1}.site-settings-form textarea{width:100%;resize:vertical}.tier-list{display:grid;gap:10px;margin-top:14px}.tier-row{display:grid;grid-template-columns:repeat(3,minmax(110px,1fr)) auto auto;gap:10px;align-items:end;padding:12px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,#fff,#f7fbff)}.tier-row label{display:grid;gap:6px;font-size:10px;font-weight:800;color:var(--muted)}.tier-row input[type=number]{width:100%;min-width:0;padding:10px;border:1px solid var(--line);border-radius:8px}.tier-active{display:flex!important;align-items:center;gap:7px;white-space:nowrap}.tier-row .danger{background:#fff0f1;color:#b20d24}@media(max-width:760px){.shell{padding:14px}.panel{padding:15px}.tabs{overflow-x:auto;flex-wrap:nowrap}.tabs button{white-space:nowrap}.tier-row{grid-template-columns:1fr 1fr}.tier-row .tier-active{grid-column:1}.tier-row .danger{grid-column:2;justify-self:start}.stats{grid-template-columns:1fr 1fr}}
+
+/* Premium operations UI: polished surfaces, clear focus states, and mobile-first tables. */
+:root{--blue:#07539b;--navy:#062b50;--red:#ed3044;--ink:#092b4d;--muted:#5d7084;--line:#dce6ee;--bg:#f4f7fa}
+body{background:radial-gradient(ellipse at 10% 0%,#e8f4fb 0%,transparent 44%),linear-gradient(180deg,#f8fafc,#eef3f7);color:var(--ink);-webkit-font-smoothing:antialiased}.shell{max-width:1360px;padding:clamp(14px,3vw,32px)}.brand{letter-spacing:-.7px}.panel{border:1px solid #e0e8ef;border-radius:22px;box-shadow:0 18px 50px #092b4d0b}.login{margin:8vh auto;padding:clamp(22px,4vw,34px)}.login h1{letter-spacing:-1.2px}.field input,.field textarea,.field select{border-color:#d2dee8;border-radius:11px;min-height:43px;transition:border-color .18s ease,box-shadow .18s ease}.field input:focus,.field textarea:focus,.field select:focus{outline:0;border-color:#4b8fc2;box-shadow:0 0 0 4px #07539b17}button{border-radius:11px;min-height:40px;background:linear-gradient(135deg,#0b66ad,#06457e);box-shadow:0 6px 15px #07539b16;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}button.secondary{background:#edf4f9;box-shadow:none}button.danger{background:#fff0f1;box-shadow:none}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #f4c95d;outline-offset:2px}.stats{gap:14px}.stat{border:1px solid #e1e9ef;border-radius:18px;background:linear-gradient(145deg,#fff,#f9fbfd);box-shadow:0 8px 24px #092b4d08;padding:20px}.stat strong{font-size:30px;letter-spacing:-1px}.tabs{gap:8px;background:#eaf1f6;border:1px solid #e1e9ef;border-radius:15px;padding:6px}.tabs button{background:transparent;color:#486078;box-shadow:none}.tabs button.active{background:#fff;color:var(--blue);box-shadow:0 5px 14px #092b4d12}.top{gap:16px}.top h2,.panel h2{letter-spacing:-.8px}.tablewrap{border:1px solid #e2eaf0;border-radius:14px;background:#fff}table{min-width:740px;border-collapse:separate;border-spacing:0}th{background:#f4f8fb;color:#52677b;font-size:10px;letter-spacing:.7px;text-transform:uppercase}th,td{padding:13px 14px;border-bottom:1px solid #eaf0f4}tbody tr:last-child td{border-bottom:0}tbody tr:hover td{background:#fbfdff}.tag{border-radius:99px}.msg{border-radius:12px}.tier-row{box-shadow:0 6px 18px #092b4d08}.hint{line-height:1.65}.hidden{display:none!important}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){button:hover{transform:translateY(-1px);box-shadow:0 10px 22px #07539b20}.tabs button:hover{transform:none;background:#ffffffa8}}
+@media(max-width:700px){.site-settings-form{grid-template-columns:1fr}.site-settings-form .field,.site-settings-form .row,.site-settings-form .hint{grid-column:1}.shell{padding:12px}.stats{grid-template-columns:1fr 1fr}.stat{padding:15px}.stat strong{font-size:24px}.tabs{overflow-x:auto;justify-content:flex-start}.tabs button{white-space:nowrap}.panel{padding:14px;border-radius:16px}.top{align-items:flex-start}.top h2{font-size:20px}.row>.field{min-width:100%;flex:1}.tablewrap{border-radius:11px}.tier-row{padding:10px;gap:8px}}
+@media(prefers-reduced-motion:reduce){button{transition:none!important}button:hover{transform:none}}
+
+/* Admin information architecture: two primary areas with focused subsections. */
+.main-tabs{margin-bottom:18px;background:#e7eef5;border-radius:16px;padding:6px}
+.main-tabs button{min-width:132px}
+.dashboard-stats{grid-template-columns:repeat(3,minmax(0,1fr));margin:18px 0}
+.dashboard-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.dashboard-list{min-width:0;border:1px solid var(--line);border-radius:14px;padding:16px;background:linear-gradient(145deg,#fff,#f9fbfd)}
+.dashboard-list h3{margin:0 0 6px}
+.activity-list{display:grid;gap:8px}
+.activity-item{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #edf1f5;align-items:flex-start}
+.activity-item:last-child{border-bottom:0}
+.activity-item strong{display:block;font-size:13px}
+.activity-item .muted{font-size:12px;line-height:1.5}
+.activity-item .tag{white-space:nowrap;align-self:flex-start}
+.dashboard-subtabs{margin-top:16px}
+.setup-tabs{margin-top:0}
+.subpanel{min-width:0}
+@media(max-width:760px){.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-columns{grid-template-columns:1fr}.main-tabs button{flex:1}}
+@media(max-width:430px){.dashboard-stats{grid-template-columns:1fr 1fr}.dashboard-stats .stat{padding:12px}.dashboard-stats .stat strong{font-size:21px}.activity-item{gap:7px}}
+
+</style></head><body><main class="shell"><div class="top"><div class="brand">ZIMS <span>ADMIN</span><div class="muted" style="font-size:12px;font-weight:500">Rental operations dashboard</div></div><div id="top-actions" class="row hidden"><span id="who" class="muted"></span><button class="secondary" id="logout">Sign out</button></div></div>
+<section id="login-panel" class="panel login"><h1 style="margin:0 0 5px">Admin sign in</h1><p class="muted">Sign in to manage fleet and booking requests.</p><div id="login-msg" class="msg hidden"></div><form id="login-form"><div class="field"><label for="email">ADMIN EMAIL</label><input id="email" type="email" autocomplete="username" required></div><div class="field"><label for="password">PASSWORD</label><input id="password" type="password" autocomplete="current-password" required></div><button style="width:100%;margin-top:8px">Sign in securely</button></form><p class="hint">Login only works after the local environment secrets are configured. Never put passwords in website files.</p></section>
+<section id="app-panel" class="hidden"><div id="app-msg" class="msg hidden"></div><div class="tabs main-tabs" role="navigation" aria-label="Admin sections"><button class="active" data-main-tab="dashboard" type="button">Dashboard</button><button data-main-tab="setup" type="button">Setup</button></div>
+<section id="dashboard-tab">
+  <section id="overview-panel" class="panel">
+    <div class="top"><div><h2 style="margin:0">Operations overview</h2><p class="muted">A live snapshot based on the booking and vehicle records currently available.</p></div><button class="secondary" id="refresh-dashboard" type="button">Refresh overview</button></div>
+    <div class="stats dashboard-stats">
+      <div class="stat"><span class="muted">Published vehicles</span><strong id="dash-active-cars">—</strong><span class="hint">Currently listed in the fleet</span></div>
+      <div class="stat"><span class="muted">Booking records</span><strong id="dash-bookings">—</strong><span class="hint">Records returned by the admin API</span></div>
+      <div class="stat"><span class="muted">Needs attention</span><strong id="dash-pending">—</strong><span class="hint">Requests and payments awaiting review</span></div>
+      <div class="stat"><span class="muted">Pickups today</span><strong id="dash-pickups">—</strong><span class="hint" id="dash-today-label">Fiji local date</span></div>
+      <div class="stat"><span class="muted">Returns today</span><strong id="dash-returns">—</strong><span class="hint">Scheduled returns in Fiji</span></div>
+      <div class="stat"><span class="muted">Verified payments</span><strong id="dash-revenue">FJ$—</strong><span class="hint">Recorded paid/deposit-paid amounts only</span></div>
+    </div>
+    <div class="dashboard-columns">
+      <section class="subpanel dashboard-list"><h3>Upcoming pickups & returns</h3><p class="hint">Next seven days, Fiji time. Cancelled and rejected bookings are excluded.</p><div id="dash-upcoming" class="activity-list"><p class="muted">Loading booking activity…</p></div></section>
+      <section class="subpanel dashboard-list"><h3>Recent booking activity</h3><p class="hint">Most recently created booking records. This is not a separate audit log.</p><div id="dash-recent" class="activity-list"><p class="muted">Loading recent records…</p></div></section>
+    </div>
+    <div class="msg" id="dash-data-note">Figures are calculated from the latest booking and vehicle records. Payment totals only include records already marked paid or deposit paid by the existing verified payment workflow.</div>
+  </section>
+  <div class="tabs dashboard-subtabs" role="navigation" aria-label="Dashboard views"><button class="active" data-dashboard-view="overview" type="button">Overview</button><button data-dashboard-view="bookings" type="button">Bookings & requests</button></div>
+  <section id="bookings-tab" class="panel hidden"><div class="top"><div><h2 style="margin:0">Bookings & requests</h2><p class="muted">Review requests and update booking/payment status.</p></div><button class="secondary" id="refresh-bookings">Refresh</button></div><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Vehicle & dates</th><th>Rental & payment</th><th>Booking status</th><th>Payment</th><th>Save</th></tr></thead><tbody id="bookings-body"></tbody></table></div><p class="hint">Payment status is displayed for reference only. This starter does not process payments or allow manual payment-status changes.</p></section>
+</section>
+<section id="setup-tab" class="hidden">
+  <div class="tabs setup-tabs" role="navigation" aria-label="Setup sections"><button class="active" data-tab="vehicles" type="button">Fleet & pricing</button><button data-tab="website" type="button">Website content & details</button><button data-tab="promotions" type="button">Promotional banners</button><button data-tab="discounts" type="button">Discount rules</button><button data-tab="payments" type="button">Payment methods</button></div>
+  <section id="vehicles-tab" class="panel"><div class="top"><div><h2 style="margin:0">Fleet management</h2><p class="muted">Edit rates and public vehicle details.</p></div><button id="new-vehicle">+ Add vehicle</button></div><form id="vehicle-form" class="hidden" style="border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px"><h3 id="form-title">Add vehicle</h3><input type="hidden" id="v-id"><div class="row"><div class="field" style="flex:2;min-width:200px"><label>VEHICLE NAME</label><input id="v-name" required maxlength="120"></div><div class="field" style="flex:1;min-width:140px"><label>DAILY RATE (FJD)</label><input id="v-rate" type="number" min="0" step="1" required></div><div class="field" style="flex:1;min-width:140px"><label>DEPOSIT (%)</label><input id="v-deposit" type="number" min="0.01" max="100" step="0.01" placeholder="Not set"></div></div><div class="field"><label>IMAGE PATH OR URL</label><input id="v-image" placeholder="/assets/toyota-fielder.jpg"></div><div class="field"><label for="v-image-file">UPLOAD VEHICLE PHOTO</label><input id="v-image-file" type="file" accept="image/png,image/jpeg,image/webp"><small class="hint">PNG, JPEG or WebP · up to 5 MB · requires owner-configured R2 storage</small></div><div class="field"><label>DESCRIPTION</label><textarea id="v-description" maxlength="1000"></textarea></div><div class="row"><label><input type="checkbox" id="v-active" checked> Published on fleet</label><button type="submit">Save vehicle</button><button type="button" class="secondary" id="cancel-edit">Cancel</button></div><p class="hint">Leave deposit blank to allow full payment only. Uploads are stored securely after the owner configures the optional R2 binding. For now, use an existing asset path or an approved image URL.</p></form><div class="tablewrap"><table><thead><tr><th>Vehicle</th><th>Rate/day</th><th>Image</th><th>Status</th><th>Actions</th></tr></thead><tbody id="vehicles-body"></tbody></table></div></section>
+
+  <section id="website-tab" class="panel hidden"><div class="top"><div><h2 style="margin:0">Website copy</h2><p class="muted">Edit selected public text. Changes are rendered as plain text, never as HTML. Leave a field blank to restore the built-in default.</p></div></div><form id="site-settings-form" class="site-settings-form"><div class="field"><label for="setting-hero-title-line1">HERO TITLE — FIRST LINE</label><input id="setting-hero-title-line1" maxlength="1000"></div><div class="field"><label for="setting-hero-title-line2">HERO TITLE — SECOND LINE</label><input id="setting-hero-title-line2" maxlength="1000"></div><div class="field"><label for="setting-hero-subtitle">HERO SUBTITLE</label><textarea id="setting-hero-subtitle" maxlength="1000" rows="3"></textarea></div><div class="field"><label for="setting-about-heading">ABOUT SECTION HEADING</label><input id="setting-about-heading" maxlength="1000"></div><div class="field"><label for="setting-about-body">ABOUT SECTION INTRODUCTION</label><textarea id="setting-about-body" maxlength="1000" rows="4"></textarea></div><div class="field"><label for="setting-guide-heading">TRAVEL GUIDE HEADING</label><input id="setting-guide-heading" maxlength="1000"></div><div class="field"><label for="setting-guide-body">TRAVEL GUIDE TEXT</label><textarea id="setting-guide-body" maxlength="1000" rows="4"></textarea></div><div class="field"><label for="setting-contact-heading">CONTACT SECTION HEADING</label><input id="setting-contact-heading" maxlength="1000"></div><div class="field"><label for="setting-footer-tagline">FOOTER TAGLINE</label><textarea id="setting-footer-tagline" maxlength="1000" rows="3"></textarea></div><div class="field"><label for="setting-about-brochure-mode">ABOUT SECTION DISPLAY</label><select id="setting-about-brochure-mode"><option value="image">Brochure image</option><option value="text">Text only</option></select></div><div class="field"><label for="setting-about-brochure-image-url">BROCHURE IMAGE URL/PATH</label><input id="setting-about-brochure-image-url" maxlength="1000" placeholder="assets/zims-original-flyer.png or HTTPS image URL"></div><div class="field"><label for="setting-about-brochure-text">TEXT-ONLY CONTENT</label><textarea id="setting-about-brochure-text" maxlength="1000" rows="3"></textarea></div><div class="field"><label for="setting-business-name">BUSINESS NAME</label><input id="setting-business-name" maxlength="1000"></div>
+<div class="field"><label for="setting-business-address">BUSINESS ADDRESS</label><input id="setting-business-address" maxlength="1000"></div>
+<div class="field"><label for="setting-business-phone">PHONE NUMBER</label><input id="setting-business-phone" type="tel" maxlength="1000"></div>
+<div class="field"><label for="setting-business-whatsapp">WHATSAPP NUMBER</label><input id="setting-business-whatsapp" type="tel" maxlength="1000"></div>
+<div class="field"><label for="setting-business-email">BUSINESS EMAIL</label><input id="setting-business-email" type="email" maxlength="1000"></div>
+<div class="field"><label for="setting-business-facebook">FACEBOOK URL</label><input id="setting-business-facebook" type="url" maxlength="1000" placeholder="https://www.facebook.com/..."></div>
+<div class="field"><label for="setting-business-map-url">GOOGLE MAPS URL</label><input id="setting-business-map-url" type="url" maxlength="1000" placeholder="https://maps.google.com/..."></div>
+<div class="field"><label for="setting-airport-pickup-text">AIRPORT PICKUP INFORMATION</label><textarea id="setting-airport-pickup-text" maxlength="1000" rows="3"></textarea></div>
+<div class="field"><label for="setting-business-logo-url">BUSINESS LOGO URL/PATH</label><input id="setting-business-logo-url" maxlength="1000" placeholder="assets/zims-logo.jpg or HTTPS image URL"></div>
+<div class="row"><button type="submit">Save website settings</button><button type="button" class="secondary" id="reset-site-settings">Restore built-in defaults</button></div>
+<p class="hint">Contact details are shared website settings. Saving them here will store them centrally; we will connect the homepage and fleet page to these values in the next steps.</p></form></section>
+
+  <section id="promotions-tab" class="panel hidden"><div class="top"><div><h2 style="margin:0">Promotional banners</h2><p class="muted">Owner-authored text only. Highest priority active banner appears in the existing top strip.</p></div><button id="new-promotion">+ Add banner</button></div><form id="promotion-form" class="hidden" style="border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px"><h3 id="promotion-form-title">Add banner</h3><input type="hidden" id="promotion-id"><div class="field"><label for="promotion-message">BANNER TEXT</label><textarea id="promotion-message" maxlength="240" required></textarea></div><div class="row"><div class="field" style="flex:1;min-width:240px"><label for="promotion-start">STARTS AT (UTC ISO 8601)</label><input id="promotion-start" placeholder="2027-01-31T23:59:59.000Z"></div><div class="field" style="flex:1;min-width:240px"><label for="promotion-end">EXPIRES AT (UTC ISO 8601, EXCLUSIVE)</label><input id="promotion-end" placeholder="2027-02-28T23:59:59.000Z"></div><div class="field" style="flex:0 1 150px"><label for="promotion-priority">PRIORITY</label><input id="promotion-priority" type="number" min="-1000" max="1000" step="1" value="0"></div></div><div class="row"><label><input type="checkbox" id="promotion-active"> Active</label><button type="submit">Save banner</button><button type="button" class="secondary" id="cancel-promotion">Cancel</button></div><p class="hint">Times must be complete UTC timestamps. Start is inclusive and expiry is exclusive. Text is shown exactly as entered.</p></form><div class="tablewrap"><table><thead><tr><th>Text</th><th>Schedule (UTC)</th><th>Priority</th><th>Status</th><th>Actions</th></tr></thead><tbody id="promotions-body"></tbody></table></div></section>
+
+  <section id="discounts-tab" class="panel hidden"><div class="top"><div><h2 style="margin:0">Discount rules</h2><p class="muted">Discounts are calculated and saved by the server. Codes do not stack with long-rental offers.</p></div></div><form id="discount-rule-form" style="border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px"><h3>Global automatic long-rental default</h3><p class="hint">Used by vehicles that do not have a custom tier list. This default is 10% and can be enabled or disabled.</p><div class="row"><div class="field"><label for="discount-threshold">MINIMUM BILLABLE DAYS</label><input id="discount-threshold" type="number" min="1" max="3650" step="1" required></div><div class="field"><label>DISCOUNT RATE</label><input value="10%" disabled></div><div class="field"><label for="discount-cap">MAXIMUM DISCOUNT (FJD)</label><input id="discount-cap" type="number" min="0" max="1000000" step="1" required></div><label><input type="checkbox" id="discount-rule-active"> Active</label><button type="submit">Save global default</button></div></form><section class="subpanel" style="border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:22px"><div class="top"><div><h3 style="margin:0">Vehicle-specific discount tiers</h3><p class="hint">Custom tiers replace the global default for that vehicle. Only the highest eligible tier applies; discounts never stack.</p></div></div><div class="row"><div class="field" style="min-width:220px;flex:1"><label for="vehicle-discount-select">VEHICLE</label><select id="vehicle-discount-select" required></select></div><label><input type="checkbox" id="vehicle-discount-custom"> Use custom tiers for this vehicle</label><label><input type="checkbox" id="vehicle-discount-active" checked> Custom automatic discount enabled</label><button type="button" id="add-vehicle-discount-tier" class="secondary">+ Add tier</button></div><div id="vehicle-discount-tiers" class="tier-list"></div><div class="row" style="margin-top:12px"><button type="button" id="save-vehicle-discount-tiers">Save vehicle rules</button><button type="button" id="use-global-discount-default" class="secondary">Use global default</button></div><p class="hint">Each tier has a minimum number of Fiji billable days, a percentage and a maximum FJD discount. Leave custom mode on with no tiers to disable automatic discounts for this vehicle while allowing eligible discount codes.</p></section><div class="top"><div><h3 style="margin:0">Discount codes</h3><p class="muted">Start time is inclusive; expiry is exclusive. Times are entered in Fiji local time.</p></div><button id="new-discount-code">+ Add code</button></div><form id="discount-code-form" class="hidden" style="border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px"><h3 id="discount-code-title">Add discount code</h3><input type="hidden" id="discount-code-id"><div class="row"><div class="field"><label for="discount-code-value">CODE</label><input id="discount-code-value" maxlength="32" required></div><div class="field"><label for="discount-code-percent">PERCENT (%)</label><input id="discount-code-percent" type="number" min="0" max="100" step="1" required></div><div class="field"><label for="discount-code-limit">USAGE LIMIT (BLANK = UNLIMITED)</label><input id="discount-code-limit" type="number" min="1" max="1000000" step="1"></div></div><div class="row"><div class="field"><label for="discount-code-start">STARTS AT (FIJI LOCAL)</label><input id="discount-code-start" type="datetime-local"></div><div class="field"><label for="discount-code-expiry">EXPIRES AT (FIJI LOCAL, EXCLUSIVE)</label><input id="discount-code-expiry" type="datetime-local"></div><label><input type="checkbox" id="discount-code-active"> Active</label></div><div class="row"><button type="submit">Save discount code</button><button type="button" class="secondary" id="cancel-discount-code">Cancel</button></div><p class="hint">Codes are limited to one active or completed redemption per normalized email address. A reservation is released if its unpaid hold expires or is cancelled.</p></form><div class="tablewrap"><table><thead><tr><th>Code</th><th>Discount</th><th>Uses</th><th>Schedule (UTC)</th><th>Status</th><th>Actions</th></tr></thead><tbody id="discount-codes-body"></tbody></table></div></section>
+  <section id="payments-tab" class="panel hidden"><div class="top"><div><h2 style="margin:0">Manual payment methods</h2><p class="muted">Configure bank transfer and M-PAiSA instructions shown to customers. Only enabled methods appear at checkout.</p></div></div><form id="payment-methods-form"><section class="subpanel" style="border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px"><h3>Bank transfer</h3><label><input type="checkbox" id="bank-enabled"> Enable bank transfer at checkout</label><div class="row"><div class="field"><label for="bank-name">BANK NAME</label><input id="bank-name" maxlength="160"></div><div class="field"><label for="bank-account-name">ACCOUNT HOLDER</label><input id="bank-account-name" maxlength="160"></div><div class="field"><label for="bank-account-number">ACCOUNT NUMBER</label><input id="bank-account-number" maxlength="160"></div><div class="field"><label for="bank-branch">BRANCH / DETAILS (OPTIONAL)</label><input id="bank-branch" maxlength="160"></div></div><div class="field"><label for="bank-instructions">CUSTOMER PAYMENT INSTRUCTIONS</label><textarea id="bank-instructions" maxlength="1000"></textarea></div></section><section class="subpanel" style="border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:18px"><h3>M-PAiSA</h3><label><input type="checkbox" id="mpaisa-enabled"> Enable M-PAiSA at checkout</label><div class="row"><div class="field"><label for="mpaisa-recipient">RECIPIENT NAME</label><input id="mpaisa-recipient" maxlength="160"></div><div class="field"><label for="mpaisa-mobile">REGISTERED MOBILE NUMBER</label><input id="mpaisa-mobile" maxlength="160"></div><div class="field"><label for="mpaisa-qr">QR CODE IMAGE URL (OPTIONAL, HTTPS)</label><input id="mpaisa-qr" maxlength="500" placeholder="https://…"><label for="mpaisa-qr-file">OR UPLOAD QR CODE IMAGE</label><input id="mpaisa-qr-file" type="file" accept="image/png,image/jpeg,image/webp"><small class="hint">PNG, JPEG or WebP · up to 5 MB · requires the existing image-storage binding</small></div></div><div class="field"><label for="mpaisa-instructions">CUSTOMER PAYMENT INSTRUCTIONS</label><textarea id="mpaisa-instructions" maxlength="1000"></textarea></div></section><button type="submit">Save payment settings</button><p class="hint">Manual payments stay pending until the owner independently verifies the transaction. The transaction reference alone never confirms a booking. QR image uploads use the same image validation and storage safeguards as vehicle photos.</p></form></section>
+</section>
+</section>
+<p class="hint" style="margin-top:20px">Zims Rental Cars · Development dashboard. Do not expose before production security review.</p></main>
+<script>
+const $=s=>document.querySelector(s);const state={vehicles:[],bookings:[],promotions:[],discountCodes:[],discountRule:null,vehicleDiscountRules:[],siteSettings:{},paymentMethods:{bank_transfer:{enabled:false},mpaisa:{enabled:false}}};let editingVehicleTiers=[];
+async function api(path,opts={}){const r=await fetch('/api'+path,{credentials:'same-origin',headers:{'content-type':'application/json',...(opts.headers||{})},...opts});const data=await r.json().catch(()=>({error:'Unexpected server response'}));if(!r.ok)throw new Error(data.error||'Request failed');return data}
+function message(el,text,error=false){el.textContent=text;el.classList.remove('hidden','error');if(error)el.classList.add('error')}
+function clearMsg(el){el.classList.add('hidden')}
+function showApp(email){$('#login-panel').classList.add('hidden');$('#app-panel').classList.remove('hidden');$('#top-actions').classList.remove('hidden');$('#who').textContent=email;loadAll()}
+async function checkSession(){try{const x=await api('/me');showApp(x.user.email)}catch{}}
+$('#login-form').addEventListener('submit',async e=>{e.preventDefault();const m=$('#login-msg');clearMsg(m);try{const x=await api('/login',{method:'POST',body:JSON.stringify({email:$('#email').value,password:$('#password').value})});showApp(x.user.email)}catch(err){message(m,err.message,true)}});
+$('#logout').addEventListener('click',async()=>{try{await api('/logout',{method:'POST',body:'{}'})}finally{location.reload()}});
+async function loadAll(){try{const [v,b]=await Promise.all([api('/admin/vehicles'),api('/admin/bookings')]);state.vehicles=v.vehicles;state.bookings=b.bookings;try{const p=await api('/admin/promotions');state.promotions=p.promotions}catch(e){state.promotions=[];message($('#app-msg'),'Promotional banners could not be loaded: '+e.message,true)}try{const [d,r,vr]=await Promise.all([api('/admin/discount-codes'),api('/admin/discount-rule'),api('/admin/vehicle-discount-rules')]);state.discountCodes=d.codes;state.discountRule=r.rule;state.vehicleDiscountRules=vr.rules;renderDiscountRule();renderDiscountCodes();renderVehicleDiscountEditor()}catch(e){message($('#app-msg'),'Discount settings are unavailable. Apply the reviewed discount migration before managing discounts.',true)}try{const site=await api('/admin/site-settings');state.siteSettings=site.settings||{};renderSiteSettings()}catch(e){message($('#app-msg'),'Website copy settings could not be loaded. Apply the reviewed site-settings migration before editing copy.',true)}try{const pm=await api('/admin/payment-methods');state.paymentMethods=pm.methods||state.paymentMethods;renderPaymentMethods()}catch(e){message($('#app-msg'),'Payment settings could not be loaded. Apply the reviewed manual-payment migration first.',true)}renderVehicles();renderBookings();renderPromotions();renderDashboardOverview();}catch(e){message($('#app-msg'),e.message,true)}}
+function fijiDateKey(value=new Date()){return new Intl.DateTimeFormat('en-CA',{timeZone:'Pacific/Fiji',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(value))}
+function fijiDateTime(value){if(!value)return'—';const date=new Date(value);if(Number.isNaN(date.getTime()))return String(value);return new Intl.DateTimeFormat('en-FJ',{timeZone:'Pacific/Fiji',dateStyle:'medium',timeStyle:'short'}).format(date)}
+function moneyFjd(minor){return'FJ$'+(Number(minor||0)/100).toLocaleString('en-FJ',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function bookingFinalMinor(b){if(b.final_total_fjd_minor!=null)return Number(b.final_total_fjd_minor);if(b.total_fjd!=null)return Number(b.total_fjd)*100;return 0}
+function bookingVerifiedPaidMinor(b){if(b.payment_status==='paid')return bookingFinalMinor(b);if(b.payment_status==='deposit_paid')return Number(b.amount_due_fjd_minor||0);return 0}
+function renderDashboardOverview(){
+ const active=state.vehicles.filter(v=>v.active).length;
+ const pending=state.bookings.filter(b=>['requested','pending_payment'].includes(b.status)||(['bank_transfer','mpaisa'].includes(b.payment_provider)&&b.payment_status==='pending'&&b.customer_payment_reference)).length;
+ const today=fijiDateKey();
+ const activeBookings=state.bookings.filter(b=>!['cancelled','rejected'].includes(b.status));
+ const pickups=activeBookings.filter(b=>fijiDateKey(b.pickup_at)===today).length;
+ const returns=activeBookings.filter(b=>fijiDateKey(b.return_at)===today).length;
+ const verified=state.bookings.reduce((sum,b)=>sum+bookingVerifiedPaidMinor(b),0);
+ const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};
+ set('dash-active-cars',active);set('dash-bookings',state.bookings.length);set('dash-pending',pending);set('dash-pickups',pickups);set('dash-returns',returns);set('dash-revenue',moneyFjd(verified));set('dash-today-label','Today · '+fijiDateTime(today+'T00:00:00'));
+ const upcoming=document.getElementById('dash-upcoming');
+ if(upcoming){upcoming.replaceChildren();const now=Date.now(),end=now+7*86400000;const events=[];for(const b of activeBookings){for(const type of ['pickup','return']){const value=type==='pickup'?b.pickup_at:b.return_at;const ms=Date.parse(value);if(Number.isFinite(ms)&&ms>=now&&ms<=end)events.push({b,type,value,ms})}}events.sort((a,b)=>a.ms-b.ms);if(!events.length){const p=document.createElement('p');p.className='muted';p.textContent='No pickups or returns scheduled in the next seven days.';upcoming.append(p)}else events.slice(0,10).forEach(event=>{const item=document.createElement('div');item.className='activity-item';const left=document.createElement('div');const strong=document.createElement('strong');strong.textContent=(event.type==='pickup'?'Pickup · ':'Return · ')+(event.b.vehicle_name||event.b.vehicle_id||'Vehicle');const detail=document.createElement('div');detail.className='muted';detail.textContent=(event.b.customer_name||'Customer')+' · '+fijiDateTime(event.value);left.append(strong,detail);const tag=document.createElement('span');tag.className='tag';tag.textContent=String(event.b.status||'unknown').replaceAll('_',' ');item.append(left,tag);upcoming.append(item)})}
+ const recent=document.getElementById('dash-recent');
+ if(recent){recent.replaceChildren();const records=[...state.bookings].sort((a,b)=>Date.parse(b.created_at||0)-Date.parse(a.created_at||0)).slice(0,8);if(!records.length){const p=document.createElement('p');p.className='muted';p.textContent='No booking records yet.';recent.append(p)}else records.forEach(b=>{const item=document.createElement('div');item.className='activity-item';const left=document.createElement('div');const strong=document.createElement('strong');strong.textContent=b.customer_name||'Customer';const detail=document.createElement('div');detail.className='muted';detail.textContent=(b.vehicle_name||b.vehicle_id||'Vehicle')+' · '+(b.created_at?fijiDateTime(b.created_at):'Date unavailable');left.append(strong,detail);const tag=document.createElement('span');tag.className='tag';tag.textContent=String(b.status||'unknown').replaceAll('_',' ');item.append(left,tag);recent.append(item)})}
+}
+function renderPaymentMethods(){const b=state.paymentMethods.bank_transfer||{},m=state.paymentMethods.mpaisa||{};$('#bank-enabled').checked=!!b.enabled;$('#bank-name').value=b.bank_name||'';$('#bank-account-name').value=b.account_name||'';$('#bank-account-number').value=b.account_number||'';$('#bank-branch').value=b.branch||'';$('#bank-instructions').value=b.instructions||'';$('#mpaisa-enabled').checked=!!m.enabled;$('#mpaisa-recipient').value=m.recipient_name||'';$('#mpaisa-mobile').value=m.mobile_number||'';$('#mpaisa-qr').value=m.qr_image_url||'';$('#mpaisa-instructions').value=m.instructions||''}
+$('#payment-methods-form').addEventListener('submit',async e=>{e.preventDefault();try{const qrFile=$('#mpaisa-qr-file').files[0];if(qrFile){const form=new FormData();form.set('file',qrFile);const response=await fetch('/api/admin/payment-qr/image',{method:'POST',credentials:'same-origin',body:form});const result=await response.json().catch(()=>({error:'Unexpected server response'}));if(!response.ok)throw new Error(result.error||'QR image upload failed.');$('#mpaisa-qr').value=result.image_path;$('#mpaisa-qr-file').value=''}const methods={bank_transfer:{enabled:$('#bank-enabled').checked,bank_name:$('#bank-name').value,account_name:$('#bank-account-name').value,account_number:$('#bank-account-number').value,branch:$('#bank-branch').value,instructions:$('#bank-instructions').value},mpaisa:{enabled:$('#mpaisa-enabled').checked,recipient_name:$('#mpaisa-recipient').value,mobile_number:$('#mpaisa-mobile').value,qr_image_url:$('#mpaisa-qr').value,instructions:$('#mpaisa-instructions').value}};await api('/admin/payment-methods',{method:'PUT',body:JSON.stringify({methods})});message($('#app-msg'),'Payment settings saved. Enabled methods will appear at customer checkout.');await loadAll()}catch(error){message($('#app-msg'),error.message,true)}});
+function renderVehicles(){const body=$('#vehicles-body');body.replaceChildren();state.vehicles.forEach(v=>{const tr=document.createElement('tr');const td1=document.createElement('td');td1.innerHTML='<strong></strong><div class="muted" style="font-size:11px"></div>';td1.querySelector('strong').textContent=v.name;td1.querySelector('.muted').textContent=v.id;const td2=document.createElement('td');td2.textContent='FJ$'+Number(v.daily_rate).toFixed(0)+(v.deposit_percent==null?'':' · '+Number(v.deposit_percent)+'% deposit');const td3=document.createElement('td');td3.textContent=v.image_path||'—';const td4=document.createElement('td');td4.innerHTML='<span class="tag"></span>';td4.querySelector('span').textContent=v.active?'Published':'Hidden';const td5=document.createElement('td');td5.className='actions';const edit=document.createElement('button');edit.className='secondary';edit.textContent='Edit';edit.onclick=()=>editVehicle(v);const hide=document.createElement('button');hide.className='danger';hide.textContent='Hide';hide.disabled=!v.active;hide.onclick=async()=>{if(!confirm('Hide '+v.name+' from the fleet?'))return;try{await api('/admin/vehicles/'+encodeURIComponent(v.id),{method:'DELETE'});await loadAll()}catch(e){message($('#app-msg'),e.message,true)}};td5.append(edit,hide);tr.append(td1,td2,td3,td4,td5);body.append(tr)})}
+function editVehicle(v){$('#vehicle-form').classList.remove('hidden');$('#form-title').textContent='Edit vehicle';$('#v-id').value=v.id;$('#v-name').value=v.name;$('#v-rate').value=v.daily_rate;$('#v-deposit').value=v.deposit_percent??'';$('#v-image').value=v.image_path||'';$('#v-image-file').value='';$('#v-description').value=v.description||'';$('#v-active').checked=!!v.active;$('#vehicle-form').scrollIntoView({behavior:'smooth',block:'start'})}
+$('#new-vehicle').onclick=()=>{const f=$('#vehicle-form');f.reset();$('#v-id').value='';$('#v-active').checked=true;$('#form-title').textContent='Add vehicle';f.classList.remove('hidden');$('#v-name').focus()};$('#cancel-edit').onclick=()=>$('#vehicle-form').classList.add('hidden');
+$('#vehicle-form').addEventListener('submit',async e=>{e.preventDefault();const photo=$('#v-image-file').files[0];try{const saved=await api('/admin/vehicles',{method:'POST',body:JSON.stringify({id:$('#v-id').value||undefined,name:$('#v-name').value,daily_rate:Number($('#v-rate').value),deposit_percent:$('#v-deposit').value===''?null:Number($('#v-deposit').value),image_path:$('#v-image').value,description:$('#v-description').value,active:$('#v-active').checked})});$('#v-id').value=saved.id;if(photo){const form=new FormData();form.set('file',photo);const response=await fetch('/api/admin/vehicles/'+encodeURIComponent(saved.id)+'/image',{method:'POST',credentials:'same-origin',body:form});const result=await response.json().catch(()=>({error:'Unexpected server response'}));if(!response.ok)throw new Error('Vehicle saved, but photo upload failed: '+(result.error||'Upload failed.'));$('#v-image').value=result.image_path;$('#v-image-file').value=''}$('#vehicle-form').classList.add('hidden');message($('#app-msg'),'Vehicle saved.');await loadAll()}catch(err){message($('#app-msg'),err.message,true)}});const statusOptions=['requested','pending_payment','rejected','cancelled','completed'];function selectCell(value,opts){const s=document.createElement('select');opts.forEach(o=>{const op=document.createElement('option');op.value=o;op.textContent=o.replaceAll('_',' ');s.append(op)});s.value=value;return s}
+
+
+function renderBookings() {
+  const body = $('#bookings-body');
+  body.replaceChildren();
+
+  state.bookings.forEach(b => {
+    const tr = document.createElement('tr');
+
+    const customer = document.createElement('td');
+    customer.innerHTML = '<strong></strong><div></div><div></div>';
+    customer.querySelector('strong').textContent = b.customer_name;
+    customer.children[1].textContent = b.email;
+    customer.children[2].textContent = b.phone || '';
+
+    const dates = document.createElement('td');
+    dates.innerHTML = '<strong></strong><div></div><div></div>';
+    dates.querySelector('strong').textContent =
+      b.vehicle_name || b.vehicle_id;
+    dates.children[1].textContent =
+      new Date(b.pickup_at).toLocaleString();
+    dates.children[2].textContent =
+      'to ' + new Date(b.return_at).toLocaleString();
+
+    if (b.notes) {
+      const note = document.createElement('div');
+      note.className = 'muted';
+      note.textContent = 'Customer request: ' + b.notes;
+      dates.append(note);
+    }
+
+    if (b.status === 'pending_payment' && b.hold_expires_at) {
+      const holdExpiry = document.createElement('div');
+      holdExpiry.className = 'muted';
+      const expiry = new Intl.DateTimeFormat('en-FJ', {
+        timeZone: 'Pacific/Fiji',
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }).format(new Date(b.hold_expires_at));
+      holdExpiry.textContent = 'Temporary hold expires (Fiji time): ' + expiry;
+      dates.append(holdExpiry);
+    }
+
+    const total = document.createElement('td');
+    total.innerHTML = '<strong></strong><div></div><div></div><div></div><div></div>';
+    const savedTotalMinor = b.final_total_fjd_minor == null ? Number(b.total_fjd) * 100 : Number(b.final_total_fjd_minor);
+    total.children[0].textContent = 'Final rental total: FJ$' + (savedTotalMinor / 100).toFixed(2);
+    total.children[1].textContent = b.original_subtotal_fjd_minor == null
+      ? 'Original subtotal: unavailable'
+      : 'Original subtotal: FJ$' + (Number(b.original_subtotal_fjd_minor) / 100).toFixed(2);
+    total.children[2].textContent = b.discount_type
+      ? 'Discount: ' + b.discount_type + (b.discount_reference ? ' (' + b.discount_reference + ')' : '') + ' (' + (b.discount_percent == null ? '' : Number(b.discount_percent) + '%') + ') −FJ$' + (Number(b.discount_amount_fjd_minor || 0) / 100).toFixed(2)
+      : 'Discount: none';
+    total.children[3].textContent = 'Payment option: ' + (b.payment_option === 'deposit'
+      ? 'Deposit (' + Number(b.deposit_percent_snapshot).toFixed(2) + '%)'
+      : 'Full payment');
+    total.children[4].textContent = 'Amount due: FJ$' + (Number(b.amount_due_fjd_minor || 0) / 100).toFixed(2)
+      + ' · balance: FJ$' + (Number(b.balance_due_fjd_minor || 0) / 100).toFixed(2);
+
+    const status = document.createElement('td');
+    const ss = selectCell(
+      b.status,
+      b.status === 'confirmed'
+        ? ['confirmed', ...statusOptions]
+        : statusOptions
+    );
+
+    ss.disabled = b.status === 'confirmed';
+ss.style.cssText =
+  'display:block;width:100%;min-width:190px;max-width:230px;box-sizing:border-box;padding:9px 28px 9px 10px;font-size:14px;white-space:normal';
+
+    const reason = document.createElement('textarea');
+    reason.maxLength = 1000;
+    reason.placeholder = 'Reason required for rejection/cancellation';
+    reason.value = b.cancellation_reason || '';
+    reason.style.cssText =
+      'display:block;width:100%;min-width:220px;max-width:280px;box-sizing:border-box;min-height:76px;margin-top:8px;padding:10px 12px;border:1px solid #dbe6f0;border-radius:8px;font:inherit;line-height:1.45;resize:vertical';
+
+    const updateReasonField = () => {
+      const needsReason =
+        ss.value === 'rejected' || ss.value === 'cancelled';
+
+      reason.style.display = needsReason ? 'block' : 'none';
+      reason.required = needsReason;
+    };
+
+    ss.addEventListener('change', updateReasonField);
+    updateReasonField();
+
+    status.append(ss, reason);
+
+    const payment = document.createElement('td');
+    payment.textContent =
+      (b.payment_status || 'unpaid').replaceAll('_', ' ');
+    if (b.payment_provider) {
+      const methodLine=document.createElement('div');methodLine.className='muted';
+      methodLine.textContent='Method: '+String(b.payment_provider).replaceAll('_',' ');payment.append(methodLine);
+    }
+    if (b.customer_payment_reference) {
+      const refLine=document.createElement('div');refLine.style.cssText='margin-top:6px;overflow-wrap:anywhere;max-width:220px';
+      refLine.textContent='Customer transaction reference: '+b.customer_payment_reference;payment.append(refLine);
+      if(b.payment_submitted_at){const submitted=document.createElement('div');submitted.className='muted';submitted.textContent='Submitted: '+new Date(b.payment_submitted_at).toLocaleString();payment.append(submitted)}
+      if(b.payment_review_note){const review=document.createElement('div');review.className='muted';review.textContent='Review: '+b.payment_review_note;payment.append(review)}
+    }
+    if (['paid', 'deposit_paid'].includes(b.payment_status) && b.status !== 'confirmed') {
+      const warning = document.createElement('div');
+      warning.className = 'muted';
+      warning.style.cssText = 'margin-top:6px;color:#b42335;font-weight:800;max-width:180px';
+      warning.textContent = 'Payment received — manual booking review required';
+      payment.append(warning);
+    }
+
+    const save = document.createElement('td');
+    const btn = document.createElement('button');
+    btn.textContent = 'Save status';
+    if(['bank_transfer','mpaisa'].includes(b.payment_provider) && b.customer_payment_reference && b.status==='pending_payment' && b.payment_status==='pending'){
+      const reviewNote=document.createElement('textarea');reviewNote.maxLength=1000;reviewNote.placeholder='Optional approval note; required reason if rejecting';reviewNote.style.cssText='display:block;width:100%;min-width:220px;max-width:280px;box-sizing:border-box;min-height:84px;margin-bottom:10px;padding:10px 12px;border:1px solid #dbe6f0;border-radius:8px;font:inherit;line-height:1.45;resize:vertical';
+      const approve=document.createElement('button');approve.textContent='Verify payment & confirm';approve.style.cssText='display:block;margin-bottom:8px;background:#18794e';
+      approve.onclick=async()=>{if(!confirm('Confirm you independently checked that the payment arrived in the correct amount and belongs to this booking?'))return;approve.disabled=true;try{await api('/admin/bookings/'+encodeURIComponent(b.id)+'/review-payment',{method:'POST',body:JSON.stringify({action:'approve',note:reviewNote.value.trim()})});message($('#app-msg'),'Payment verified and booking confirmed.');await loadAll()}catch(error){message($('#app-msg'),error.message,true);approve.disabled=false}};
+      const reject=document.createElement('button');reject.className='danger';reject.textContent='Reject payment';reject.style.cssText='display:block;margin-bottom:8px';
+      reject.onclick=async()=>{if(!reviewNote.value.trim()){message($('#app-msg'),'Enter the reason for rejecting this payment.',true);reviewNote.focus();return}if(!confirm('Reject this manual payment and release the temporary vehicle hold?'))return;reject.disabled=true;try{await api('/admin/bookings/'+encodeURIComponent(b.id)+'/review-payment',{method:'POST',body:JSON.stringify({action:'reject',note:reviewNote.value.trim()})});message($('#app-msg'),'Payment rejected and booking hold released.');await loadAll()}catch(error){message($('#app-msg'),error.message,true);reject.disabled=false}};
+      save.append(reviewNote,approve,reject);
+    }
+
+btn.onclick = async () => {
+  if (ss.value === 'confirmed') {
+    message(
+      $('#app-msg'),
+      'Bookings can only be confirmed after verified payment processing.',
+      true
+    );
+    return;
+  }
+
+  if (
+    ['rejected', 'cancelled'].includes(ss.value) &&
+    !reason.value.trim()
+  ) {
+    message(
+      $('#app-msg'),
+      'Enter a reason before rejecting or cancelling this booking.',
+      true
+    );
+    reason.focus();
+    return;
+  }
+
+  const originalText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+  btn.style.opacity = '0.7';
+  btn.style.cursor = 'wait';
+
+  try {
+    await api('/admin/bookings/' + encodeURIComponent(b.id), {
+      method: 'PATCH',
+      body: JSON.stringify({
+        status: ss.value,
+        cancellation_reason: reason.value.trim()
+      })
+    });
+
+    btn.textContent = '✓ Saved!';
+    btn.style.background = '#18794e';
+    btn.style.opacity = '1';
+    btn.style.cursor = 'default';
+
+    message(
+      $('#app-msg'),
+      'Booking status and reason saved successfully.'
+    );
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    await loadAll();
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = originalText;
+    btn.style.background = '';
+    btn.style.opacity = '1';
+    btn.style.cursor = 'pointer';
+
+    message($('#app-msg'), 'Save failed: ' + e.message, true);
+  }
+};
+
+
+    save.append(btn);
+    tr.append(customer, dates, total, status, payment, save);
+    body.append(tr);
+  });
+}
+
+$('#refresh-bookings').onclick = loadAll;
+
+function renderPromotions(){
+  const body=$('#promotions-body');body.replaceChildren();
+  state.promotions.forEach(p=>{
+    const tr=document.createElement('tr');
+    const text=document.createElement('td');text.textContent=p.message;
+    const schedule=document.createElement('td');schedule.textContent=(p.starts_at||'No start')+' → '+(p.ends_at||'No expiry');
+    const priority=document.createElement('td');priority.textContent=String(p.priority);
+    const status=document.createElement('td');status.textContent=p.active?'Enabled':'Disabled';
+    const actions=document.createElement('td');actions.className='actions';
+    const edit=document.createElement('button');edit.className='secondary';edit.textContent='Edit';edit.onclick=()=>editPromotion(p);
+    const remove=document.createElement('button');remove.className='danger';remove.textContent='Delete';remove.onclick=async()=>{if(!confirm('Delete this promotional banner?'))return;try{await api('/admin/promotions/'+encodeURIComponent(p.id),{method:'DELETE'});await loadAll()}catch(e){message($('#app-msg'),e.message,true)}};
+    actions.append(edit,remove);tr.append(text,schedule,priority,status,actions);body.append(tr);
+  });
+}
+const SITE_SETTING_DEFAULTS={"hero_title_line1":"Explore Fiji","hero_title_line2":"Your Way","hero_subtitle":"Rent smart, rent with us! Quality vehicles, great rates and friendly local service. Make your Fiji trip memorable, from airport arrival to island adventures.","about_heading":"Drive Fiji with Confidence.","about_body":"Welcome to Zims Rental Cars Nadi, your local car rental partner in beautiful Fiji. Whether you're visiting for a holiday, business trip or family adventure, we offer a selection of vehicles for different travel needs and budgets.","guide_heading":"Make room for island adventures.","guide_body":"Enjoy the freedom to visit local attractions, discover beaches, spend time with family or explore at your own pace. Plan your route in advance and contact Zims to arrange the vehicle and pickup details that fit your trip.","contact_heading":"Let's plan your Fiji drive.","footer_tagline":"Quality vehicles, great rates and friendly local service in Nadi, Fiji. Explore Fiji your way with Zims Rental Cars.","about_brochure_mode":"image","about_brochure_text":"Our fleet and rental options change over time. Contact our team for current vehicles, rates and availability.","about_brochure_image_url":"assets/zims-original-flyer.png","business_name":"Zims Rental Cars Nadi","business_address":"Lot 1, Backroad Nadi, Fiji","business_phone":"+679 9042101","business_whatsapp":"+679 9042101","business_email":"zimsrentalfj@gmail.com","business_facebook":"https://www.facebook.com/zimsfiji","business_map_url":"https://maps.google.com/?q=Lot+1+Backroad+Nadi+Fiji","airport_pickup_text":"Airport pickup and drop-off available by arrangement.","business_logo_url":"assets/zims-logo.jpg"}
+function renderSiteSettings(){
+  for(const [key,value] of Object.entries(SITE_SETTING_DEFAULTS)){
+    const field=$('#setting-'+key.replaceAll('_','-'));
+    if(field)field.value=Object.hasOwn(state.siteSettings,key)?state.siteSettings[key]:value;
+  }
+}
+$('#site-settings-form').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const settings={};
+  for(const key of Object.keys(SITE_SETTING_DEFAULTS)){
+    const field=$('#setting-'+key.replaceAll('_','-'));
+    if(field)settings[key]=field.value;
+  }
+  try{
+    await api('/admin/site-settings',{method:'PUT',body:JSON.stringify({settings})});
+    message($('#app-msg'),'Website settings saved.');
+    await loadAll();
+  }catch(error){
+    message($('#app-msg'),error.message,true);
+  }
+});
+$('#reset-site-settings').addEventListener('click',()=>{
+  for(const [key,value] of Object.entries(SITE_SETTING_DEFAULTS)){
+    const field=$('#setting-'+key.replaceAll('_','-'));
+    if(field)field.value=value;
+  }
+  message($('#app-msg'),'Built-in defaults loaded. Save to apply them.');
+});
+function renderDiscountRule(){const r=state.discountRule;if(!r)return;$('#discount-threshold').value=r.threshold_days;$('#discount-cap').value=Number(r.max_discount_fjd_minor)/100;$('#discount-rule-active').checked=!!r.active}
+function renderVehicleDiscountEditor(){const select=$('#vehicle-discount-select');const previous=select.value;select.replaceChildren();state.vehicles.forEach(v=>{const option=document.createElement('option');option.value=v.id;option.textContent=v.name+(v.active?'':' (hidden)');select.append(option)});if(state.vehicles.some(v=>v.id===previous))select.value=previous;loadVehicleDiscountEditor()}
+function loadVehicleDiscountEditor(){const id=$('#vehicle-discount-select').value;const rule=state.vehicleDiscountRules.find(x=>x.vehicle_id===id);$('#vehicle-discount-custom').checked=!!rule;$('#vehicle-discount-active').checked=rule?!!rule.active:true;editingVehicleTiers=(rule?.tiers||[]).map(t=>({threshold_days:Number(t.threshold_days),percentage:Number(t.percentage),max_discount_fjd:Number(t.max_discount_fjd_minor)/100,active:!!t.active}));renderVehicleDiscountTiers()}
+function renderVehicleDiscountTiers(){const host=$('#vehicle-discount-tiers');host.replaceChildren();if(!$('#vehicle-discount-custom').checked){const note=document.createElement('p');note.className='hint';note.textContent='This vehicle currently uses the global automatic discount default.';host.append(note);return}if(!editingVehicleTiers.length){const note=document.createElement('p');note.className='hint';note.textContent='No tiers configured. Automatic discounts will not apply to this vehicle while custom mode is enabled.';host.append(note)}editingVehicleTiers.forEach((tier,index)=>{const row=document.createElement('div');row.className='tier-row';row.dataset.index=String(index);row.innerHTML='<label>MINIMUM DAYS<input type="number" min="1" max="3650" step="1" data-field="threshold_days" required></label><label>DISCOUNT %<input type="number" min="0" max="100" step="1" data-field="percentage" required></label><label>MAX DISCOUNT FJD<input type="number" min="0" max="1000000" step="1" data-field="max_discount_fjd" required></label><label class="tier-active"><input type="checkbox" data-field="active"> Tier active</label><button type="button" class="danger" data-remove="'+index+'">Remove</button>';row.querySelector('[data-field="threshold_days"]').value=tier.threshold_days;row.querySelector('[data-field="percentage"]').value=tier.percentage;row.querySelector('[data-field="max_discount_fjd"]').value=tier.max_discount_fjd;row.querySelector('[data-field="active"]').checked=tier.active;row.querySelectorAll('input').forEach(input=>input.addEventListener('change',()=>{const field=input.dataset.field;tier[field]=input.type==='checkbox'?input.checked:Number(input.value)}));row.querySelector('[data-remove]').onclick=()=>{editingVehicleTiers.splice(index,1);renderVehicleDiscountTiers()};host.append(row)})}
+$('#vehicle-discount-select').addEventListener('change',loadVehicleDiscountEditor);$('#vehicle-discount-custom').addEventListener('change',renderVehicleDiscountTiers);$('#add-vehicle-discount-tier').addEventListener('click',()=>{if(!$('#vehicle-discount-custom').checked){$('#vehicle-discount-custom').checked=true;renderVehicleDiscountTiers()}if(editingVehicleTiers.length>=30){message($('#app-msg'),'A vehicle can have up to 30 tiers.',true);return}editingVehicleTiers.push({threshold_days:7,percentage:10,max_discount_fjd:100,active:true});renderVehicleDiscountTiers()});$('#use-global-discount-default').addEventListener('click',async()=>{const id=$('#vehicle-discount-select').value;if(!id)return;try{await api('/admin/vehicles/'+encodeURIComponent(id)+'/discount-rules',{method:'DELETE'});message($('#app-msg'),'Vehicle now uses the global discount default.');await loadAll()}catch(e){message($('#app-msg'),e.message,true)}});$('#save-vehicle-discount-tiers').addEventListener('click',async()=>{const id=$('#vehicle-discount-select').value;if(!id)return;if(!$('#vehicle-discount-custom').checked){await $('#use-global-discount-default').click();return}const tiers=editingVehicleTiers.map(t=>({threshold_days:Number(t.threshold_days),percentage:Number(t.percentage),max_discount_fjd:Number(t.max_discount_fjd),active:!!t.active}));try{await api('/admin/vehicles/'+encodeURIComponent(id)+'/discount-rules',{method:'PUT',body:JSON.stringify({active:$('#vehicle-discount-active').checked,tiers})});message($('#app-msg'),'Vehicle discount tiers saved.');await loadAll()}catch(e){message($('#app-msg'),e.message,true)}});
+function renderDiscountCodes(){const body=$('#discount-codes-body');body.replaceChildren();state.discountCodes.forEach(c=>{const tr=document.createElement('tr');const code=document.createElement('td');code.textContent=c.code;const percent=document.createElement('td');percent.textContent=Number(c.discount_percent)+'%';const uses=document.createElement('td');uses.textContent=Number(c.uses)+' / '+(c.usage_limit==null?'Unlimited':c.usage_limit);const schedule=document.createElement('td');schedule.textContent=(c.starts_at||'No start')+' → '+(c.expires_at||'No expiry');const status=document.createElement('td');status.textContent=c.active?'Active':'Inactive';const actions=document.createElement('td');actions.className='actions';const edit=document.createElement('button');edit.className='secondary';edit.textContent='Edit';edit.onclick=()=>editDiscountCode(c);actions.append(edit);tr.append(code,percent,uses,schedule,status,actions);body.append(tr)})}
+function utcToFijiInput(instant){if(!instant)return'';return new Intl.DateTimeFormat('sv-SE',{timeZone:'Pacific/Fiji',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(instant)).replace(' ','T')}
+function editDiscountCode(c){$('#discount-code-form').classList.remove('hidden');$('#discount-code-title').textContent='Edit discount code';$('#discount-code-id').value=c.id;$('#discount-code-value').value=c.code;$('#discount-code-percent').value=c.discount_percent;$('#discount-code-limit').value=c.usage_limit??'';$('#discount-code-start').value=utcToFijiInput(c.starts_at);$('#discount-code-expiry').value=utcToFijiInput(c.expires_at);$('#discount-code-active').checked=!!c.active;$('#discount-code-form').scrollIntoView({behavior:'smooth',block:'start'})}
+$('#discount-rule-form').addEventListener('submit',async e=>{e.preventDefault();try{await api('/admin/discount-rule',{method:'PUT',body:JSON.stringify({threshold_days:Number($('#discount-threshold').value),max_discount_fjd:Number($('#discount-cap').value),active:$('#discount-rule-active').checked})});message($('#app-msg'),'Automatic discount rule saved.');await loadAll()}catch(err){message($('#app-msg'),err.message,true)}});
+$('#new-discount-code').onclick=()=>{const f=$('#discount-code-form');f.reset();$('#discount-code-id').value='';$('#discount-code-title').textContent='Add discount code';f.classList.remove('hidden');$('#discount-code-value').focus()};
+$('#cancel-discount-code').onclick=()=>$('#discount-code-form').classList.add('hidden');
+$('#discount-code-form').addEventListener('submit',async e=>{e.preventDefault();try{await api('/admin/discount-codes',{method:'POST',body:JSON.stringify({id:$('#discount-code-id').value||undefined,code:$('#discount-code-value').value,discount_percent:Number($('#discount-code-percent').value),usage_limit:$('#discount-code-limit').value===''?null:Number($('#discount-code-limit').value),starts_at:$('#discount-code-start').value||null,expires_at:$('#discount-code-expiry').value||null,active:$('#discount-code-active').checked})});$('#discount-code-form').classList.add('hidden');message($('#app-msg'),'Discount code saved.');await loadAll()}catch(err){message($('#app-msg'),err.message,true)}});
+function editPromotion(p){const f=$('#promotion-form');f.classList.remove('hidden');$('#promotion-form-title').textContent='Edit banner';$('#promotion-id').value=p.id;$('#promotion-message').value=p.message;$('#promotion-start').value=p.starts_at||'';$('#promotion-end').value=p.ends_at||'';$('#promotion-priority').value=p.priority;$('#promotion-active').checked=!!p.active;f.scrollIntoView({behavior:'smooth',block:'start'})}
+$('#new-promotion').onclick=()=>{const f=$('#promotion-form');f.reset();$('#promotion-id').value='';$('#promotion-priority').value='0';$('#promotion-form-title').textContent='Add banner';f.classList.remove('hidden');$('#promotion-message').focus()};
+$('#cancel-promotion').onclick=()=>$('#promotion-form').classList.add('hidden');
+$('#promotion-form').addEventListener('submit',async e=>{e.preventDefault();try{await api('/admin/promotions',{method:'POST',body:JSON.stringify({id:$('#promotion-id').value||undefined,message:$('#promotion-message').value,starts_at:$('#promotion-start').value.trim()||null,ends_at:$('#promotion-end').value.trim()||null,priority:Number($('#promotion-priority').value),active:$('#promotion-active').checked})});$('#promotion-form').classList.add('hidden');message($('#app-msg'),'Promotional banner saved.');await loadAll()}catch(err){message($('#app-msg'),err.message,true)}});
+
+function setDashboardView(view){document.querySelectorAll('[data-dashboard-view]').forEach(btn=>btn.classList.toggle('active',btn.dataset.dashboardView===view));$('#overview-panel').classList.toggle('hidden',view!=='overview');$('#bookings-tab').classList.toggle('hidden',view!=='bookings')}
+function setMainTab(tab){document.querySelectorAll('[data-main-tab]').forEach(btn=>btn.classList.toggle('active',btn.dataset.mainTab===tab));$('#dashboard-tab').classList.toggle('hidden',tab!=='dashboard');$('#setup-tab').classList.toggle('hidden',tab!=='setup');if(tab==='dashboard')setDashboardView('overview')}
+document.querySelectorAll('[data-main-tab]').forEach(btn=>btn.addEventListener('click',()=>setMainTab(btn.dataset.mainTab)));
+document.querySelectorAll('[data-dashboard-view]').forEach(btn=>btn.addEventListener('click',()=>setDashboardView(btn.dataset.dashboardView)));
+document.querySelectorAll('[data-tab]').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(tab=>tab.classList.toggle('active',tab===btn));for(const name of ['vehicles','promotions','discounts','website','payments'])$('#'+name+'-tab').classList.toggle('hidden',btn.dataset.tab!==name)})});
+$('#refresh-dashboard').addEventListener('click',loadAll);
+
+checkSession();
+
+</script></body></html>

@@ -1,0 +1,21 @@
+{
+  "name": "zims-rental-cars-cloudflare",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "node --test",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create zims-rental-db",
+    "db:migrate:local": "wrangler d1 migrations apply zims-rental-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply zims-rental-db --remote"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261012.0-beta",
+    "wrangler": "^4.154.0"
+  },
+  "overrides": {
+    "undici": "^7.30.1"
+  }
+}

@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zims Rental Cars Nadi | Explore Fiji Your Way</title>
+<meta name="description" content="Book a rental vehicle with Zims Rental Cars Nadi. Explore our Toyota, Honda, Nissan, Kia and Ford fleet. Airport pickup and drop-off available by arrangement.">
+<meta name="theme-color" content="#07539b">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="512x512" href="/assets/zims-app-icon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="Zims Rental Cars Nadi — Explore Fiji Your Way">
+<meta property="og:description" content="Quality vehicles, great rates and friendly local service in Nadi, Fiji.">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+:root{--blue:#07539b;--navy:#062e60;--red:#f21e35;--ink:#092b59;--muted:#526c89;--line:#d4e4f1;--pale:#eaf7ff;--gold:#ffce28;--shadow:0 14px 42px #0637681a}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:white}a{color:inherit;text-decoration:none}button, input, select{font:inherit}button{cursor:pointer}.wrap{width:min(1450px,calc(100% - 48px));margin:auto}
+.top{background:#053a78;color:#d8ebfc;font-size:11px;padding:7px 0}.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:9;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #d9e7f2}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:8px;flex-shrink:0}.brand img{width:70px;height:58px;object-fit:contain}.brand-word{font:800 18px Manrope;letter-spacing:-.6px}.brand-word span{display:block;color:var(--red);font-size:9px;letter-spacing:1.2px}.navlinks{display:flex;align-items:center;gap:23px;font-size:12px;font-weight:800;color:#16375e}.navlinks a:hover{color:var(--red)}.navright{display:flex;align-items:center;gap:15px;font-size:11px;font-weight:700}.contact{display:flex;align-items:center;gap:8px;white-space:nowrap}.contact .ico{width:32px;height:32px;display:grid;place-items:center;background:#eaf4ff;border-radius:50%;font-size:17px}.btn{border:0;border-radius:10px;padding:12px 17px;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{transform:translateY(-1px)}.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 17px #f21e352b}.btn-blue{background:var(--blue);color:#fff}.btn-outline{border:1px solid #b8d0e6;background:#fff;color:var(--navy)}.btn-light{background:white;color:var(--navy)}
+.hero{min-height:445px;position:relative;isolation:isolate;color:white;display:flex;align-items:center;overflow:hidden;background:#07539b}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#063a78f2 0%,#07539bd9 34%,#07539b60 65%,#07539b20),url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85") center 55%/cover}.hero:after{content:"";position:absolute;right:-5%;bottom:-45%;width:550px;height:550px;border-radius:50%;border:1px solid #ffffff3a;box-shadow:0 0 0 42px #ffffff0a,0 0 0 86px #ffffff08;z-index:-1}.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:38px 0 48px}.hero-copy{max-width:600px}.eyebrow{display:inline-block;border-radius:99px;background:#042f61a8;border:1px solid #ffffff36;padding:7px 13px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font:800 clamp(42px,5.3vw,72px)/.99 Manrope;letter-spacing:-3.3px;margin:17px 0 14px}.hero h1 em{font-family:Georgia,serif;font-weight:700;letter-spacing:-2px;color:#fff;font-style:italic;text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:5px;text-underline-offset:8px}.hero-copy p{font-size:14px;line-height:1.7;max-width:460px;color:#eff8ff}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.trust{display:flex;gap:17px;flex-wrap:wrap;margin-top:27px}.trust span{font-size:10px;text-align:center;max-width:82px;font-weight:700;line-height:1.35}.trust b{display:grid;place-items:center;width:37px;height:37px;background:white;color:var(--blue);border-radius:50%;font-size:18px;margin:0 auto 7px}
+.booking-box{background:#fff;color:var(--ink);border-radius:16px;box-shadow:0 20px 60px #042b5640;overflow:hidden;max-width:480px;width:100%;justify-self:center}.booking-tabs{display:grid;grid-template-columns:1fr 1fr;background:#eff8ff;border-bottom:1px solid #dce9f5}.tab{border:0;background:transparent;padding:15px 8px;color:#124475;font-size:12px;font-weight:800}.tab.active{background:#fff;color:var(--red);box-shadow:inset 0 -3px var(--red)}.booking-body{padding:17px 18px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:10px;font-weight:800;margin-bottom:6px;color:#244d7a}.field input, .field select{width:100%;min-width:0;border:1px solid #cbddeb;border-radius:7px;background:#fff;padding:11px 9px;font-size:11px;color:var(--ink);outline:none}.field input:focus, .field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #d7ecff}.booking-submit{width:100%;margin-top:12px;border-radius:7px;padding:13px}.secure-points{display:flex;justify-content:space-between;gap:8px;margin-top:14px;color:#234a74;font-size:9px;line-height:1.4}.secure-points span{display:flex;align-items:center;gap:5px}
+.section{padding:54px 0}.fleet-head{display:grid;grid-template-columns:1fr 1fr auto;gap:22px;align-items:center;margin-bottom:22px}.kicker{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);font-weight:800}.fleet-head h2, .section-title{font:800 clamp(26px,3.3vw,39px)/1.1 Manrope;letter-spacing:-1.5px;margin:8px 0 0}.fleet-head p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.fleet{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px}.car{border:1px solid #deebf6;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 3px 12px #083b6910;min-width:0}.car-img{height:115px;background:#e7f5ff;overflow:hidden}.car-img img{width:100%;height:100%;object-fit:cover}.car-info{padding:10px 9px 11px;text-align:center}.car h3{font:800 12px/1.2 Manrope;min-height:30px;margin:0 0 9px}.rate{display:inline-block;background:#ffdf39;color:#111d2d;padding:6px 8px;border-radius:99px;font-size:12px;font-weight:900;white-space:nowrap}.rate small{font-size:9px;font-weight:700}.specs{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;color:#536e88;font-size:9px;margin:9px 0}.car .btn{width:100%;padding:9px 6px;font-size:10px;border-radius:7px}
+.services-band{background:#063d79;color:#fff;padding:25px 0}.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.service{display:flex;align-items:center;gap:13px;padding:7px 14px;border-right:1px solid #ffffff4d}.service:last-child{border:0}.service-icon{width:47px;height:47px;flex-shrink:0;border:1px solid #ffffffa0;border-radius:50%;display:grid;place-items:center;font-size:21px}.service strong{font:800 12px Manrope;display:block;margin-bottom:5px}.service p{font-size:10px;color:#d5e8fb;line-height:1.5;margin:0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.about-visual{border-radius:17px;overflow:hidden;position:relative;min-height:300px;background:#e5f4ff}.about-visual img{width:100%;height:100%;min-height:300px;object-fit:cover}.about p{font-size:13px;line-height:1.8;color:var(--muted)}.about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.about-points div{border-left:3px solid var(--red);padding-left:11px}.about-points strong{display:block;font-size:12px}.about-points small{font-size:10px;color:var(--muted)}
+.faq{max-width:850px;margin:auto}.faq details{padding:17px 0;border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;list-style:none;font-weight:800;font-size:13px;display:flex;justify-content:space-between;gap:14px}.faq summary:after{content:"+";color:var(--red);font-size:20px}.faq details[open] summary:after{content:"−"}.faq p{font-size:12px;line-height:1.8;color:var(--muted)}
+
+footer{background:#042d5d;color:#fff;padding:33px 0 20px}.footer-top{display:flex;justify-content:space-between;gap:25px;align-items:start;padding-bottom:23px}.footer-brand{max-width:430px}.footer-brand p{font-size:11px;line-height:1.7;color:#c3d9ee}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:#e2f1ff}.footer-bottom{border-top:1px solid #ffffff2c;padding-top:15px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#b6d0e8;font-size:10px}
+.modal-bg{position:fixed;inset:0;background:#031a39d9;z-index:20;display:none;align-items:center;justify-content:center;padding:16px}.modal-bg.show{display:flex}.modal{background:#fff;width:min(550px,100%);max-height:90vh;overflow:auto;border-radius:18px;padding:24px;box-shadow:0 25px 80px #0004}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:start}.modal h2{font:800 23px Manrope;margin:5px 0}.close{border:0;background:#e8f4ff;border-radius:50%;width:34px;height:34px;font-size:21px;color:var(--navy)}.summary{background:#eef7ff;padding:14px;border-radius:12px;font-size:12px;line-height:1.8;margin:14px 0}.modal-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}.notice{font-size:10px;line-height:1.7;color:#697f95}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:30;background:#063d79;color:white;border-radius:10px;padding:13px 17px;font-size:12px;max-width:calc(100% - 25px);transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Motion-only feedback; existing colours, type and geometry stay unchanged. */
+a:not(.btn), button:not(.btn), .faq summary{
+  transition: color .18s ease, transform .18s ease, opacity .18s ease;
+}
+a:not(.btn):hover, button:not(.btn):hover:not(:disabled){ transform: translateY(-1px); }
+a:focus-visible, button:focus-visible, .faq summary:focus-visible{
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+a:focus-visible, button:focus-visible, .btn:focus-visible{ transform: translateY(-1px); }
+.field input, .field select{
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.car{ transition: transform .22s ease; }
+.car-img img{ transition: transform .35s ease; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .car:hover{ transform: translateY(-2px); }
+  .car:hover .car-img img{ transform: scale(1.035); }
+}
+.modal-bg{
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease, visibility 0s linear .22s;
+}
+.modal-bg.show{
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity .22s ease, visibility 0s;
+}
+.modal{ transform: translateY(6px); transition: transform .22s ease; }
+.modal-bg.show .modal{ transform: translateY(0); }
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ready .reveal{
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+  html.motion-ready .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media(max-width:1200px){.navlinks{gap:13px}.contact .text{display:none}.fleet{grid-template-columns:repeat(4,1fr)}.car-img{height:145px}.fleet-head{grid-template-columns:1fr 1fr}.fleet-head>a{grid-column:2;justify-self:end}}
+@media(max-width:780px){.wrap{width:calc(100% - 28px)}.nav{height:68px}.navlinks{display:none}.brand img{width:58px;height:50px}.brand-word{font-size:16px}.hero-inner{grid-template-columns:1fr;gap:25px;padding:42px 0}.hero-copy{max-width:590px}.hero h1{font-size:clamp(45px,10vw,67px)}.booking-box{max-width:540px}.fleet-head{grid-template-columns:1fr;gap:10px}.fleet-head>a{grid-column:auto;justify-self:start}.fleet{grid-template-columns:repeat(3,minmax(0,1fr))}.car-img{height:135px}.services-grid{grid-template-columns:repeat(2,1fr);gap:10px}.service{border:0;padding:8px}.about{grid-template-columns:1fr;gap:25px}.footer-top{flex-direction:column}}
+@media(max-width:460px){.top .wrap{justify-content:center;text-align:center}.navright .btn{padding:10px 12px}.hero h1{letter-spacing:-2.4px}.hero-copy p{font-size:13px}.trust{gap:9px}.trust span{max-width:72px;font-size:9px}.booking-body{padding:13px}.fields{gap:9px}.field input, .field select{font-size:10px;padding:10px 7px}.secure-points{font-size:8px}.section{padding:42px 0}.fleet{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.car-img{height:145px}.car-info{padding:10px}.car h3{font-size:12px}.rate{font-size:12px}.services-grid{grid-template-columns:1fr 1fr}.service{align-items:start;flex-direction:column}.service-icon{width:40px;height:40px}.modal-fields{grid-template-columns:1fr}}
+
+/* Premium finish: preserve the existing Zims blue/red identity while adding depth and polish. */
+:root{--blue:#07539b;--navy:#062b50;--red:#ed3044;--ink:#092b4d;--muted:#5c7085;--line:#dce6ee;--pale:#f4f8fb;--gold:#f4c95d;--shadow:0 18px 48px #082b4b16}
+html{scroll-padding-top:100px}body{background:#fffdfa;color:var(--ink);text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}::selection{background:#f4c95d66;color:var(--navy)}
+.top{background:linear-gradient(100deg,#042b50,#07539b 68%,#0b649c);letter-spacing:.01em}.top .wrap{align-items:center}
+header{box-shadow:0 8px 28px #062b5010;background:rgba(255,255,255,.92)}.nav{gap:16px}.brand img{filter:drop-shadow(0 4px 8px #082b5015)}.brand-word{letter-spacing:-.8px}.navlinks a{position:relative;padding:10px 0;transition:color .2s ease}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:2px;border-radius:2px;background:var(--red);transition:right .22s ease}.navlinks a:hover:after, .navlinks a:focus-visible:after{right:0}
+.btn{min-height:42px;border-radius:12px;letter-spacing:.01em;box-shadow:0 4px 12px #062b500d;transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease}.btn-red{background:linear-gradient(135deg,#f23c4d,#d91d35);box-shadow:0 9px 22px #ed30442b}.btn-blue{background:linear-gradient(135deg,#0b66ad,#06457e);box-shadow:0 8px 18px #07539b22}.btn-outline{border-color:#c7d8e6;background:#ffffffd9}.btn:focus-visible, .navlinks a:focus-visible, .mobile-nav a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible{outline:3px solid #f4c95d;outline-offset:3px}
+.hero{min-height:530px;background:#07539b}.hero:before{background:linear-gradient(90deg,#052d53f5 0%,#07539bdc 36%,#07539b72 70%,#052d5320 100%),url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85") center 55%/cover}.hero-inner{gap:clamp(28px,4vw,58px);padding:clamp(38px,5vw,68px) 0}.hero h1{font-size:clamp(44px,5.5vw,78px);line-height:.98}.hero-copy p{font-size:clamp(14px,1.1vw,16px);max-width:500px}.eyebrow{backdrop-filter:blur(10px);box-shadow:inset 0 1px #ffffff25}.trust{gap:18px}.trust b{box-shadow:0 7px 20px #001d3a40}
+.booking-box{border:1px solid #ffffffd9;border-radius:22px;box-shadow:0 28px 80px #001a3555,0 4px 14px #001a3518;max-width:520px;transform:translateZ(0)}.booking-tabs{background:#f3f8fc}.tab{padding:17px 10px;transition:color .2s ease,background .2s ease}.booking-body{padding:clamp(16px,2vw,24px)}.field label{font-size:11px;letter-spacing:.01em}.field input, .field select{min-height:44px;border-radius:10px;padding:11px 12px;font-size:12px;transition:border-color .18s ease,box-shadow .18s ease}.field input:focus, .field select:focus{box-shadow:0 0 0 4px #0b66ad20}.secure-points{font-size:10px;align-items:flex-start;line-height:1.5}.secure-points span{flex:1;align-items:flex-start}
+.section{padding:clamp(52px,6vw,86px) 0}.fleet-head{grid-template-columns:minmax(0,1fr) minmax(240px,.9fr) auto;gap:28px;margin-bottom:30px}.fleet-head h2, .section-title{letter-spacing:-1.6px}.fleet-head p{font-size:13px}.fleet{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.car{border:1px solid #e1e8ed;border-radius:20px;box-shadow:0 7px 22px #082b4b0c;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease}.car-img{height:auto;aspect-ratio:16/10;background:linear-gradient(145deg,#f2f6f8,#e6f1f8);position:relative}.car-img:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#062b5010);pointer-events:none}.car-img img{object-fit:contain;padding:5px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}.car-info{padding:18px 16px 17px;text-align:left;display:flex;flex-direction:column;align-items:flex-start}.car h3{font-size:clamp(14px,1.2vw,17px);min-height:2.5em;margin:0 0 12px;line-height:1.25}.rate{background:linear-gradient(120deg,#ffedb0,#f4c95d);padding:8px 12px;font-size:14px;box-shadow:inset 0 1px #ffffffa6}.specs{justify-content:flex-start;font-size:11px;min-height:30px;margin:12px 0;color:#64788b}.car .btn{margin-top:auto;width:100%;min-height:43px;padding:10px 12px;font-size:12px;border-radius:11px}.car .btn:disabled{box-shadow:none}
+.services-band{background:radial-gradient(ellipse at 10% 0%,#0e659a 0%,transparent 48%),linear-gradient(125deg,#052c50,#06457a 65%,#062b50);padding:34px 0}.services-grid{gap:14px}.service{min-height:90px;padding:16px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff08;backdrop-filter:blur(6px);transition:background .22s ease,transform .22s ease}.service:last-child{border:1px solid #ffffff22}.service-icon{border-color:#ffffff80;background:#ffffff0a}.service strong{font-size:13px}.service p{font-size:11px}.about{gap:clamp(26px,5vw,68px)}.about-visual{border-radius:24px;box-shadow:0 20px 50px #082b5018;border:1px solid #e2ebf1}.about-visual img{object-fit:cover}.about-points div{padding:12px 14px;border:1px solid #e4ebf1;border-left:3px solid var(--red);border-radius:0 12px 12px 0;background:#fff;box-shadow:0 6px 18px #082b5008}.about-points strong{font-size:13px}.about-points small{display:block;margin-top:5px;font-size:11px}.faq details{padding:20px 0}.faq summary{font-size:14px;align-items:center}.faq p{font-size:13px}footer{background:radial-gradient(ellipse at 80% 0%,#07539b 0%,transparent 55%),#042746}footer .brand img{border-radius:10px}.footer-links a{transition:color .2s ease}.footer-links a:hover{color:#f4c95d}
+.mobile-menu-toggle{display:none;flex:0 0 auto;width:42px;height:42px;border:1px solid #d9e5ee;border-radius:12px;background:#fff;color:var(--navy);font-size:20px;box-shadow:0 5px 14px #082b500c}.mobile-nav{display:none}.mobile-nav[hidden]{display:none!important}.mobile-nav a{padding:13px 15px;border-radius:10px;font-weight:800;font-size:13px}.mobile-nav a:not(.btn):hover{background:#eef6fb;color:var(--blue)}
+.modal-bg{backdrop-filter:blur(8px)}.modal{border:1px solid #ffffffd9;border-radius:24px;padding:clamp(20px,4vw,32px);box-shadow:0 30px 100px #0006}.summary{border:1px solid #deebf4;background:linear-gradient(135deg,#f5faff,#edf6fc);border-radius:16px;padding:18px}.toast{max-width:min(600px,calc(100% - 28px));width:max-content;padding:14px 18px;border:1px solid #ffffff22;box-shadow:0 15px 45px #001a3540}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.btn:hover{transform:translateY(-2px);box-shadow:0 13px 28px #062b5024}.car:hover{transform:translateY(-7px);border-color:#c4d8e7;box-shadow:0 24px 50px #082b501c}.car:hover .car-img img{transform:scale(1.045)}.service:hover{transform:translateY(-3px);background:#ffffff12}}
+@media(max-width:1100px){.navlinks{gap:14px}.navright{gap:9px}.contact .text{display:none}.fleet-head{grid-template-columns:1fr 1fr}.fleet-head>a{grid-column:2;justify-self:end}.fleet{grid-template-columns:repeat(3,minmax(0,1fr))}.car-img{height:auto}}
+@media(max-width:780px){.wrap{width:calc(100% - 30px)}.top .wrap{justify-content:center;gap:4px 12px}.top .wrap span:nth-child(2){display:none}.nav{height:70px;gap:10px}.brand img{width:54px;height:48px}.brand-word{font-size:15px}.navlinks{display:none}.mobile-menu-toggle{display:inline-grid;place-items:center}.navright{margin-left:auto}.navright .contact{display:none}.navright .btn{padding:10px 13px;min-height:40px}.mobile-nav:not([hidden]){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:12px 15px 16px;background:#fff;border-bottom:1px solid #dce6ee;box-shadow:0 14px 25px #082b5012}.mobile-nav .btn{grid-column:1/-1}.hero-inner{grid-template-columns:1fr;gap:28px;padding:44px 0 50px}.hero-copy{max-width:680px}.hero h1{font-size:clamp(46px,10vw,70px)}.booking-box{max-width:620px}.fleet-head{grid-template-columns:1fr;gap:14px}.fleet-head>a{grid-column:auto;justify-self:start}.fleet{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.car-info{padding:14px}.car h3{font-size:14px}.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.service{padding:12px;align-items:flex-start}.service-icon{width:42px;height:42px}.about{grid-template-columns:1fr;gap:28px}.about-visual, .about-visual img{min-height:240px}.footer-top{flex-direction:column}.footer-links{gap:14px}}
+@media(max-width:460px){.wrap{width:calc(100% - 24px)}.top{font-size:10px}.brand img{width:46px;height:44px}.brand-word{font-size:13px}.brand-word span{font-size:8px}.navright .btn{padding:9px 10px;font-size:11px}.mobile-menu-toggle{width:39px;height:39px}.hero-inner{padding:36px 0 40px;gap:24px}.hero h1{font-size:clamp(42px,12vw,56px);letter-spacing:-2.5px}.hero-copy p{font-size:13px}.hero-actions .btn{flex:1;min-width:145px}.trust{justify-content:space-between;gap:8px}.trust span{max-width:76px;font-size:9px}.booking-box{border-radius:18px}.booking-body{padding:14px}.fields{gap:10px}.field label{font-size:10px}.field input, .field select{font-size:12px;min-height:43px;padding:10px 8px}.secure-points{gap:6px;font-size:8px}.section{padding:45px 0}.fleet{gap:10px}.car{border-radius:15px}.car-img{aspect-ratio:4/3}.car-info{padding:11px}.car h3{font-size:12px;min-height:2.6em}.rate{font-size:12px;padding:7px 9px}.specs{font-size:9px;min-height:28px;margin:8px 0}.car .btn{min-height:40px;font-size:10px;padding:9px 5px}.services-grid{grid-template-columns:1fr}.service{min-height:0}.about-points{gap:8px}.about-points div{padding:10px}.about-points strong{font-size:11px}.about-points small{font-size:10px}.modal-bg{padding:10px}.modal{padding:18px;border-radius:19px;max-height:94vh}.modal h2{font-size:21px}.modal-fields{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.mobile-nav:not([hidden]){grid-template-columns:1fr 1fr;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn, .car, .car-img img, .service, .navlinks a:after{transition:none!important}.car:hover, .service:hover, .btn:hover{transform:none}}
+
+/* Refinements requested during owner review */
+header .navlinks a{position:relative;padding-top:18px}
+.nav-car-indicator{position:absolute;top:-1px;left:50%;transform:translateX(-50%);font-size:15px;line-height:1;opacity:0;transition:left .25s ease,opacity .2s ease;pointer-events:none;filter:drop-shadow(0 2px 2px #092b5930)}
+.navlinks a.active-section .nav-car-indicator{opacity:1}
+.brand img{animation:logoEnter 1.2s cubic-bezier(.2,.8,.2,1) .12s both;will-change:transform,opacity}
+.brand-word{animation:wordEnter 1.15s .38s cubic-bezier(.2,.8,.2,1) both;will-change:transform,opacity}
+@keyframes logoEnter{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
+@keyframes wordEnter{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+.hero{min-height:0}.hero-inner{padding:36px 0 42px}
+.services-band{padding:17px 0;min-height:0}.services-grid{gap:12px}.service{min-height:0}
+
+footer{padding:18px 0 12px}.footer-top{padding-bottom:12px;gap:18px}.footer-brand p{margin:10px 0 0;max-width:390px}.footer-bottom{padding-top:10px;font-size:10px}
+.car{cursor:pointer;display:flex;flex-direction:column}.car-img{height:150px;background:#eef4f7;display:flex;align-items:center;justify-content:center;padding:8px}.car-img img{object-fit:contain;background:#eef4f7}.car-info{flex:1;display:flex;flex-direction:column}.car .btn{margin-top:auto}.car-featureline{font-size:10px;color:#526c89;line-height:1.5;margin:0 0 8px}.fuel-rating{font-size:11px;color:#d29a00;letter-spacing:1px}.fuel-rating .muted-star{color:#c6d1da}.car-spec-icons{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;font-size:10px;color:#526c89;margin:7px 0 9px}.car-spec-icons span{background:#f2f7fa;border:1px solid #e1eaf0;border-radius:999px;padding:4px 7px}
+.fleet-link{white-space:nowrap}.flower-decoration{position:fixed;z-index:5;right:16px;bottom:14px;width:66px;height:66px;opacity:.86;pointer-events:none;filter:drop-shadow(0 5px 9px #082b5020);transition:opacity .2s ease}.flower-decoration svg{width:100%;height:100%}.flower-decoration .petal{fill:#d92f48;stroke:#a91d36;stroke-width:1.2}.flower-decoration .vein{fill:none;stroke:#ffb0b8;stroke-width:1.4}.flower-decoration .center{fill:#f8d76b;stroke:#b88619;stroke-width:1.3}
+.gallery-bg{position:fixed;inset:0;z-index:40;background:#031a39e8;display:none;align-items:center;justify-content:center;padding:18px}.gallery-bg.open{display:flex}.gallery-panel{width:min(850px,100%);max-height:92vh;overflow:auto;border-radius:22px;background:white;padding:22px;box-shadow:0 25px 80px #0005}.gallery-head{display:flex;justify-content:space-between;align-items:center;gap:15px}.gallery-main{width:100%;height:min(48vh,420px);object-fit:contain;background:#eef4f7;border-radius:14px;margin-top:14px}.gallery-thumbs{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.gallery-thumbs button{border:1px solid #d4e4f1;background:#f6fafc;border-radius:9px;padding:5px;color:var(--ink)}.gallery-thumbs img{width:75px;height:52px;object-fit:contain}.gallery-note{font-size:12px;color:var(--muted);line-height:1.6}
+.phone-entry{display:grid;grid-template-columns:minmax(115px,.42fr) minmax(0,1fr);gap:8px}.phone-entry select, .phone-entry input{width:100%;min-width:0;border:1px solid #cbddeb;border-radius:7px;background:#fff;padding:11px 9px;font-size:12px;color:var(--ink)}
+@media(max-width:780px){.nav-car-indicator{display:none}.flower-decoration{width:50px;height:50px;right:8px;bottom:8px;opacity:.55}.car-img{height:145px}.footer-top{padding-bottom:10px}}
+@media(max-width:460px){.phone-entry{grid-template-columns:115px minmax(0,1fr)}.gallery-panel{padding:14px}.gallery-main{height:38vh}.car-img{height:125px}}
+@media(prefers-reduced-motion:reduce){.brand img, .brand-word{animation:none!important;will-change:auto}.nav-car-indicator{transition:none}}
+
+
+/* Owner-review polish: compact sections, premium fleet cards, balanced contact/footer, and safe floral detail. */
+html{scroll-padding-top:88px}
+.hero{min-height:0;padding:0}
+.hero-inner{padding:clamp(30px,3.6vw,48px) 0 clamp(32px,3.8vw,50px)}
+.section{padding:clamp(32px,3.7vw,52px) 0}
+#fleet.section{padding-top:clamp(28px,3vw,42px);padding-bottom:clamp(30px,3.2vw,44px)}
+.fleet-head{margin-bottom:20px;gap:20px}
+.fleet-head h2, .section-title{line-height:1.12}
+.fleet{gap:18px}
+.car{border:1px solid #e3eaf0;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#fff,#fcfdfe);box-shadow:0 9px 26px #062b500b;min-width:0}
+.car-img{aspect-ratio:16/9;height:auto;padding:0;overflow:hidden;background:#eaf3f5;border-radius:0;position:relative}
+.car-img:after{display:none}
+.car-img img{display:block;width:100%;height:100%;object-fit:cover;padding:0;background:transparent;transform:none}
+.car-info{padding:20px 18px 18px;gap:0}
+.car h3{font-family:Manrope,"DM Sans",sans-serif;font-size:clamp(16px,1.35vw,19px);font-weight:800;line-height:1.25;letter-spacing:-.45px;min-height:0;margin:0 0 15px;padding-top:1px}
+.rate{margin-bottom:1px}
+.car-spec-icons{justify-content:flex-start;gap:7px;margin:12px 0 10px;font-size:11px}
+.car-spec-icons span{padding:6px 9px;background:#f3f7f9;border-color:#e4ebef}
+.car-featureline{font-size:11px;line-height:1.55;margin:0 0 10px}
+.specs{margin:0 0 14px;min-height:0}
+.car .btn{margin-top:auto;min-height:43px;border-radius:12px;font-size:12px}
+.about-visual{min-height:0;padding:0;background:#f3f8fa;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-visual img{display:block;width:100%;height:auto;min-height:0;object-fit:contain}
+.about-visual[hidden], #aboutTextOnly[hidden]{display:none!important}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{position:relative;isolation:isolate;overflow:hidden;padding:15px 0 10px;background:radial-gradient(ellipse at 80% 0%,#07539b 0%,transparent 55%),#042746}
+.footer-top{padding-bottom:10px;gap:18px;align-items:center}
+.footer-brand{max-width:440px}
+.footer-brand p{margin:8px 0 0;max-width:390px;font-size:11px;line-height:1.55}
+.footer-links{gap:14px;font-size:11px;align-items:center}
+.footer-bottom{padding-top:9px;font-size:10px;line-height:1.5;position:relative;z-index:2}
+.flower-decoration{position:absolute;right:-10px;bottom:-12px;width:clamp(100px,12vw,160px);height:auto;max-height:160px;object-fit:contain;z-index:1;opacity:.88;pointer-events:none;filter:drop-shadow(0 5px 9px #082b5020)}footer .wrap{position:relative;z-index:2}footer{padding-right:0}.footer-bottom span:last-child{padding-right:105px}
+header, main, .top, .mobile-nav{position:relative;z-index:1}footer{position:relative;z-index:1;padding-right:110px}.footer-bottom span:last-child{padding-right:34px}
+header{position:sticky;z-index:9}
+.navlinks a{padding-top:20px!important;padding-bottom:10px!important}
+.nav-car-indicator{position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:28px;height:16px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s ease,transform .22s ease;pointer-events:none}
+.nav-car-indicator svg{display:block;width:27px;height:14px}
+.navlinks a.active-section .nav-car-indicator{opacity:1;transform:translateX(-50%) translateY(0)}
+.navlinks a.active-section:after{right:0}
+.mobile-nav .nav-car-indicator{position:static;display:inline-flex;vertical-align:middle;margin-right:7px;transform:none;opacity:0;width:25px;height:14px}
+.mobile-nav a.active-section .nav-car-indicator{opacity:1}
+.phone-entry{grid-template-columns:minmax(116px,.42fr) minmax(0,1fr)}
+.phone-entry select, .phone-entry input{min-height:44px;border-radius:10px}
+.phone-entry .custom-code[hidden]{display:none!important}.phone-entry.custom-code-active{grid-template-columns:minmax(98px,1fr) minmax(58px,.5fr) minmax(90px,1.15fr)}
+@media(max-width:1100px){.footer-top{align-items:flex-start}}
+@media(max-width:780px){.hero-inner{padding:34px 0 38px}.section{padding:34px 0}.fleet-head{margin-bottom:18px}.car-img{height:auto;aspect-ratio:16/10}.car-info{padding:15px}.car h3{font-size:15px;margin-bottom:12px}.footer-top{padding-bottom:10px;gap:14px}.footer-brand p{max-width:520px}.footer-links{gap:12px}.nav-car-indicator{display:inline-flex}.flower-decoration{width:clamp(82px,18vw,118px);right:-12px;bottom:-12px;opacity:.82}footer{padding-right:0}.footer-bottom span:last-child{padding-right:85px}}
+@media(max-width:460px){.hero-inner{padding:28px 0 32px}.section{padding:30px 0}.fleet{gap:12px}.car{border-radius:17px}.car-img{aspect-ratio:4/3}.car-info{padding:13px}.car h3{font-size:14px;line-height:1.25;margin-bottom:11px}.rate{font-size:12px;padding:7px 9px}.car-spec-icons{font-size:9px;gap:5px;margin:9px 0}.car-spec-icons span{padding:5px 7px}.car-featureline{font-size:10px}.car .btn{font-size:10px;min-height:40px}.footer-top{align-items:flex-start}.footer-links{gap:10px;font-size:10px}.footer-bottom{padding-right:38px;font-size:9px}.flower-decoration{width:78px;right:-12px;bottom:-10px;opacity:.8}footer{padding-right:0}.footer-bottom span:last-child{padding-right:72px}.phone-entry{grid-template-columns:minmax(105px,.45fr) minmax(0,1fr)}.phone-entry select, .phone-entry input{padding:10px 7px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.brand img, .brand-word, .nav-car-indicator{animation:none!important;transition:none!important;will-change:auto}}
+
+
+/* Final implementation pass: consistent compact contact area, floating floral art, and staggered branding. */
+
+
+
+
+
+
+
+
+
+footer{padding:13px 0 9px!important;overflow:hidden}
+.footer-top{padding-bottom:8px!important;gap:14px!important}
+.footer-brand p{margin:7px 0 0!important;line-height:1.5!important}
+.footer-bottom{padding-top:8px!important;line-height:1.45!important}
+.footer-bottom span:last-child{padding-right:100px!important}
+.flower-decoration{position:fixed!important;z-index:5!important;right:4px!important;bottom:7px!important;width:clamp(112px,11vw,168px)!important;height:auto!important;max-height:180px!important;object-fit:contain!important;opacity:.92!important;pointer-events:none!important;filter:drop-shadow(0 12px 18px #061c3040) drop-shadow(0 3px 3px #061c3030)!important;transform:translateZ(0);transition:width .25s ease,opacity .25s ease,filter .25s ease!important}
+.flower-decoration.flower-near-map{width:82px!important;opacity:.4!important;filter:drop-shadow(0 4px 8px #061c3020)!important}
+.brand img{animation:logoEnter 1.2s cubic-bezier(.2,.8,.2,1) .12s both!important}
+.brand-word{animation:wordEnter 1.15s .38s cubic-bezier(.2,.8,.2,1) both!important}
+footer .brand img, footer .brand-word{animation:none!important;opacity:0;transform:translateY(8px)}
+footer.brand-entered .brand img{animation:logoEnter 1.2s cubic-bezier(.2,.8,.2,1) .08s both!important}
+footer.brand-entered .brand-word{animation:wordEnter 1.15s .34s cubic-bezier(.2,.8,.2,1) both!important}
+@media(max-width:780px){.flower-decoration{width:96px!important;right:0!important;bottom:4px!important;opacity:.7!important}.flower-decoration.flower-near-map{width:64px!important;opacity:.25!important}.footer-bottom span:last-child{padding-right:66px!important}}
+@media(max-width:460px){.footer-links{padding-right:40px}.footer-bottom span:last-child{padding-right:58px!important}.flower-decoration{width:76px!important;right:0!important;bottom:4px!important;opacity:.58!important}.flower-decoration.flower-near-map{width:52px!important;opacity:.2!important}}
+@media(prefers-reduced-motion:reduce){.brand img, .brand-word, footer .brand img, footer .brand-word, .flower-decoration{animation:none!important;transition:none!important;will-change:auto!important;opacity:1;transform:none}}
+
+/* Compact contact layout: keep the map useful without making the whole section oversized. */
+
+
+
+
+
+
+
+
+@media(max-width:780px){}
+@media(max-width:460px){}
+@media(prefers-reduced-motion:reduce){}
+
+/* Compact contact section with the existing car animation preserved */
+.contact-section{padding:0 0 16px!important;background:#f0f8ff!important}
+.contact-section .section-title{margin-bottom:16px!important}
+.contact-section .contact-grid{display:grid!important;grid-template-columns:minmax(0,855px) minmax(300px,405px)!important;align-items:center!important;justify-content:center!important;gap:26px!important;width:100%!important;max-width:1310px!important;margin:0 auto!important}
+.contact-section .contact-combined{display:flex!important;flex-direction:column!important;align-self:center!important;width:100%!important;min-width:0!important;height:fit-content!important;min-height:0!important;padding:0!important;overflow:hidden!important;background:#fff!important;border:1px solid #dce9f5!important;border-radius:20px!important;box-shadow:0 8px 24px #082b5010!important}
+.contact-section .contact-half{display:grid!important;grid-template-columns:48px minmax(0,1fr) 160px!important;grid-template-rows:auto auto!important;column-gap:16px!important;align-items:center!important;position:relative!important;overflow:hidden!important;min-width:0!important;min-height:0!important;padding:17px 23px!important}
+.contact-section .contact-half+.contact-half{border-left:0!important;border-top:1px solid #e1eaf1!important}
+.contact-section .contact-half .big{grid-column:1!important;grid-row:1/3!important;display:grid!important;place-items:center!important;width:48px!important;height:48px!important;margin:0!important;border-radius:15px!important;background:#eaf4fb!important;color:#07539b!important;font-size:22px!important}
+.contact-section .contact-half h3{grid-column:2!important;grid-row:1!important;margin:0 0 4px!important;font-size:15px!important;line-height:1.35!important;min-width:0!important}
+.contact-section .contact-half p{grid-column:2!important;grid-row:2!important;margin:0!important;min-height:0!important;font-size:12px!important;line-height:1.5!important;overflow-wrap:anywhere!important}
+.contact-section .contact-half .btn{grid-column:3!important;grid-row:1/3!important;position:relative!important;z-index:2!important;width:160px!important;min-width:0!important;min-height:44px!important;margin:0!important;padding:10px 12px!important;white-space:nowrap!important;border-radius:11px!important;font-size:11px!important}
+.contact-section .map-card{display:grid!important;grid-template-rows:auto 180px auto!important;align-self:center!important;width:100%!important;max-width:405px!important;min-width:0!important;min-height:0!important;height:fit-content!important;padding:0!important;overflow:hidden!important;background:#fff!important;border:1px solid #dce9f5!important;border-radius:20px!important;box-shadow:0 8px 24px #082b5010!important}
+.contact-section .map-card .map-copy{padding:14px 20px 9px!important}
+.contact-section .map-card .big{display:grid!important;place-items:center!important;width:42px!important;height:42px!important;margin:0!important;border-radius:15px!important;background:#eaf4fb!important;color:#07539b!important;font-size:22px!important}
+.contact-section .map-card h3{margin:9px 0 4px!important;font-size:15px!important}
+.contact-section .map-card p{margin:0!important;min-height:0!important;font-size:12px!important;line-height:1.5!important}
+.contact-section .map-frame{display:block!important;width:100%!important;height:180px!important;min-height:180px!important;max-height:180px!important;aspect-ratio:auto!important;flex:none!important;border:0!important;background:#eaf4fb!important}
+.contact-section .map-actions{padding:9px 16px 13px!important}
+.contact-section .map-actions .btn{width:100%!important;min-height:40px!important;border-radius:11px!important;font-size:11px!important}
+.contact-car{position:absolute;top:0;left:0;width:44px;height:22px;color:#111;opacity:0;pointer-events:none;z-index:1;transform:translate(var(--car-start-x,0px),var(--car-start-y,0px))}
+.contact-car svg{display:block;width:100%;height:100%}
+.contact-half.is-driving .contact-car{animation:contactCarDrive 1s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes contactCarDrive{0%{opacity:0;transform:translate(var(--car-start-x),var(--car-start-y))}12%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate(var(--car-end-x),var(--car-end-y))}}
+@media(max-width:900px){.contact-section .contact-grid{grid-template-columns:minmax(0,1fr) minmax(270px,340px)!important;gap:16px!important}.contact-section .contact-half{grid-template-columns:42px minmax(0,1fr)!important;column-gap:12px!important;padding:15px!important}.contact-section .contact-half .big{width:42px!important;height:42px!important}.contact-section .contact-half h3,.contact-section .contact-half p{grid-column:2!important}.contact-section .contact-half h3{grid-row:1!important}.contact-section .contact-half p{grid-row:2!important}.contact-section .contact-half .btn{grid-column:2!important;grid-row:3!important;width:100%!important;margin-top:9px!important}.contact-section .map-card{grid-template-rows:auto 165px auto!important}.contact-section .map-frame{height:165px!important;min-height:165px!important;max-height:165px!important}}
+@media(max-width:780px){.contact-section{padding:0 0 20px!important}.contact-section .contact-grid{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}.contact-section .map-card{width:100%!important;max-width:405px!important;justify-self:center!important}.contact-section .contact-half{grid-template-columns:46px minmax(0,1fr) auto!important;padding:16px!important}.contact-section .contact-half .big{grid-column:1!important;grid-row:1/3!important;width:44px!important;height:44px!important}.contact-section .contact-half h3{grid-column:2!important;grid-row:1!important}.contact-section .contact-half p{grid-column:2!important;grid-row:2!important}.contact-section .contact-half .btn{grid-column:3!important;grid-row:1/3!important;width:auto!important;min-width:125px!important;margin-top:0!important}.contact-section .map-card{grid-template-rows:auto 180px auto!important}.contact-section .map-frame{height:180px!important;min-height:180px!important;max-height:180px!important}}
+@media(max-width:520px){.contact-section .contact-half{grid-template-columns:40px minmax(0,1fr)!important;column-gap:11px!important;padding:14px!important}.contact-section .contact-half .big{grid-column:1!important;grid-row:1/3!important;width:38px!important;height:38px!important}.contact-section .contact-half h3{grid-column:2!important;grid-row:1!important}.contact-section .contact-half p{grid-column:2!important;grid-row:2!important}.contact-section .contact-half .btn{grid-column:2!important;grid-row:3!important;width:100%!important;margin-top:8px!important}.contact-section .map-card{grid-template-rows:auto 160px auto!important}.contact-section .map-frame{height:160px!important;min-height:160px!important;max-height:160px!important}}
+@media(prefers-reduced-motion:reduce){.contact-car{display:none!important}}</style>
+
+</head>
+<body>
+<div class="top"><div class="wrap"><span>📍 <span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span> · Approx. 5 minutes from Nadi International Airport</span><span data-site-setting="airport_pickup_text">Airport pickup and drop-off available by arrangement.</span><span id="promo-announcement" hidden aria-live="polite"></span></div></div>
+<header><div class="wrap nav"><a class="brand" href="index.html#home"><img src="assets/zims-logo.jpg" alt="Zims Rental Cars logo" data-site-setting="business_logo_url"><span class="brand-word">ZIMS<span>RENTAL CARS</span></span></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#home" data-nav-target="#hero">Home</a><a href="fleet.html">Our Fleet</a><a href="#how" data-nav-target="#how">How It Works</a><a href="#about" data-nav-target="#about">About Us</a><a href="#guide" data-nav-target="#guide">Travel Guide</a><a href="#contact" data-nav-target="#contact">Contact</a></nav>
+<button id="mobileMenuToggle" class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation">☰</button>
+<div class="navright"><a class="contact" data-business-link="whatsapp" href="https://wa.me/6799042101" target="_blank" rel="noopener"><span class="ico">☏</span><span class="text" data-site-setting="business_phone">+679 9042101</span><span class="text"><small>WhatsApp / Call</small></span></a><a class="contact" data-business-link="email" href="mailto:zimsrentalfj@gmail.com"><span class="ico">✉</span><span class="text" data-site-setting="business_email">zimsrentalfj@gmail.com</span><span class="text"><small>Email Us</small></span></a><a class="btn btn-red" href="#booking">Book Now →</a></div></div></header>
+<nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#home" data-nav-target="#hero">Home</a><a href="fleet.html">Our Fleet</a><a href="#how" data-nav-target="#how">How It Works</a><a href="#about" data-nav-target="#about">About Us</a><a href="#guide" data-nav-target="#guide">Travel Guide</a><a href="#contact" data-nav-target="#contact">Contact</a><a class="btn btn-red" href="#booking">Book Now →</a></nav>
+<main id="home">
+<section class="hero" id="hero"><div class="wrap hero-inner"><div class="hero-copy"><span class="eyebrow">Zims Rental Cars Nadi</span><h1><span data-site-setting="hero_title_line1">Explore Fiji</span><br><em data-site-setting="hero_title_line2">Your Way</em></h1><p data-site-setting="hero_subtitle">Rent smart, rent with us! Quality vehicles, great rates and friendly local service. Make your Fiji trip memorable, from airport arrival to island adventures.</p><div class="hero-actions"><a class="btn btn-red" href="#booking">Find a Vehicle →</a><a class="btn btn-outline" href="fleet.html">Explore Our Fleet →</a></div><div class="trust"><span><b>🚘</b>Well-Maintained Fleet</span><span><b>✈</b>Flexible Rentals</span><span><b>🛡</b>Airport Pickup</span><span><b>♙</b>Local Support</span></div></div>
+<div class="booking-box" id="booking"><div class="booking-tabs"><button class="tab active" id="bookTab">🚘 &nbsp; Book a Car</button><button class="tab" id="manageTab">▦ &nbsp; Manage Booking</button></div><div class="booking-body" id="bookPane"><form id="searchForm"><div class="fields">
+<div class="field"><label for="pickup">Pickup Location</label><select id="pickup" required><option>Nadi Airport (by arrangement)</option><option>Lot 1, Backroad Nadi</option><option>Nadi Town</option><option>Other location (confirm)</option></select></div>
+<div class="field"><label for="dropoff">Drop-off Location</label><select id="dropoff" required><option>Nadi Airport (by arrangement)</option><option>Lot 1, Backroad Nadi</option><option>Nadi Town</option><option>Other location (confirm)</option></select></div>
+<div class="field"><label for="startDate">Pickup Date</label><input id="startDate" type="date" required></div><div class="field"><label for="startTime">Pickup Time (Fiji local time)</label><input id="startTime" type="time" value="10:00" required></div>
+<div class="field"><label for="endDate">Drop-off Date</label><input id="endDate" type="date" required></div><div class="field"><label for="endTime">Drop-off Time (Fiji local time)</label><input id="endTime" type="time" value="10:00" required></div></div><button class="btn btn-red booking-submit" type="submit">Search Vehicles →</button></form><div class="secure-points"><span>🔒 Secure booking request</span><span>▦ Availability check</span><span id="secure-payment-label">▣ Checking checkout</span></div></div>
+<div class="booking-body" id="managePane" style="display:none"><form id="manageForm"><div class="field"><label for="bookingRef">Booking reference</label><input id="bookingRef" placeholder="Enter reference number" required></div><div class="field" style="margin-top:12px"><label for="manageEmail">Email used for enquiry</label><input id="manageEmail" type="email" placeholder="you@example.com" required></div><button class="btn btn-blue booking-submit" type="submit">Look Up Booking →</button><div id="manageResult" class="summary" role="status" aria-live="polite" hidden></div><p class="notice">Use your booking reference and the same email address used at checkout. Contact Zims for changes, cancellations or payment assistance.</p><a class="btn btn-outline" data-business-link="whatsapp" href="https://wa.me/6799042101" target="_blank" rel="noopener">Contact Zims on WhatsApp</a></form></div></div></div></section>
+<section class="services-band" id="how"><div class="wrap services-grid"><div class="service"><div class="service-icon">✈</div><div><strong>Airport Pickup & Drop-off</strong><p><span data-site-setting="airport_pickup_text">Airport pickup and drop-off available by arrangement.</span></p></div></div><div class="service"><div class="service-icon">🛡</div><div><strong>Flexible Rentals</strong><p>Ask us about daily and longer-term options.</p></div></div><div class="service"><div class="service-icon">♙</div><div><strong>Friendly Local Team</strong><p>We're here to help you choose a vehicle.</p></div></div><div class="service"><div class="service-icon">⌖</div><div><strong>Convenient Location</strong><p><span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span>.</p></div></div></div></section>
+<section class="section wrap" id="about"><div class="about"><div class="about-visual" id="aboutBrochureVisual"><img id="aboutBrochureImage" src="assets/zims-original-flyer.png" alt="Zims Rental Cars brochure supplied by the company" loading="lazy"></div><div><div class="kicker">About Zims Rental Cars</div><h2 class="section-title" data-site-setting="about_heading">Drive Fiji with Confidence.</h2><p data-site-setting="about_body">Welcome to Zims Rental Cars Nadi, your local car rental partner in beautiful Fiji. Whether you're visiting for a holiday, business trip or family adventure, we offer a selection of vehicles for different travel needs and budgets.</p> <p>Located at <span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span>. <span data-site-setting="airport_pickup_text">Airport pickup and drop-off available by arrangement.</span> Contact us to confirm dates, vehicle availability, rental terms and collection details.</p><div id="aboutTextOnly" hidden class="about-text-only"><p data-site-setting="about_brochure_text">Our fleet and rental options change over time. Contact our team for current vehicles, rates and availability.</p></div><div class="about-points"><div><strong>Local Nadi team</strong><small>Friendly service and assistance</small></div><div><strong>Range of vehicles</strong><small>Cars, wagons, SUVs and pickup</small></div><div><strong>Advertised daily rates</strong><small>Clear starting price per day</small></div><div><strong>Airport convenience</strong><small>Pickup by arrangement</small></div></div><a class="btn btn-blue" data-business-link="whatsapp" href="https://wa.me/6799042101" target="_blank" rel="noopener">Chat with our team →</a></div></div></section>
+<section class="section" id="guide" style="background:#f5faff"><div class="wrap"><div class="kicker">Discover Fiji your way</div><h2 class="section-title" data-site-setting="guide_heading">Make room for island adventures.</h2><p data-site-setting="guide_body" style="max-width:740px;color:var(--muted);font-size:13px;line-height:1.8">Enjoy the freedom to visit local attractions, discover beaches, spend time with family or explore at your own pace. Plan your route in advance and contact Zims to arrange the vehicle and pickup details that fit your trip.</p><div style="margin-top:19px"><a class="btn btn-outline" href="#booking">Plan Your Rental →</a></div></div></section>
+<section class="section wrap" id="faq"><div class="faq"><div class="kicker">Good to know</div><h2 class="section-title" style="margin-bottom:22px">Frequently Asked Questions</h2>
+<details><summary>Where is Zims Rental Cars located?</summary><p><span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span>, approximately five minutes from Nadi International Airport.</p></details>
+<details><summary>Can I arrange airport pickup?</summary><p><span data-site-setting="airport_pickup_text">Airport pickup and drop-off available by arrangement.</span> Contact the team to confirm meeting point, timing and any applicable fee.</p></details>
+<details><summary>How do I book a vehicle?</summary><p>Select your dates and vehicle. If online checkout is configured, the site creates a temporary 15-minute hold while you pay. If checkout is not configured, the site prepares a WhatsApp enquiry without creating a booking hold. A booking is confirmed only after verified payment or direct confirmation from Zims.</p></details>
+<details><summary>How can I book and arrange payment?</summary><p>Choose your preferred vehicle and rental dates, then contact our team to confirm availability, booking arrangements and payment details. Online payment options will be introduced in the future. Your booking is confirmed only after Zims confirms the arrangements.</p></details>
+<details><summary>What are the licence, deposit and cancellation rules?</summary><p>Please contact Zims directly to confirm driver requirements, licence rules, deposits, insurance, cancellations and refunds before booking.</p></details></div></section>
+<section class="section contact-section" id="contact"><div class="wrap"><div class="kicker">Get in touch</div><h2 class="section-title" data-site-setting="contact_heading" style="margin-bottom:24px">Let's plan your Fiji drive.</h2><div class="contact-grid"><article class="contact-card contact-combined">
+<div class="contact-half">
+  <div class="big">☏</div>
+  <h3>WhatsApp / Call</h3>
+  <p data-site-setting="business_phone">+679 9042101</p>
+  <a class="btn btn-blue" data-business-link="whatsapp" href="https://wa.me/6799042101" target="_blank" rel="noopener">Message Zims →</a>
+  <span class="contact-car" aria-hidden="true">
+    <svg viewBox="0 0 64 32" fill="currentColor">
+      <path d="M7 19l4-9c1-2 3-3 5-3h23c3 0 5 1 7 4l5 8h5c3 0 5 2 5 5v3H3v-4c0-2 2-4 4-4z"/>
+      <path d="M16 10l-3 7h32l-5-7z" fill="#fff" opacity=".8"/>
+      <circle cx="16" cy="26" r="5" fill="#18334d"/>
+      <circle cx="48" cy="26" r="5" fill="#18334d"/>
+    </svg>
+  </span>
+</div>
+<div class="contact-half"><div class="big">✉</div><h3>Email</h3><p data-site-setting="business_email">zimsrentalfj@gmail.com</p><a class="btn btn-outline" data-business-link="email" href="mailto:zimsrentalfj@gmail.com">Email Us →</a></div><div class="contact-half"><div class="big" aria-hidden="true">f</div><h3>Facebook</h3><p data-site-setting="business_name">Zims Rental Cars</p><a class="btn btn-outline" data-business-link="facebook" href="https://www.facebook.com/zimsfiji" target="_blank" rel="noopener">Visit Facebook →</a></div></article><article class="contact-card map-card"><div class="map-copy"><div class="big">⌖</div><h3>Visit Zims Rental Cars</h3><p data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</p></div><iframe class="map-frame" title="Google Maps location for Zims Rental Cars" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-business-map></iframe><div class="map-actions"><a class="btn btn-outline" data-business-link="map" href="https://www.google.com/maps/search/?api=1&query=Zims+Rental+Cars%2C+Lot+1+Backroad+Nadi%2C+Fiji" target="_blank" rel="noopener">Open pinned location →</a></div></article></div></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-top"><div class="footer-brand"><a class="brand" href="#home"><img src="assets/zims-logo.jpg" alt="Zims logo" data-site-setting="business_logo_url"><span class="brand-word" style="color:#fff">ZIMS<span style="color:#ffccd3">RENTAL CARS · RENT SMART, RENT WITH US!</span></span></a><p data-site-setting="footer_tagline">Quality vehicles, great rates and friendly local service in Nadi, Fiji. Explore Fiji your way with Zims Rental Cars.</p></div><div class="footer-links"><a href="fleet.html">Our Fleet</a><a href="#how">How It Works</a><a href="#about">About Us</a><a href="#guide">Travel Guide</a><a href="#contact">Contact</a><a href="#faq">FAQs</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> <span data-site-setting="business_name">Zims Rental Cars Nadi</span> · <span data-site-setting="business_address">Lot 1, Backroad Nadi, Fiji</span></span><span><span data-site-setting="business_phone">+679 9042101</span> · <span data-site-setting="business_email">zimsrentalfj@gmail.com</span></span></div></div></footer>
+<div class="gallery-bg" id="galleryBg" role="dialog" aria-modal="true" aria-labelledby="galleryTitle"><div class="gallery-panel"><div class="gallery-head"><div><div class="kicker">Explore the vehicle</div><h2 id="galleryTitle" class="section-title">Vehicle gallery</h2></div><button class="close" id="closeGallery" aria-label="Close vehicle gallery">×</button></div><img id="galleryMain" class="gallery-main" alt="Vehicle photo"><div id="galleryThumbs" class="gallery-thumbs"></div><p class="gallery-note" id="galleryNote">Interior photos have not yet been supplied for this vehicle. Contact Zims to confirm the exact interior and features.</p><button class="btn btn-blue" id="galleryBook" type="button">Book this vehicle →</button></div></div>
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><div class="modal-head"><div><div class="kicker">Booking enquiry</div><h2 id="modalTitle">Review your journey</h2></div><button class="close" id="closeModal" aria-label="Close">×</button></div><div class="summary" id="summary"></div><form id="guestForm"><div class="modal-fields"><div class="field"><label for="guestName">Full name</label><input id="guestName" required autocomplete="name" placeholder="Your full name"></div><div class="field"><label for="guestEmail">Email</label><input id="guestEmail" type="email" required autocomplete="email" placeholder="you@example.com"></div><div class="field"><label for="guestPhone">Phone / WhatsApp</label><div class="phone-entry"><select id="guestPhoneCode" aria-label="Phone country code"><option value="+679">Fiji +679</option><option value="+61">Australia +61</option><option value="+64">New Zealand +64</option><option value="+1">USA/Canada +1</option><option value="+44">UK +44</option><option value="+91">India +91</option><option value="+81">Japan +81</option><option value="+65">Singapore +65</option><option value="+33">France +33</option><option value="+49">Germany +49</option><option value="+86">China +86</option><option value="+685">Samoa +685</option><option value="+676">Tonga +676</option><option value="+678">Vanuatu +678</option><option value="+675">PNG +675</option><option value="+other">Other</option></select><input id="guestPhoneCustomCode" class="custom-code" type="tel" inputmode="tel" pattern="\+[0-9]{1,4}" maxlength="5" placeholder="+33" aria-label="Other country calling code" hidden><input id="guestPhone" type="tel" required autocomplete="tel-national" inputmode="tel" pattern="[0-9() +.-]{4,25}" title="Enter a phone number with digits and optional spaces or symbols" placeholder="Phone number"></div></div><div class="field"><label for="discountCode">Discount code (optional)</label><input id="discountCode" maxlength="32" autocomplete="off" placeholder="Enter code"></div><div class="field"><label for="extra">Optional request</label><select id="extra"><option>No extra</option><option>Child seat — ask for price</option><option>Additional driver — ask for price</option></select></div><div class="field"><label for="paymentOption">Payment preference</label><select id="paymentOption"><option value="full">Pay full rental amount</option><option value="deposit" disabled>Deposit not configured</option></select></div><div class="field"><label for="paymentMethod">How would you like to pay?</label><select id="paymentMethod" required><option value="">Checking available payment methods…</option></select></div></div><p id="checkout-notice" class="notice">Checking available payment methods…</p><button class="btn btn-red" id="booking-submit-button" type="submit" style="width:100%" disabled>Checking checkout…</button></form><section id="paypalCheckout" hidden aria-live="polite"><div class="summary"><strong>Temporary booking hold created</strong><br><span id="checkout-reference"></span><br><span id="checkout-amount"></span><br><small id="checkout-hold-note">Your vehicle is held temporarily while you complete checkout.</small></div><div id="manualPaymentPanel" hidden><h3 style="font:800 16px Manrope;margin:18px 0 10px" id="manual-payment-title">Payment instructions</h3><div class="summary" id="manual-payment-instructions"></div><p class="notice">After paying in your bank or M-PAiSA app, return here and enter the transaction reference. Your booking remains pending until the owner checks the actual transaction.</p><form id="manualPaymentForm"><div class="field"><label for="transactionReference">Transaction number / payment reference</label><textarea id="transactionReference" required maxlength="160" minlength="3" placeholder="Enter the reference shown by your bank or M-PAiSA"></textarea></div><button class="btn btn-red" id="manual-payment-submit" type="submit" style="width:100%">Submit reference & request booking</button></form><p id="manual-payment-result" class="notice" hidden></p></div><div id="paypalPaymentPanel"><h3 style="font:800 16px Manrope;margin:18px 0 10px">Choose your PayPal checkout</h3><div id="paypal-wallet-button"></div><div id="paypal-card-button" style="margin-top:10px"></div><p class="notice">PayPal sign-in and guest debit/credit card options depend on PayPal eligibility. Your card details are entered only in PayPal's checkout.</p></div><button class="btn btn-outline" id="checkout-back" type="button" data-mode="contact" style="width:100%">Contact Zims on WhatsApp</button></section></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module">
+import { addCalendarDays, calendarDaysBetween, fijiCurrentDate, fijiLocalDateTimeToIso } from './assets/booking-date-time.js';
+let paypalConfig={enabled:false};let paymentMethods={methods:{paypal:{enabled:false},bank_transfer:{enabled:false},mpaisa:{enabled:false}}};let activeCheckout=null;let paypalScriptPromise=null;
+let cars=[
+{id:'fielder',name:'Toyota Fielder',category:'Economy',price:110,img:'assets/toyota-fielder.jpg',spec:'Wagon · Details on request',seats:'5 seats (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null},
+{id:'corolla',name:'Toyota Corolla',category:'Economy',price:115,img:'assets/toyota-corolla.jpg',spec:'Sedan · Details on request',seats:'5 seats (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null},
+{id:'shuttle',name:'Honda Fit Shuttle',category:'Economy',price:110,img:'assets/honda-fit-shuttle.jpg',spec:'Wagon · Details on request',seats:'5 seats (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null},
+{id:'adwagon',name:'Nissan AD Wagon / Wingroad',category:'Economy',price:115,img:'assets/nissan-ad-wagon.jpg',spec:'Wagon · Details on request',seats:'5 seats (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null},
+{id:'sportage',name:'Kia Sportage',category:'SUV',price:175,img:'assets/kia-sportage.jpg',spec:'SUV · Details on request',seats:'5 seats (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null},
+{id:'xtrail',name:'Nissan X-Trail',category:'SUV',price:270,img:'assets/nissan-x-trail.jpg',spec:'SUV · Details on request',seats:'5–7 seats depending on model',features:['Bluetooth availability on request'],fuel:null},
+{id:'ranger',name:'Ford Ranger',category:'Pickup',price:490,img:'assets/ford-ranger.jpg',spec:'Pickup · Details on request',seats:'5 seats if double-cab (confirm exact vehicle)',features:['Bluetooth availability on request'],fuel:null}
+];
+const $=id=>document.getElementById(id);let filter='All',criteria=null,selected=null,bookingRequestId=null,quoteSequence=0,quoteTimer=null;
+const money=n=>'FJ$'+Number(n).toLocaleString('en-FJ');
+const today=fijiCurrentDate();$('startDate').min=today;$('endDate').min=today;$('startDate').value=today;$('endDate').value=addCalendarDays(today,1);
+const initialParams=new URLSearchParams(location.search);
+for(const [param,id] of [['start','startDate'],['end','endDate'],['startTime','startTime'],['endTime','endTime']]){const value=initialParams.get(param);if(value&&$(id))$(id).value=value}
+for(const [param,id] of [['pickup','pickup'],['dropoff','dropoff']]){const value=initialParams.get(param);if(value&&$(id)&&[...$(id).options].some(o=>o.value===value))$(id).value=value}
+$('endDate').min=$('startDate').value||today;
+$('startDate').addEventListener('change',()=>{const s=$('startDate').value;$('endDate').min=s;if($('endDate').value<=s){$('endDate').value=addCalendarDays(s,1)}});
+function days(){if(!criteria)return 1;return Math.max(1,calendarDaysBetween(criteria.start,criteria.end)||1)}
+function esc(v){return String(v??'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]))}
+
+function render() {
+  const grid = $('fleetGrid');
+  if (!grid) return;
+  const list = cars.filter(c => filter === 'All' || c.category === filter);
+  grid.innerHTML = list.map(c => {
+    const availability = window.vehicleAvailability?.[c.id];
+    const unavailable = availability === false;
+    const featureSummary = (c.features || ['Vehicle features confirmed on request']).slice(0,2).map(esc).join(' · ');
+    const stars = c.fuel == null ? '<span class="fuel-rating" aria-label="Fuel economy not yet verified">Fuel economy: <span class="muted-star">☆☆☆☆☆</span> <small>not rated</small></span>' : '<span class="fuel-rating" aria-label="Fuel economy rating">'+'★'.repeat(c.fuel)+'<span class="muted-star">'+'★'.repeat(5-c.fuel)+'</span></span>';
+    return `<article class="car" tabindex="0" role="group" aria-label="View ${esc(c.name)} gallery" onclick="openVehicleGallery('${esc(c.id)}')" onkeydown="if(event.target===event.currentTarget&&(event.key==='Enter'||event.key===' ')){event.preventDefault();openVehicleGallery('${esc(c.id)}')}">
+      <div class="car-img"><img src="${esc(c.img)}" alt="${esc(c.name)} exterior" loading="lazy"></div>
+      <div class="car-info"><h3>${esc(c.name)}</h3><div class="rate">${money(c.price)} <small>/ day</small></div>
+      <div class="car-spec-icons"><span>👥 ${esc(c.seats||'Seats: confirm')}</span><span>📍 Nadi</span></div><div class="car-featureline">${featureSummary}</div><div class="specs">${stars}</div>
+      <button class="btn btn-blue" ${unavailable?'disabled':''} style="${unavailable?'opacity:.5;cursor:not-allowed':''}" onclick="event.stopPropagation();bookCar('${esc(c.id)}')">${unavailable?'Unavailable':'Book Now →'}</button></div></article>`;
+  }).join('');
+}
+window.openVehicleGallery=function(id){const car=cars.find(c=>c.id===id);if(!car)return;window.galleryVehicleId=id;$('galleryTitle').textContent=car.name;$('galleryMain').src=car.img;$('galleryMain').alt=car.name+' exterior reference';$('galleryThumbs').innerHTML=`<button type="button" aria-label="Show exterior photo"><img src="${esc(car.img)}" alt=""></button>`;$('galleryThumbs').querySelector('button').addEventListener('click',()=>$('galleryMain').src=car.img);$('galleryNote').textContent='Interior photos for this exact vehicle have not yet been supplied. Please confirm interior equipment, Bluetooth, Apple CarPlay, Android Auto, reverse camera and other features with Zims before booking.';$('galleryBook').textContent='Book '+car.name+' →';$('galleryBg').classList.add('open');document.body.style.overflow='hidden'};
+function closeGallery(){$('galleryBg').classList.remove('open');document.body.style.overflow=''}
+$('closeGallery').addEventListener('click',closeGallery);$('galleryBg').addEventListener('click',e=>{if(e.target===$('galleryBg'))closeGallery()});$('galleryBook').addEventListener('click',()=>{const id=window.galleryVehicleId;closeGallery();bookCar(id)});
+async function loadPublishedFleet(){try{const r=await fetch('/api/vehicles');if(!r.ok)return;const data=await r.json();if(!Array.isArray(data.vehicles)||!data.vehicles.length)return;cars=data.vehicles.map(v=>{const known=cars.find(c=>c.id===v.id)||{};return {...known,id:v.id,name:v.name,category:/sportage|x-trail/i.test(v.name)?'SUV':/ranger/i.test(v.name)?'Pickup':known.category||'Economy',price:Number(v.daily_rate),depositPercent:v.deposit_percent==null?null:Number(v.deposit_percent),img:v.image_path||known.img,spec:'Details on request'}});render()}catch(e){console.warn('Using built-in fleet until API is configured.',e)}}
+async function loadPromotionBanner(){try{const r=await fetch('/api/promotions');if(!r.ok)return;const data=await r.json();const promotion=data.promotions?.[0];if(promotion&&typeof promotion.message==='string'&&promotion.message.trim()){const banner=$('#promo-announcement');banner.textContent=promotion.message;banner.hidden=false}}catch{}}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),4000)}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render()}));
+function dateValid(){if(!$('startDate').value||!$('endDate').value||$('endDate').value<=$('startDate').value){toast('Choose a return date after your pickup date.');return false}return true}
+function formatMinor(value){return 'FJ$'+(Number(value||0)/100).toFixed(2)}
+function schedulePaymentPreview(){clearTimeout(quoteTimer);quoteTimer=setTimeout(updatePaymentPreview,300)}
+function updatePaymentPreview(){if(!selected||!criteria)return;const seq=++quoteSequence,pickup=fijiLocalDateTimeToIso(criteria.start,criteria.startTime),ret=fijiLocalDateTimeToIso(criteria.end,criteria.endTime);$('summary').innerHTML='<strong>'+esc(selected.name)+'</strong><br>'+criteria.start+' '+criteria.startTime+' Fiji local time → '+criteria.end+' '+criteria.endTime+' Fiji local time<br>Pickup: '+esc(criteria.pickup)+'<br>Drop-off: '+esc(criteria.dropoff)+'<br>Duration: '+days()+' day(s)<hr style="border:0;border-top:1px solid #d5e7f5">Checking current server price…';if(!pickup||!ret)return;fetch('/api/booking-quote',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({vehicle_id:selected.id,pickup_at:pickup,return_at:ret,email:$('guestEmail').value,discount_code:$('discountCode').value.trim(),payment_option:$('paymentOption').value})}).then(async response=>{const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not calculate this quote.');return data}).then(data=>{if(seq!==quoteSequence)return;const discount=data.discount_type?'<br>'+esc(data.discount_type==='automatic'?'Automatic long-rental discount':'Discount code '+data.discount_reference)+' ('+Number(data.discount_percent)+'%): −'+formatMinor(data.discount_amount_fjd_minor):'<br>Discount: none';$('summary').innerHTML='<strong>'+esc(selected.name)+'</strong><br>'+criteria.start+' '+criteria.startTime+' Fiji local time → '+criteria.end+' '+criteria.endTime+' Fiji local time<br>Pickup: '+esc(criteria.pickup)+'<br>Drop-off: '+esc(criteria.dropoff)+'<br>Duration: '+data.rental_days+' billable day(s)<hr style="border:0;border-top:1px solid #d5e7f5"><strong>Original rental subtotal: '+formatMinor(data.original_subtotal_fjd_minor)+'</strong>'+discount+'<br><strong>Estimated rental total: '+formatMinor(data.rental_total_fjd_minor)+'</strong><br>Amount due before checkout: '+formatMinor(data.amount_due_fjd_minor)+'<br>Remaining balance: '+formatMinor(data.balance_due_fjd_minor)+'<br><small>Server-calculated estimate. The booking request recalculates and saves the final amount. Online checkout uses PayPal when configured; otherwise continue through WhatsApp without creating a hold.</small>'}).catch(error=>{if(seq!==quoteSequence)return;$('summary').innerHTML='<strong>'+esc(selected.name)+'</strong><br>'+criteria.start+' '+criteria.startTime+' Fiji local time → '+criteria.end+' '+criteria.endTime+' Fiji local time<hr style="border:0;border-top:1px solid #d5e7f5"><small>Your vehicle and dates are selected. Contact Zims to confirm the final price and availability before your booking is confirmed.</small>'})}
+function bookCar(id){if(activeCheckout){$('guestForm').hidden=true;$('paypalCheckout').hidden=false;$('modalBg').classList.add('show');toast('Finish checkout or contact Zims for booking '+activeCheckout.bookingId+' before starting another booking.');return}if(!dateValid()){$('booking').scrollIntoView({behavior:'smooth'});return}$('guestForm').reset();$('guestForm').hidden=false;$('paypalCheckout').hidden=true;$('checkout-back').textContent='Contact Zims on WhatsApp';$('checkout-back').dataset.mode='contact';criteria={pickup:$('pickup').value,dropoff:$('dropoff').value,start:$('startDate').value,end:$('endDate').value,startTime:$('startTime').value,endTime:$('endTime').value};selected=cars.find(c=>c.id===id);bookingRequestId=crypto.randomUUID();$('discountCode').value='';$('summary').innerHTML='<strong>'+esc(selected.name)+'</strong><br>'+criteria.start+' '+criteria.startTime+' Fiji local time → '+criteria.end+' '+criteria.endTime+' Fiji local time<br><small>Preparing your rental estimate…</small>';const option=$('paymentOption'),deposit=option.querySelector('option[value="deposit"]');if(selected.depositPercent!=null){deposit.disabled=false;deposit.textContent='Pay deposit ('+selected.depositPercent+'%)'}else{deposit.disabled=true;deposit.textContent='Deposit not configured';option.value='full'}updatePaymentPreview();$('modalBg').classList.add('show')}
+$('guestPhoneCode').addEventListener('change',()=>{const other=$('guestPhoneCode').value==='+other';const custom=$('guestPhoneCustomCode');custom.hidden=!other;custom.required=other;custom.closest('.phone-entry').classList.toggle('custom-code-active',other);$('guestPhone').placeholder='Phone number';$('guestPhone').setAttribute('autocomplete',other?'tel':'tel-national');if(other)custom.focus()});
+$('paymentOption').addEventListener('change',schedulePaymentPreview);
+$('discountCode').addEventListener('input',schedulePaymentPreview);
+$('guestEmail').addEventListener('input',schedulePaymentPreview);
+
+window.bookCar=bookCar;
+
+$('searchForm').addEventListener('submit', async e => {
+  e.preventDefault();
+
+  if (!dateValid()) return;
+
+  criteria = {
+    pickup: $('pickup').value,
+    dropoff: $('dropoff').value,
+    start: $('startDate').value,
+    end: $('endDate').value,
+    startTime: $('startTime').value,
+    endTime: $('endTime').value
+  };
+
+  const btn = $('searchForm').querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Checking availability…';
+
+  try {
+    const pickupAt = fijiLocalDateTimeToIso(criteria.start, criteria.startTime);
+    const returnAt = fijiLocalDateTimeToIso(criteria.end, criteria.endTime);
+
+    if (!pickupAt || !returnAt || Date.parse(returnAt) <= Date.parse(pickupAt)) {
+      toast('Choose valid pickup and return times in Fiji, with return after pickup.');
+      return;
+    }
+
+    const results = await Promise.all(
+      cars.map(async car => {
+        const response = await fetch('/api/availability', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            vehicle_id: car.id,
+            pickup_at: pickupAt,
+            return_at: returnAt
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Could not check availability.');
+        }
+
+        const result = await response.json();
+
+        return {
+          id: car.id,
+          name: car.name,
+          available: result.available
+        };
+      })
+    );
+
+    const availableIds = results
+      .filter(car => car.available)
+      .map(car => car.id)
+      .filter(Boolean);
+    const params = new URLSearchParams({
+      start: criteria.start, end: criteria.end,
+      startTime: criteria.startTime, endTime: criteria.endTime,
+      pickup: criteria.pickup, dropoff: criteria.dropoff,
+      available: availableIds.join(',')
+    });
+    // Fleet browsing lives on its own page; carry the selected dates forward.
+    location.href = 'fleet.html?' + params.toString();
+    return;
+  } catch (error) {
+    console.error('Availability check failed:', error);
+    toast('Could not check availability. Please try again.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Search Vehicles →';
+  }
+});
+
+$('bookTab').addEventListener('click',()=>{$('bookTab').classList.add('active');$('manageTab').classList.remove('active');$('bookPane').style.display='block';$('managePane').style.display='none'});$('manageTab').addEventListener('click',()=>{$('manageTab').classList.add('active');$('bookTab').classList.remove('active');$('bookPane').style.display='none';$('managePane').style.display='block'});
+const mobileMenuToggle=$('mobileMenuToggle'),mobileNav=$('mobileNav');mobileMenuToggle.addEventListener('click',()=>{const opening=mobileNav.hidden;mobileNav.hidden=!opening;mobileMenuToggle.setAttribute('aria-expanded',String(opening));mobileMenuToggle.setAttribute('aria-label',opening?'Close navigation':'Open navigation');mobileMenuToggle.textContent=opening?'×':'☰'});mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{mobileNav.hidden=true;mobileMenuToggle.setAttribute('aria-expanded','false');mobileMenuToggle.setAttribute('aria-label','Open navigation');mobileMenuToggle.textContent='☰'}));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&$('galleryBg').classList.contains('open'))closeGallery();if(event.key==='Escape'&&!mobileNav.hidden){mobileNav.hidden=true;mobileMenuToggle.setAttribute('aria-expanded','false');mobileMenuToggle.setAttribute('aria-label','Open navigation');mobileMenuToggle.textContent='☰'}});
+$('manageForm').addEventListener('submit',async e=>{e.preventDefault();const result=$('manageResult');result.hidden=false;result.replaceChildren();const submit=$('manageForm').querySelector('button[type=submit]');submit.disabled=true;submit.textContent='Looking up booking…';try{const response=await fetch('/api/booking-lookup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({booking_id:$('bookingRef').value.trim(),email:$('manageEmail').value.trim()})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not look up booking');const b=data.booking;const lines=[['Reference',b.reference],['Vehicle',b.vehicle_name],['Pickup',new Intl.DateTimeFormat('en-FJ',{timeZone:'Pacific/Fiji',dateStyle:'medium',timeStyle:'short'}).format(new Date(b.pickup_at))+' Fiji time'],['Return',new Intl.DateTimeFormat('en-FJ',{timeZone:'Pacific/Fiji',dateStyle:'medium',timeStyle:'short'}).format(new Date(b.return_at))+' Fiji time'],['Booking status',b.hold_expired?'Payment hold expired':b.status.replaceAll('_',' ')],['Payment status',b.payment_status.replaceAll('_',' ')],['Rental total','FJ$'+Number(b.rental_total_fjd).toFixed(2)],['Amount due','FJ$'+(Number(b.amount_due_fjd_minor)/100).toFixed(2)],['Remaining balance','FJ$'+(Number(b.balance_due_fjd_minor)/100).toFixed(2)]];for(const [label,value] of lines){const line=document.createElement('p');line.style.margin='6px 0';const strong=document.createElement('strong');strong.textContent=label+': ';line.append(strong,document.createTextNode(value));result.append(line)}if(b.payment_status==='paid'||b.payment_status==='deposit_paid'){}const contact=document.createElement('a');contact.className='btn btn-outline';const whatsappNumber=(document.querySelector('[data-business-link="whatsapp"]')?.href||'https://wa.me/6799042101').split('/').pop().split('?')[0];
+contact.href='https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent('Hello Zims, I need help with booking '+b.reference+'.');contact.target='_blank';contact.rel='noopener';contact.textContent='Contact Zims about this booking';result.append(contact)}catch(error){const message=document.createElement('p');message.textContent=error.message;result.append(message);const contact=document.createElement('a');contact.className='btn btn-outline';const whatsappNumber=(document.querySelector('[data-business-link="whatsapp"]')?.href||'https://wa.me/6799042101').split('/').pop().split('?')[0];
+contact.href='https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent('Hello Zims, I need help checking a booking. Reference: '+$('bookingRef').value.trim()+'; Email: '+$('manageEmail').value.trim());contact.target='_blank';contact.rel='noopener';contact.textContent='Ask Zims on WhatsApp';result.append(contact)}finally{submit.disabled=false;submit.textContent='Look Up Booking →'}});
+$('closeModal').addEventListener('click',()=>$('modalBg').classList.remove('show'));$('modalBg').addEventListener('click',e=>{if(e.target===$('modalBg'))$('modalBg').classList.remove('show')});
+async function loadSiteSettings(){
+  try{
+    const response=await fetch('/api/site-settings');
+    if(!response.ok)return;
+
+    const data=await response.json();
+    const settings=data.settings||{};
+
+    for(const [key,value] of Object.entries(settings)){
+      if(typeof value!=='string')continue;
+
+      if(key==='about_brochure_mode'){
+        const showImage=value!=='text';
+        $('aboutBrochureVisual').hidden=!showImage;
+        $('aboutTextOnly').hidden=showImage;
+        continue;
+      }
+
+      if(key==='about_brochure_image_url'&&value.trim()){
+        const image=$('aboutBrochureImage');
+        if(/^https:\/\//i.test(value.trim())||value.startsWith('assets/')){
+          image.src=value.trim();
+        }
+        continue;
+      }
+
+      if(key!=='business_logo_url'){
+        document.querySelectorAll('[data-site-setting="'+CSS.escape(key)+'"]').forEach(node=>{
+          node.textContent=value;
+        });
+      }
+    }
+
+    const phone=(settings.business_phone||'+679 9042101').trim();
+    const whatsapp=(settings.business_whatsapp||phone).replace(/\D/g,'');
+    const email=(settings.business_email||'zimsrentalfj@gmail.com').trim();
+    const facebook=(settings.business_facebook||'https://www.facebook.com/zimsfiji').trim();
+    const address=(settings.business_address||'Lot 1, Backroad Nadi, Fiji').trim();
+    const businessName=(settings.business_name||'Zims Rental Cars Nadi').trim();
+    const mapUrl=(settings.business_map_url||'https://maps.google.com/?q=Lot+1+Backroad+Nadi+Fiji').trim();
+
+    document.querySelectorAll('[data-business-link="whatsapp"]').forEach(link=>{
+      link.href='https://wa.me/'+whatsapp;
+    });
+
+    document.querySelectorAll('[data-business-link="email"]').forEach(link=>{
+      link.href='mailto:'+email;
+    });
+
+    document.querySelectorAll('[data-business-link="facebook"]').forEach(link=>{
+      link.href=facebook;
+    });
+
+    document.querySelectorAll('[data-business-link="map"]').forEach(link=>{
+      link.href=mapUrl;
+    });
+
+    document.querySelectorAll('[data-business-map]').forEach(frame=>{
+      frame.src='https://maps.google.com/maps?q='
+        +encodeURIComponent(businessName+', '+address)
+        +'&t=&z=16&ie=UTF8&iwloc=&output=embed';
+    });
+
+    document.querySelectorAll('[data-site-setting="business_logo_url"]').forEach(node=>{
+      if(node.tagName==='IMG'){
+        const logo=(settings.business_logo_url||'assets/zims-logo.jpg').trim();
+        if(/^https:\/\//i.test(logo)||/^assets\/[a-zA-Z0-9._/-]+$/.test(logo)){
+          node.src=logo;
+        }
+      }
+    });
+  }catch{
+    // Keep built-in content visible if settings cannot be loaded.
+  }
+}
+async function loadPaypalConfig(){try{const response=await fetch('/api/paypal/config');if(response.ok){const data=await response.json();paypalConfig=data&&data.enabled&&data.client_id&&data.currency?data:{enabled:false}}}catch{paypalConfig={enabled:false}}await loadPaymentMethods()}
+async function loadPaymentMethods(){const select=$('paymentMethod'),notice=$('checkout-notice'),button=$('booking-submit-button');try{const response=await fetch('/api/payment-methods');const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not load payment methods');paymentMethods=data;select.replaceChildren();const available=[];if(data.methods?.paypal?.enabled&&paypalConfig.enabled)available.push(['paypal','PayPal / eligible card']);if(data.methods?.bank_transfer?.enabled)available.push(['bank_transfer','Bank transfer']);if(data.methods?.mpaisa?.enabled)available.push(['mpaisa','M-PAiSA']);if(!available.length){select.add(new Option('No online payment methods available',''));notice.textContent='Online payments are not configured yet. You can still contact Zims on WhatsApp to request a booking.';button.textContent='Contact Zims on WhatsApp';button.disabled=false;return}for(const [value,label] of available)select.add(new Option(label,value));select.value=available[0][0];notice.textContent='Your vehicle will be held for 15 minutes while you complete payment setup. Manual payments stay pending until the owner verifies the transaction.';button.textContent=select.value==='paypal'?'Continue to secure checkout':'Create temporary hold';button.disabled=false;select.onchange=()=>{button.textContent=select.value==='paypal'?'Continue to secure checkout':'Create temporary hold';notice.textContent=select.value==='paypal'?'Your vehicle will be held for up to 15 minutes while you complete PayPal checkout.':'Your vehicle will be held for up to 15 minutes while you switch to your payment app. Submit your transaction reference before the hold expires.'}}catch{paymentMethods={methods:{paypal:{enabled:!!paypalConfig.enabled},bank_transfer:{enabled:false},mpaisa:{enabled:false}}};select.replaceChildren(new Option(paypalConfig.enabled?'PayPal / eligible card':'Contact Zims on WhatsApp',paypalConfig.enabled?'paypal':'contact'));button.textContent=paypalConfig.enabled?'Continue to secure checkout':'Contact Zims on WhatsApp';button.disabled=false;notice.textContent=paypalConfig.enabled?'Your server-calculated quote will be held for up to 15 minutes while you complete PayPal checkout.':'Payment methods could not be loaded. Contact Zims to arrange a booking.'}}
+
+function fullGuestPhone(){const selectedCode=$('guestPhoneCode')?.value||'+679';const code=selectedCode==='+other'?$('guestPhoneCustomCode').value.trim():selectedCode;const local=$('guestPhone').value.trim();return (code+' '+local).trim()}
+function bookingWhatsappMessage(){return ['Zims Rental Cars Nadi — booking enquiry','Vehicle: '+(selected?.name||'Not selected'),'Pickup: '+criteria.start+' '+criteria.startTime+' Fiji time','Return: '+criteria.end+' '+criteria.endTime+' Fiji time','Pickup location: '+criteria.pickup,'Drop-off location: '+criteria.dropoff,'Name: '+$('guestName').value.trim(),'Email: '+$('guestEmail').value.trim(),'Phone: '+fullGuestPhone().trim(),'Discount code: '+($('discountCode').value.trim()||'None'),'Payment preference: '+$('paymentOption').selectedOptions[0].textContent,'Quote summary: '+$('summary').innerText.replace(/\s+/g,' ').trim(),'Extra request: '+$('extra').value].join('\n')}
+async function loadPayPalSdk(){if(window.paypal)return window.paypal;if(paypalScriptPromise)return paypalScriptPromise;paypalScriptPromise=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='https://www.paypal.com/sdk/js?client-id='+encodeURIComponent(paypalConfig.client_id)+'&currency='+encodeURIComponent(paypalConfig.currency)+'&intent=capture&components=buttons&enable-funding=card';script.async=true;script.onload=()=>window.paypal?resolve(window.paypal):reject(new Error('PayPal checkout did not initialize.'));script.onerror=()=>reject(new Error('Could not load PayPal checkout. Check your connection and try again.'));document.head.append(script)});return paypalScriptPromise}
+async function renderPayPalButtons(){const wallet=$('paypal-wallet-button'),card=$('paypal-card-button');wallet.replaceChildren();card.replaceChildren();const paypal=await loadPayPalSdk();const common={createOrder:async()=>{if(!activeCheckout)throw new Error('Booking details are missing.');const response=await fetch('/api/paypal/create-order',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({booking_id:activeCheckout.bookingId,email:activeCheckout.email})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not start PayPal checkout.');$('checkout-amount').textContent='Amount due: FJ$'+(activeCheckout.amountDueMinor/100).toFixed(2)+' · PayPal charge: '+data.currency+' '+data.amount+' · Remaining FJD balance: FJ$'+(activeCheckout.balanceDueMinor/100).toFixed(2);return data.order_id},onApprove:async data=>{const response=await fetch('/api/paypal/capture-order',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({booking_id:activeCheckout.bookingId,email:activeCheckout.email,order_id:data.orderID})});const result=await response.json();if(!response.ok)throw new Error(result.error||'Payment could not be confirmed.');$('checkout-amount').textContent=result.manual_review?'Payment received, but the booking needs manual review because the vehicle hold changed or expired. Contact Zims before travelling.':'Payment confirmed. Your booking is confirmed.';wallet.replaceChildren();card.replaceChildren();$('checkout-back').textContent=result.manual_review?'Contact Zims on WhatsApp':'Close';$('checkout-back').dataset.mode=result.manual_review?'contact':'close';if(!result.manual_review)activeCheckout=null;toast(result.manual_review?'Payment received; contact Zims for booking confirmation.':'Payment successful. Your booking is confirmed.');},onError:error=>{toast(error?.message||'PayPal checkout failed. You can retry while your hold is active.')}};const walletButton=paypal.Buttons({...common,fundingSource:paypal.FUNDING.PAYPAL,style:{layout:'vertical',shape:'rect',label:'paypal'}});if(walletButton.isEligible())await walletButton.render(wallet);try{const cardButton=paypal.Buttons({...common,fundingSource:paypal.FUNDING.CARD,style:{layout:'vertical',shape:'rect',label:'pay'}});if(cardButton.isEligible())await cardButton.render(card)}catch{const note=document.createElement('p');note.className='notice';note.textContent='Guest card checkout is not available for this account or transaction. You can still try PayPal checkout.';card.append(note)}if(!wallet.childElementCount&&!card.childElementCount)throw new Error('PayPal does not currently offer a checkout method for this account. Contact Zims to arrange payment.')}
+$('checkout-back').addEventListener('click',()=>{const mode=$('checkout-back').dataset.mode;if(mode==='close'){$('modalBg').classList.remove('show');$('paypalCheckout').hidden=true;$('guestForm').hidden=false;return}const text='Hello Zims, I need help with checkout.\nBooking reference: '+(activeCheckout?.bookingId||'Not available')+'\nEmail: '+(activeCheckout?.email||$('guestEmail').value.trim());const whatsappNumber=(document.querySelector('[data-business-link="whatsapp"]')?.href||'https://wa.me/6799042101').split('/').pop().split('?')[0];window.open('https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent(text),'_blank','noopener')});
+$('guestForm').addEventListener('submit',async e=>{e.preventDefault();const btn=$('booking-submit-button');if(!selected||!criteria)return;if(!dateValid())return;const paymentMethod=$('paymentMethod').value;if(!paymentMethod||paymentMethod==='contact'){const message=bookingWhatsappMessage();const whatsappNumber=(document.querySelector('[data-business-link="whatsapp"]')?.href||'https://wa.me/6799042101').split('/').pop().split('?')[0];window.open('https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent(message),'_blank','noopener');$('modalBg').classList.remove('show');toast('No booking hold was created. Send the prepared WhatsApp enquiry to request a booking.');return}btn.disabled=true;btn.textContent='Creating temporary hold…';try{const pickup=fijiLocalDateTimeToIso(criteria.start,criteria.startTime);const ret=fijiLocalDateTimeToIso(criteria.end,criteria.endTime);if(!pickup||!ret||Date.parse(ret)<=Date.parse(pickup))throw new Error('Choose valid pickup and return times in Fiji, with return after pickup.');bookingRequestId ||= crypto.randomUUID();const email=$('guestEmail').value.trim();const response=await fetch('/api/booking-request',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({request_id:bookingRequestId,customer_name:$('guestName').value,email,phone:fullGuestPhone(),vehicle_id:selected.id,pickup_at:pickup,return_at:ret,notes:$('extra').value,payment_option:$('paymentOption').value,payment_method:paymentMethod,discount_code:$('discountCode').value.trim()||undefined})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not create booking request');bookingRequestId=null;activeCheckout={bookingId:data.booking_id,email,amountDueMinor:Number(data.amount_due_fjd_minor),balanceDueMinor:Number(data.balance_due_fjd_minor),paymentMethod:data.payment_method||paymentMethod};$('checkout-reference').textContent='Booking reference: '+data.booking_id;$('checkout-amount').textContent='Amount due now: FJ$'+(Number(data.amount_due_fjd_minor)/100).toFixed(2)+' · Remaining balance: FJ$'+(Number(data.balance_due_fjd_minor)/100).toFixed(2);$('guestForm').hidden=true;$('paypalCheckout').hidden=false;$('paypalPaymentPanel').hidden=activeCheckout.paymentMethod!=='paypal';$('manualPaymentPanel').hidden=activeCheckout.paymentMethod==='paypal';if(activeCheckout.paymentMethod==='paypal'){await renderPayPalButtons()}else{const method=paymentMethods.methods[activeCheckout.paymentMethod];$('manual-payment-title').textContent=activeCheckout.paymentMethod==='bank_transfer'?'Bank transfer details':'M-PAiSA payment details';$('manual-payment-instructions').replaceChildren();$('manualPaymentForm').reset();$('transactionReference').disabled=false;$('manual-payment-submit').disabled=false;$('manual-payment-submit').textContent='Submit reference & request booking';$('manual-payment-result').hidden=true;const lines=[];if(activeCheckout.paymentMethod==='bank_transfer'){lines.push(['Bank',method.bank_name],['Account name',method.account_name],['Account number',method.account_number],['Branch',method.branch])}else{lines.push(['Recipient',method.recipient_name],['M-PAiSA mobile number',method.mobile_number]);if(method.qr_image_url){const qr=document.createElement('img');qr.src=method.qr_image_url;qr.alt='M-PAiSA payment QR code';qr.loading='lazy';qr.style.cssText='display:block;max-width:220px;max-height:220px;object-fit:contain;margin:12px auto';$('manual-payment-instructions').append(qr)}}for(const [label,value] of lines){if(!value)continue;const line=document.createElement('p');line.style.margin='6px 0';const strong=document.createElement('strong');strong.textContent=label+': ';line.append(strong,document.createTextNode(value));$('manual-payment-instructions').append(line)}const instructions=document.createElement('p');instructions.textContent=method.instructions||'Use your banking app to make the payment, then return here and submit the transaction reference.';$('manual-payment-instructions').append(instructions);$('checkout-hold-note').textContent='Your vehicle is held for up to 15 minutes while you switch apps and make the payment. After reference submission, the hold extends to 24 hours for owner review.'}}catch(err){if(activeCheckout){$('checkout-amount').textContent='Checkout could not finish: '+err.message+'. Your temporary hold remains active until it expires. Do not submit a second booking; contact Zims using the button below.';$('checkout-back').textContent='Contact Zims on WhatsApp';$('checkout-back').dataset.mode='contact';$('guestForm').hidden=true;$('paypalCheckout').hidden=false}else{toast(err.message+' If payment is unavailable, contact Zims on WhatsApp.')}}finally{btn.disabled=false;btn.textContent=($('paymentMethod').value==='paypal')?'Continue to secure checkout':'Create temporary hold'}});
+$('manualPaymentForm').addEventListener('submit',async e=>{e.preventDefault();if(!activeCheckout||!['bank_transfer','mpaisa'].includes(activeCheckout.paymentMethod))return;const button=$('manual-payment-submit'),result=$('manual-payment-result');button.disabled=true;button.textContent='Submitting reference…';try{const response=await fetch('/api/manual-payment/submit',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({booking_id:activeCheckout.bookingId,email:activeCheckout.email,transaction_reference:$('transactionReference').value.trim()})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Could not submit payment reference');result.hidden=false;result.textContent='Reference submitted. Your booking is pending owner review and is not confirmed yet. Your vehicle hold has been extended for up to 24 hours.';$('transactionReference').disabled=true;button.textContent='Reference submitted';$('checkout-back').textContent='Contact Zims on WhatsApp';$('checkout-back').dataset.mode='contact';toast('Payment reference submitted for owner review.')}catch(error){result.hidden=false;result.textContent=error.message;button.disabled=false;button.textContent='Submit reference & request booking'}});
+
+function initContactCarAnimations() {
+  const carSvg = '<svg viewBox="0 0 60 28" aria-hidden="true"><path d="M7 17 11 9.5Q12 7 16 7h23q4 0 6 4l3 5h4q3 0 3 3v3H5v-3q0-2 2-2Z" fill="#111"/><path d="M15 9.5h10v6H12.5Z M28 9.5h10q3 0 4.5 3l1.2 3H28Z" fill="#d9e9f5"/><circle cx="15" cy="23" r="4" fill="#111"/><circle cx="44" cy="23" r="4" fill="#111"/></svg>';
+
+  document.querySelectorAll('.contact-half').forEach(row => {
+    const button = row.querySelector('.btn');
+    const text = row.querySelector('p');
+    if (!button || !text) return;
+
+    let car = row.querySelector('.contact-car');
+    if (!car) {
+      car = document.createElement('span');
+      car.className = 'contact-car';
+      car.setAttribute('aria-hidden', 'true');
+      car.innerHTML = carSvg;
+      row.appendChild(car);
+    }
+
+    function drive() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const rowRect = row.getBoundingClientRect();
+      const textRect = text.getBoundingClientRect();
+      const buttonRect = button.getBoundingClientRect();
+
+      // Measure the actual rendered text, not the full paragraph box.
+      const range = document.createRange();
+      range.selectNodeContents(text);
+      const textEndRect = range.getBoundingClientRect();
+
+      const startX = Math.max(0, textEndRect.right - rowRect.left + 8);
+      const endX = buttonRect.left - rowRect.left - 50;
+      const y = textRect.top - rowRect.top +
+        (textRect.height - 22) / 2;
+
+      // Skip if there isn't enough horizontal space for the car.
+      if (endX <= startX + 10) return;
+
+      row.style.setProperty('--car-start-x', `${startX}px`);
+      row.style.setProperty('--car-start-y', `${y}px`);
+      row.style.setProperty('--car-end-x', `${endX}px`);
+      row.style.setProperty('--car-end-y', `${y}px`);
+
+      row.classList.remove('is-driving');
+      void car.offsetWidth;
+      row.classList.add('is-driving');
+    }
+
+    button.addEventListener('mouseenter', drive);
+    button.addEventListener('focus', drive);
+    button.addEventListener('mouseleave', () => row.classList.remove('is-driving'));
+    button.addEventListener('blur', () => row.classList.remove('is-driving'));
+  });
+}
+
+initContactCarAnimations();
+
+function initScrollReveals() {
+  const carSvg = '<svg viewBox="0 0 60 28" aria-hidden="true" focusable="false"><path d="M7 17 11 9.5Q12 7 16 7h23q4 0 6 4l3 5h4q3 0 3 3v3H5v-3q0-2 2-2Z" fill="#101820"/><path d="M15 9.5h10v6H12.5Z M28 9.5h10q3 0 4.5 3l1.2 3H28Z" fill="#d9e9f5"/><circle cx="15" cy="23" r="4" fill="#101820" stroke="#fff" stroke-width="1.2"/><circle cx="44" cy="23" r="4" fill="#101820" stroke="#fff" stroke-width="1.2"/></svg>';
+  const navLinks = [...document.querySelectorAll('[data-nav-target]')];
+  navLinks.forEach(link => {
+    if (!link.querySelector('.nav-car-indicator')) {
+      const icon = document.createElement('span');
+      icon.className = 'nav-car-indicator';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.innerHTML = carSvg;
+      link.prepend(icon);
+    }
+  });
+  const navTargets = [...new Map(navLinks.map(link => {
+    const target = document.querySelector(link.dataset.navTarget);
+    return target ? [link.dataset.navTarget, target] : null;
+  }).filter(Boolean)).entries()].map(([selector, target]) => ({selector, target}));
+  const setActive = selector => navLinks.forEach(link => {
+    const active = link.dataset.navTarget === selector;
+    link.classList.toggle('active-section', active);
+    if (active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+  if ('IntersectionObserver' in window && navTargets.length) {
+    const activeObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+      if (visible) setActive('#' + visible.target.id);
+    }, {rootMargin:'-22% 0px -62% 0px', threshold:[0,.1,.25,.5]});
+    navTargets.forEach(item => activeObserver.observe(item.target));
+  }
+  navLinks.forEach(link => link.addEventListener('click', () => setActive(link.dataset.navTarget)));
+
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sections = document.querySelectorAll('.hero, .services-band, .section[id]');
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('is-visible');
+    revealObserver.unobserve(entry.target);
+  }), {threshold:.12, rootMargin:'0px 0px -24px 0px'});
+  sections.forEach(section => {section.classList.add('reveal'); revealObserver.observe(section)});
+  document.documentElement.classList.add('motion-ready');
+}
+
+ initScrollReveals();
+ $('year').textContent=new Date().getFullYear();render();loadPublishedFleet();loadPromotionBanner();const requestedVehicle=new URLSearchParams(location.search).get('vehicle');if(requestedVehicle){setTimeout(()=>{if(cars.some(c=>c.id===requestedVehicle))bookCar(requestedVehicle)},250)}loadPaypalConfig();loadSiteSettings();
+</script>
+<img class="flower-decoration" src="assets/hibiscus-tattoo.webp" alt="" aria-hidden="true" loading="lazy">
+
+<script>
+(()=>{
+ const footer=document.querySelector('footer');
+ if(footer&&'IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){footer.classList.add('brand-entered');observer.disconnect()}},{threshold:.12});observer.observe(footer)}
+ const flower=document.querySelector('.flower-decoration');const map=document.querySelector('.map-card');
+ if(flower&&map&&'IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const e of entries)flower.classList.toggle('flower-near-map',e.isIntersecting)},{threshold:.08});observer.observe(map)}
+})();
+</script>
+</body></html>

@@ -1,0 +1,43 @@
+name = "zims-rental-cars"
+main = "src/index.js"
+compatibility_date = "2026-10-14"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zims-rental-db"
+database_id = "bc7606b0-5d57-4bdd-8424-9f339f988e2e"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "VEHICLE_IMAGES"
+bucket_name = "zims-rental-images"
+
+[[ratelimits]]
+name = "LOGIN_IP_LIMITER"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
+
+[[ratelimits]]
+name = "LOGIN_ACCOUNT_LIMITER"
+namespace_id = "1002"
+simple = { limit = 10, period = 60 }
+
+[[ratelimits]]
+name = "PUBLIC_API_LIMITER"
+namespace_id = "1003"
+simple = { limit = 30, period = 60 }
+
+[[ratelimits]]
+name = "BOOKING_LIMITER"
+namespace_id = "1005"
+simple = { limit = 5, period = 60 }
+
+[[ratelimits]]
+name = "ADMIN_UPLOAD_LIMITER"
+namespace_id = "1004"
+simple = { limit = 10, period = 60 }
