@@ -649,7 +649,7 @@ try{
 const canvas=await html2canvas(c,{scale:2,backgroundColor:'#ffffff',useCORS:true,logging:false});
 const imgData=canvas.toDataURL('image/png');
 const{jsPDF}=window.jspdf;
-const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'4'});
+const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
 const pageWidth=210,pageHeight=297;
 const imgWidth=pageWidth-20;
 const imgHeight=(canvas.height*imgWidth)/canvas.width;
