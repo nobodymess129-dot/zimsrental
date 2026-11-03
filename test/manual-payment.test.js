@@ -117,7 +117,42 @@ test('manual review refuses expired holds and overlapping confirmed bookings', a
     database.prepare(`INSERT INTO bookings (id,customer_name,email,vehicle_id,pickup_at,return_at,status,payment_status,total_fjd) VALUES (?,?,?,?,?,?,'confirmed','paid',100)`)
       .run('55555555-5555-4555-8555-555555555555','Other Guest','other@example.test','fielder','2098-08-01T00:00:00.000Z','2098-08-03T00:00:00.000Z');
     const conflictReview=await request(env,'/api/admin/bookings/'+conflicted.booking_id+'/review-payment',{method:'POST',cookie,body:{action:'approve'}});
-    assert.equal(conflictReview.status,409);assert.match((await conflictReview.json()).error,/overlaps these dates/i);
+    assert.equal(conflictReview.status,409);assert.match((await conflictReview.json()).error,/fully booked for part or all of these dates/i);
     assert.equal(database.prepare('SELECT status FROM bookings WHERE id=?').get(conflicted.booking_id).status,'pending_payment');
+  } finally {database.close();}
+});
+
+test('fleet_quantity=2: manual payment approval succeeds when only one overlapping confirmed booking exists', async()=>{
+  const {database,env}=makeEnvironment();
+  try {
+    database.prepare('UPDATE vehicles SET fleet_quantity=? WHERE id=?').run(2,'fielder');
+    const booking=await createManualBooking(env,'66666666-6666-4666-8666-666666666666');
+    assert.equal((await request(env,'/api/manual-payment/submit',{method:'POST',body:{booking_id:booking.booking_id,email:'guest@example.test',transaction_reference:'BANK-TXN-CAP2'}})).status,200);
+    database.prepare(`INSERT INTO bookings (id,customer_name,email,vehicle_id,pickup_at,return_at,status,payment_status,total_fjd) VALUES (?,?,?,?,?,?,'confirmed','paid',100)`)
+      .run('77777777-7777-4777-8777-777777777777','Other Guest','other@example.test','fielder','2098-05-01T00:00:00.000Z','2098-05-03T00:00:00.000Z');
+    const cookie=await signIn(env);
+    const approve=await request(env,'/api/admin/bookings/'+booking.booking_id+'/review-payment',{method:'POST',cookie,body:{action:'approve',note:'One slot remains in fleet of 2.'}});
+    assert.equal(approve.status,200,await approve.clone().text());
+    assert.deepEqual(await approve.json(),{ok:true,status:'confirmed',payment_status:'paid'});
+    const row=database.prepare('SELECT status,payment_status FROM bookings WHERE id=?').get(booking.booking_id);
+    assert.equal(row.status,'confirmed');assert.equal(row.payment_status,'paid');
+  } finally {database.close();}
+});
+
+test('fleet_quantity=2: manual payment approval is rejected when two overlapping confirmed bookings fill capacity', async()=>{
+  const {database,env}=makeEnvironment();
+  try {
+    database.prepare('UPDATE vehicles SET fleet_quantity=? WHERE id=?').run(2,'fielder');
+    const booking=await createManualBooking(env,'88888888-8888-4888-8888-888888888888');
+    assert.equal((await request(env,'/api/manual-payment/submit',{method:'POST',body:{booking_id:booking.booking_id,email:'guest@example.test',transaction_reference:'BANK-TXN-CAP-FULL'}})).status,200);
+    database.prepare(`INSERT INTO bookings (id,customer_name,email,vehicle_id,pickup_at,return_at,status,payment_status,total_fjd) VALUES (?,?,?,?,?,?,'confirmed','paid',100)`)
+      .run('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','Guest A','a@example.test','fielder','2098-05-01T00:00:00.000Z','2098-05-03T00:00:00.000Z');
+    database.prepare(`INSERT INTO bookings (id,customer_name,email,vehicle_id,pickup_at,return_at,status,payment_status,total_fjd) VALUES (?,?,?,?,?,?,'confirmed','paid',100)`)
+      .run('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','Guest B','b@example.test','fielder','2098-05-01T00:00:00.000Z','2098-05-03T00:00:00.000Z');
+    const cookie=await signIn(env);
+    const approve=await request(env,'/api/admin/bookings/'+booking.booking_id+'/review-payment',{method:'POST',cookie,body:{action:'approve',note:'Should not succeed.'}});
+    assert.equal(approve.status,409);
+    const row=database.prepare('SELECT status,payment_status FROM bookings WHERE id=?').get(booking.booking_id);
+    assert.equal(row.status,'pending_payment');assert.equal(row.payment_status,'pending');
   } finally {database.close();}
 });

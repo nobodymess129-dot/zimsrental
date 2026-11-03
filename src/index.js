@@ -594,10 +594,20 @@ if (exceedsCapacity) {
             const results = await env.DB.batch([
               env.DB.prepare(`UPDATE bookings SET status='confirmed',payment_status=?,payment_review_note=?,payment_reviewed_at=?,payment_reviewed_by=?
                 WHERE id=? AND status='pending_payment' AND payment_status='pending' AND customer_payment_reference=? AND payment_submitted_at=? AND hold_expires_at>?
-                AND NOT EXISTS (SELECT 1 FROM bookings other WHERE other.vehicle_id=bookings.vehicle_id AND other.id<>bookings.id
+                AND (SELECT COUNT(*) FROM bookings other WHERE other.vehicle_id=bookings.vehicle_id AND other.id<>bookings.id
                   AND (other.status='confirmed' OR (other.status='pending_payment' AND other.hold_expires_at IS NOT NULL AND other.hold_expires_at>?))
-                  AND julianday(other.pickup_at)<julianday(bookings.return_at) AND julianday(other.return_at)>julianday(bookings.pickup_at))`)
-                .bind(paymentStatus,note || 'Manual payment verified by owner.',now,user.email,id,booking.customer_payment_reference,booking.payment_submitted_at,now,now),
+                  AND julianday(other.pickup_at)<=julianday(bookings.pickup_at) AND julianday(other.return_at)>julianday(bookings.pickup_at))
+                  < (SELECT fleet_quantity FROM vehicles WHERE id=bookings.vehicle_id)
+                AND NOT EXISTS (
+                  SELECT 1 FROM bookings event WHERE event.vehicle_id=bookings.vehicle_id AND event.id<>bookings.id
+                  AND (event.status='confirmed' OR (event.status='pending_payment' AND event.hold_expires_at IS NOT NULL AND event.hold_expires_at>?))
+                  AND julianday(event.pickup_at)>julianday(bookings.pickup_at) AND julianday(event.pickup_at)<julianday(bookings.return_at)
+                  AND (SELECT COUNT(*) FROM bookings active WHERE active.vehicle_id=event.vehicle_id AND active.id<>bookings.id
+                    AND (active.status='confirmed' OR (active.status='pending_payment' AND active.hold_expires_at IS NOT NULL AND active.hold_expires_at>?))
+                    AND julianday(active.pickup_at)<=julianday(event.pickup_at) AND julianday(active.return_at)>julianday(event.pickup_at))
+                    >= (SELECT fleet_quantity FROM vehicles WHERE id=event.vehicle_id)
+                )`)
+                .bind(paymentStatus,note || 'Manual payment verified by owner.',now,user.email,id,booking.customer_payment_reference,booking.payment_submitted_at,now,now,now,now),
               env.DB.prepare(`UPDATE discount_redemptions SET state='redeemed',redeemed_at=COALESCE(redeemed_at,CURRENT_TIMESTAMP) WHERE booking_id=? AND state='reserved' AND EXISTS (SELECT 1 FROM bookings WHERE id=? AND status='confirmed' AND payment_status IN ('paid','deposit_paid'))`).bind(id,id)
             ]);
             if (results[0]?.meta?.changes !== 1) return fail('Booking changed during review or the vehicle dates are no longer available. Refresh and check availability again.',409);
@@ -1049,34 +1059,45 @@ if (exceedsCapacity) {
   if (ACTIVE_BOOKING_STATES.includes(b.status)) {
     const now = new Date().toISOString();
 
-    const conflict = await env.DB.prepare(`
-      SELECT id
+    const capacity = await env.DB.prepare(
+      'SELECT fleet_quantity FROM vehicles WHERE id=? AND active=1'
+    ).bind(booking.vehicle_id).first();
+
+    if (!capacity || Number(capacity.fleet_quantity) < 1) {
+      return fail('This vehicle is no longer available.', 409);
+    }
+
+    const { results: overlappingBookings } = await env.DB.prepare(`
+      SELECT id, pickup_at, return_at
       FROM bookings
-      WHERE vehicle_id = ?
-        AND id <> ?
+      WHERE vehicle_id=? AND id<>?
         AND (
-          status = 'confirmed'
-          OR (
-            status = 'pending_payment'
-            AND hold_expires_at IS NOT NULL
-            AND hold_expires_at > ?
-          )
+          status='confirmed'
+          OR (status='pending_payment' AND hold_expires_at IS NOT NULL AND hold_expires_at>?)
         )
         AND ${BOOKING_OVERLAP_RANGE_SQL}
-      LIMIT 1
-    `).bind(
-      booking.vehicle_id,
-      id,
-      now,
-      booking.return_at,
-      booking.pickup_at
-    ).first();
+    `).bind(booking.vehicle_id, id, now, booking.return_at, booking.pickup_at).all();
 
-    if (conflict) {
-      return fail(
-        'This vehicle has an overlapping active booking.',
-        409
-      );
+    const pickupMs = Date.parse(booking.pickup_at);
+    const returnMs = Date.parse(booking.return_at);
+    const checkPoints = [
+      pickupMs,
+      ...overlappingBookings
+        .map(item => Date.parse(item.pickup_at))
+        .filter(time => time >= pickupMs && time < returnMs)
+    ];
+
+    const exceedsCapacity = checkPoints.some(point => {
+      const inUse = overlappingBookings.filter(item =>
+        Date.parse(item.pickup_at) <= point &&
+        Date.parse(item.return_at) > point
+      ).length;
+
+      return inUse >= Number(capacity.fleet_quantity);
+    });
+
+    if (exceedsCapacity) {
+      return fail('The fleet is fully booked for part or all of these dates.', 409);
     }
   }
 
@@ -1094,9 +1115,33 @@ if (exceedsCapacity) {
     ]);
     if (results[0]?.meta?.changes !== 1) return fail('Booking status was not updated.', 409);
   } else {
-    await env.DB.prepare(
-      'UPDATE bookings SET status = ? WHERE id = ?'
-    ).bind(b.status, id).run();
+    const wasActive = ACTIVE_BOOKING_STATES.includes(booking.status);
+    const isActive = ACTIVE_BOOKING_STATES.includes(b.status);
+    if (!wasActive && isActive) {
+      const now = new Date().toISOString();
+      const results = await env.DB.batch([
+        env.DB.prepare(`UPDATE bookings SET status=? WHERE id=?
+          AND (SELECT COUNT(*) FROM bookings other WHERE other.vehicle_id=bookings.vehicle_id AND other.id<>bookings.id
+            AND (other.status='confirmed' OR (other.status='pending_payment' AND other.hold_expires_at IS NOT NULL AND other.hold_expires_at>?))
+            AND julianday(other.pickup_at)<=julianday(bookings.pickup_at) AND julianday(other.return_at)>julianday(bookings.pickup_at))
+            < (SELECT fleet_quantity FROM vehicles WHERE id=bookings.vehicle_id)
+          AND NOT EXISTS (
+            SELECT 1 FROM bookings event WHERE event.vehicle_id=bookings.vehicle_id AND event.id<>bookings.id
+            AND (event.status='confirmed' OR (event.status='pending_payment' AND event.hold_expires_at IS NOT NULL AND other.hold_expires_at>?))
+            AND julianday(event.pickup_at)>julianday(bookings.pickup_at) AND julianday(event.pickup_at)<julianday(bookings.return_at)
+            AND (SELECT COUNT(*) FROM bookings active WHERE active.vehicle_id=event.vehicle_id AND active.id<>bookings.id
+              AND (active.status='confirmed' OR (active.status='pending_payment' AND active.hold_expires_at IS NOT NULL AND active.hold_expires_at>?))
+              AND julianday(active.pickup_at)<=julianday(event.pickup_at) AND julianday(active.return_at)>julianday(event.pickup_at))
+              >= (SELECT fleet_quantity FROM vehicles WHERE id=event.vehicle_id)
+          )`)
+          .bind(b.status, id, now, now, now)
+      ]);
+      if (results[0]?.meta?.changes !== 1) return fail('Booking changed during update or the vehicle dates are no longer available. Refresh and check availability again.', 409);
+    } else {
+      await env.DB.prepare(
+        'UPDATE bookings SET status = ? WHERE id = ?'
+      ).bind(b.status, id).run();
+    }
   }
 
   return json({ ok: true });
