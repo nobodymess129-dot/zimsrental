@@ -921,7 +921,7 @@ if (exceedsCapacity) {
           ];
           const validPaymentStatuses = [
             'unpaid', 'pending', 'deposit_paid', 'paid',
-            'refunded', 'failed'
+            'refunded', 'failed', 'pay_on_arrival'
           ];
 
           if ((pickupFrom && !validDate(pickupFrom)) ||
