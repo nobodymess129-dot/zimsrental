@@ -1,5 +1,48 @@
 import { normalizeBookingDateRange, BOOKING_OVERLAP_RANGE_SQL, calculateBookingPayment, calculateBookingPaymentMinor } from './booking-dates.js';
 import { calculateRentalDiscount, discountCodeStatus, fijiLocalDateTimeToUtc, normalizeCustomerEmail, normalizeDiscountCode } from './discounts.js';
+// === EMAIL NOTIFICATIONS via Resend ===
+async function sendEmail(env, to, subject, html) {
+  if (!env.RESEND_API_KEY) { console.log('[email] No RESEND_API_KEY - skipping'); return; }
+  try {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + env.RESEND_API_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ from: 'Zims Rental Cars <onboarding@resend.dev>', to: [to], subject, html })
+    });
+    if (!res.ok) console.error('[email] Failed:', res.status);
+  } catch (e) { console.error('[email] Error:', e.message); }
+}
+
+function bookingEmailHtml(b) {
+  return '<div style="font-family:sans-serif;max-width:600px;margin:auto;background:#f8f9fa;padding:20px">'
+    + '<div style="background:#0a3d62;color:white;padding:20px;border-radius:8px 8px 0 0">'
+    + '<h1 style="margin:0;font-size:22px">Zims Rental Cars - New Booking</h1></div>'
+    + '<div style="background:white;padding:20px;border:1px solid #e0e0e0;border-top:none">'
+    + '<p><strong>Reference:</strong> ' + b.id + '</p>'
+    + '<p><strong>Customer:</strong> ' + b.name + '</p>'
+    + '<p><strong>Email:</strong> ' + b.email + '</p>'
+    + '<p><strong>Phone:</strong> ' + (b.phone || 'N/A') + '</p>'
+    + '<p><strong>Vehicle:</strong> ' + (b.vehicle_name || b.vehicle_id) + '</p>'
+    + '<p><strong>Pickup:</strong> ' + b.pickup + '</p>'
+    + '<p><strong>Return:</strong> ' + b.ret + '</p>'
+    + '<p><strong>Payment:</strong> ' + (b.payment_option === 'arrival' ? 'Pay on Arrival' : b.payment_option) + '</p>'
+    + '<p><strong>Total:</strong> FJ$' + (b.total / 100).toFixed(2) + '</p>'
+    + (b.notes ? '<p><strong>Notes:</strong> ' + b.notes + '</p>' : '')
+    + '</div></div>';
+}
+
+function customerConfirmationHtml(b) {
+  return '<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:20px">'
+    + '<div style="background:#0a3d62;color:white;padding:20px;border-radius:8px">'
+    + '<h1 style="margin:0;font-size:22px">Booking Confirmed</h1></div>'
+    + '<div style="background:white;padding:20px;border:1px solid #e0e0e0">'
+    + '<p>Hi ' + b.name + ', your booking is confirmed!</p>'
+    + '<p><strong>Reference:</strong> ' + b.id + '</p>'
+    + '<p><strong>Vehicle:</strong> ' + (b.vehicle_name || b.vehicle_id) + '</p>'
+    + '<p><strong>Total:</strong> FJ$' + (b.total / 100).toFixed(2) + '</p>'
+    + (b.payment_option === 'arrival' ? '<p>Full payment due on pickup.</p>' : '')
+    + '<p>Call +679 9042101 for help.</p></div></div>';
+}
 const COOKIE = 'zims_admin';
 const ACTIVE_BOOKING_STATES = ['pending_payment', 'confirmed'];
 const MAX_VEHICLE_IMAGE_BYTES = 5 * 1024 * 1024;
@@ -1437,7 +1480,12 @@ if (!methods[paymentMethod]?.enabled) {
             409
           );
         }
-
+                // Send email notifications
+        const vehicleRec = await env.DB.prepare('SELECT name FROM vehicles WHERE id=?').bind(vehicle).first();
+        const emailData = { id, name, email, phone, vehicle_id: vehicle, vehicle_name: vehicleRec?.name || vehicle, pickup, ret, payment_option: payment.paymentOption, total: payment.rentalTotalFjdMinor, amount_due: payment.amountDueFjdMinor, notes };
+        const ownerEmail = env.OWNER_EMAIL || 'zimsrentalfj@gmail.com';
+        sendEmail(env, ownerEmail, 'New Booking - ' + id, bookingEmailHtml(emailData));
+        sendEmail(env, email, 'Booking Confirmed - ' + id, customerConfirmationHtml(emailData));
         return json({
           ok: true,
           booking_id: id,
