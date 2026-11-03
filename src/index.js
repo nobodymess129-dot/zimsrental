@@ -288,7 +288,7 @@ async function releaseExpiredDiscountReservations(env) {
         AND (b.status IN ('cancelled','rejected')
           OR (b.status='pending_payment' AND b.hold_expires_at IS NOT NULL
             AND b.hold_expires_at <= strftime('%Y-%m-%dT%H:%M:%fZ','now')))
-        AND b.payment_status NOT IN ('paid','deposit_paid')
+        AND b.payment_status NOT IN ('paid','deposit_paid','pay_on_arrival')
     )`).run();
 }
 
@@ -590,7 +590,7 @@ const exceedsCapacity = checkPoints.some(point => {
 if (exceedsCapacity) {
   return fail('The fleet is fully booked for part or all of these dates.', 409);
 }
-            const paymentStatus = booking.payment_option === 'deposit' ? 'deposit_paid' : 'paid';
+            const paymentStatus = booking.payment_option === 'deposit' ? 'deposit_paid' : booking.payment_option === 'arrival' ? 'pay_on_arrival' : 'paid';
             const results = await env.DB.batch([
               env.DB.prepare(`UPDATE bookings SET status='confirmed',payment_status=?,payment_review_note=?,payment_reviewed_at=?,payment_reviewed_by=?
                 WHERE id=? AND status='pending_payment' AND payment_status='pending' AND customer_payment_reference=? AND payment_submitted_at=? AND hold_expires_at>?
@@ -608,7 +608,7 @@ if (exceedsCapacity) {
                     >= (SELECT fleet_quantity FROM vehicles WHERE id=event.vehicle_id)
                 )`)
                 .bind(paymentStatus,note || 'Manual payment verified by owner.',now,user.email,id,booking.customer_payment_reference,booking.payment_submitted_at,now,now,now,now),
-              env.DB.prepare(`UPDATE discount_redemptions SET state='redeemed',redeemed_at=COALESCE(redeemed_at,CURRENT_TIMESTAMP) WHERE booking_id=? AND state='reserved' AND EXISTS (SELECT 1 FROM bookings WHERE id=? AND status='confirmed' AND payment_status IN ('paid','deposit_paid'))`).bind(id,id)
+              env.DB.prepare(`UPDATE discount_redemptions SET state='redeemed',redeemed_at=COALESCE(redeemed_at,CURRENT_TIMESTAMP) WHERE booking_id=? AND state='reserved' AND EXISTS (SELECT 1 FROM bookings WHERE id=? AND status='confirmed' AND payment_status IN ('paid','deposit_paid','pay_on_arrival'))`).bind(id,id)
             ]);
             if (results[0]?.meta?.changes !== 1) return fail('Booking changed during review or the vehicle dates are no longer available. Refresh and check availability again.',409);
             return json({ ok:true, status:'confirmed', payment_status:paymentStatus });
@@ -1111,7 +1111,7 @@ if (exceedsCapacity) {
       env.DB.prepare(`UPDATE discount_redemptions SET state='released',released_at=CURRENT_TIMESTAMP
         WHERE booking_id=? AND state='reserved'
           AND EXISTS (SELECT 1 FROM bookings b WHERE b.id=? AND b.status IN ('cancelled','rejected')
-            AND b.payment_status NOT IN ('paid','deposit_paid'))`).bind(id, id)
+            AND b.payment_status NOT IN ('paid','deposit_paid','pay_on_arrival'))`).bind(id, id)
     ]);
     if (results[0]?.meta?.changes !== 1) return fail('Booking status was not updated.', 409);
   } else {
@@ -1163,7 +1163,7 @@ if (exceedsCapacity) {
         const paymentOption = String(b.payment_option || 'full');
         const codeText = String(b.discount_code || '').trim();
         const code = codeText ? normalizeDiscountCode(codeText) : null;
-        if (!vehicle || !dateRange || !['full','deposit'].includes(paymentOption)
+        if (!vehicle || !dateRange || !['full','deposit','arrival'].includes(paymentOption)
           || (email && !/^\S+@\S+\.\S+$/.test(email)) || (codeText && !code)) {
           return fail('Please provide a vehicle, valid dates and a valid email address or discount code.');
         }
@@ -1209,8 +1209,8 @@ if (exceedsCapacity) {
           !/^\S+@\S+\.\S+$/.test(email) ||
           !vehicle ||
           !dateRange ||
-          !['full', 'deposit'].includes(paymentOption) ||
-          !['bank_transfer','mpaisa'].includes(paymentMethod) ||
+          !['full', 'deposit', 'arrival'].includes(paymentOption) ||
+          !['bank_transfer','mpaisa','none'].includes(paymentMethod) ||
           !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(requestId) ||
           (codeText && !code)
         ) {
@@ -1255,7 +1255,7 @@ if (!methods[paymentMethod]?.enabled) {
             WHERE state='reserved' AND EXISTS (SELECT 1 FROM bookings b WHERE b.id=discount_redemptions.booking_id
               AND (b.status IN ('cancelled','rejected') OR (b.status='pending_payment'
                 AND b.hold_expires_at <= strftime('%Y-%m-%dT%H:%M:%fZ','now')))
-              AND b.payment_status NOT IN ('paid','deposit_paid'))`),
+              AND b.payment_status NOT IN ('paid','deposit_paid','pay_on_arrival'))`),
           env.DB.prepare(`
           INSERT INTO bookings (
             id, customer_name, email, phone, vehicle_id,

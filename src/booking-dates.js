@@ -89,7 +89,7 @@ export const BOOKING_OVERLAP_RANGE_SQL =
 // Money due and balance are stored as integer FJD cents.
 export function calculateBookingPayment(totalFjd, paymentOption, depositPercent) {
   if (!Number.isSafeInteger(totalFjd) || totalFjd < 0) throw new RangeError('Invalid rental total.');
-  if (!['full', 'deposit'].includes(paymentOption)) throw new RangeError('Invalid payment option.');
+  if (!['full', 'deposit', 'arrival'].includes(paymentOption)) throw new RangeError('Invalid payment option.');
   if (depositPercent !== null && depositPercent !== undefined
     && (!Number.isFinite(depositPercent) || depositPercent <= 0 || depositPercent > 100)) {
     throw new RangeError('Deposit percentage must be greater than 0 and no more than 100.');
@@ -105,13 +105,14 @@ export function calculateBookingPayment(totalFjd, paymentOption, depositPercent)
 // payment calculation in cents to avoid repeating a dollar conversion.
 export function calculateBookingPaymentMinor(totalMinor, paymentOption, depositPercent) {
   if (!Number.isSafeInteger(totalMinor) || totalMinor < 0) throw new RangeError('Invalid rental total.');
-  if (!['full', 'deposit'].includes(paymentOption)) throw new RangeError('Invalid payment option.');
+  if (!['full', 'deposit', 'arrival'].includes(paymentOption)) throw new RangeError('Invalid payment option.');
   if (depositPercent !== null && depositPercent !== undefined
     && (!Number.isFinite(depositPercent) || depositPercent <= 0 || depositPercent > 100)) {
     throw new RangeError('Deposit percentage must be greater than 0 and no more than 100.');
   }
   if (paymentOption === 'deposit' && depositPercent == null) throw new RangeError('A deposit is not configured for this vehicle.');
   let dueMinor = totalMinor;
+  if (paymentOption === 'arrival') { dueMinor = 0; }
   if (paymentOption === 'deposit') {
     const percentText = String(depositPercent);
     if (!/^\d{1,3}(?:\.\d{1,12})?$/.test(percentText)) throw new RangeError('Deposit percentage precision is invalid.');
