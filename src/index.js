@@ -1287,7 +1287,7 @@ if (!methods[paymentMethod]?.enabled) {
         const quote = await calculateServerQuote(env, { vehicle, dateRange, emailNormalized, code, paymentOption, now });
         if (quote.error) return fail(quote.error, quote.status);
         const { vehicleRecord, rule, override, tiers, codeRecord, discount, payment } = quote.value;
-        if (payment.amountDueFjdMinor <= 0) return fail('This booking has no payable balance and cannot be confirmed automatically. Please contact Zims for manual confirmation.', 400);
+        if (payment.amountDueFjdMinor <= 0 && payment.paymentOption !== 'arrival') return fail('This booking has no payable balance and cannot be confirmed automatically. Please contact Zims for manual confirmation.', 400);
         const overrideState = override ? Number(override.active) : -1;
         const selectedTier = discount.automaticTierId ? tiers.find(tier => tier.id === discount.automaticTierId) : null;
         const holdExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString();
@@ -1484,8 +1484,8 @@ if (!methods[paymentMethod]?.enabled) {
         const vehicleRec = await env.DB.prepare('SELECT name FROM vehicles WHERE id=?').bind(vehicle).first();
         const emailData = { id, name, email, phone, vehicle_id: vehicle, vehicle_name: vehicleRec?.name || vehicle, pickup, ret, payment_option: payment.paymentOption, total: payment.rentalTotalFjdMinor, amount_due: payment.amountDueFjdMinor, notes };
         const ownerEmail = env.OWNER_EMAIL || 'zimsrentalfj@gmail.com';
-        sendEmail(env, ownerEmail, 'New Booking - ' + id, bookingEmailHtml(emailData));
-        sendEmail(env, email, 'Booking Confirmed - ' + id, customerConfirmationHtml(emailData));
+      await sendEmail(env, ownerEmail, 'New Booking - ' + id + ' - ' + (vehicleRec?.name || 'Vehicle'), bookingEmailHtml(emailData));
+        await sendEmail(env, email, 'Booking Confirmed - Zims Rental Cars - ' + id, customerConfirmationHtml(emailData));
         return json({
           ok: true,
           booking_id: id,
