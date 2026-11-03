@@ -1277,7 +1277,7 @@ if (exceedsCapacity) {
         const now = new Date().toISOString();
         const methods = await readPaymentMethods(env);
 
-if (!methods[paymentMethod]?.enabled) {
+if (paymentMethod !== 'none' && !methods[paymentMethod]?.enabled) {
   return fail(
     'That payment method is not currently available. Refresh and choose another method.',
     409
