@@ -1290,7 +1290,7 @@ if (paymentMethod !== 'none' && !methods[paymentMethod]?.enabled) {
         if (payment.amountDueFjdMinor <= 0 && payment.paymentOption !== 'arrival') return fail('This booking has no payable balance and cannot be confirmed automatically. Please contact Zims for manual confirmation.', 400);
         const overrideState = override ? Number(override.active) : -1;
         const selectedTier = discount.automaticTierId ? tiers.find(tier => tier.id === discount.automaticTierId) : null;
-        const holdExpires = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+        const holdExpires = payment.paymentOption === 'arrival' ? null : new Date(Date.now() + 15 * 60 * 1000).toISOString();
 
         const id = crypto.randomUUID();
         const statements = [
@@ -1308,7 +1308,7 @@ if (paymentMethod !== 'none' && !methods[paymentMethod]?.enabled) {
             daily_rate_fjd_minor,rental_days,original_subtotal_fjd_minor,discount_type,
             discount_reference,discount_percent,discount_amount_fjd_minor,final_total_fjd_minor,request_id,payment_provider
           )
-          SELECT ?, ?, ?, ?, ?, ?, ?, 'pending_payment', 'pending', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+          SELECT ?, ?, ?, ?, ?, ?, ?, CASE WHEN ?='arrival' THEN 'confirmed' ELSE 'pending_payment' END, CASE WHEN ?='arrival' THEN 'pay_on_arrival' ELSE 'pending' END, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
           WHERE EXISTS (
             SELECT 1 FROM vehicles
             WHERE id = ? AND active = 1 AND daily_rate=? AND deposit_percent IS ?
@@ -1393,6 +1393,8 @@ if (paymentMethod !== 'none' && !methods[paymentMethod]?.enabled) {
           vehicle,
           pickup,
           ret,
+          payment.paymentOption,
+          payment.paymentOption,
           payment.rentalTotalFjd,
           notes,
           holdExpires,
